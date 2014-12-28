@@ -1,7 +1,10 @@
 var _ = require("underscore");
 
-module.exports = {
-    name: "base",
+function BaseController(name) {
+    this.name = name;
+}
+
+BaseController.prototype = {
     extend: function(child) {
         return _.extend({}, this, child);
     },
@@ -9,3 +12,5 @@ module.exports = {
 
     }
 };
+
+module.exports = BaseController;
