@@ -14,7 +14,8 @@ MainModel.prototype.select = function(paramMap, callback) {
         }
 
         console.log('Result: ', rows);
-        callback({});
+
+        callback(rows);
     });
 };
 

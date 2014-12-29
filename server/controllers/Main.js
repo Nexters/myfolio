@@ -10,11 +10,12 @@ function MainController() {
 MainController.prototype = new BaseController("MainController");
 
 MainController.prototype.run = function(req, res, next) {
-    var self = this;
     var content = {};
+    var paramMap = {};
 
     content.testData = "Test Data";
-    mainModel.select({},function(data){
+    mainModel.select(paramMap,function(records){
+        console.log(records);
         res.render('Main.ejs',content);
 
     });
