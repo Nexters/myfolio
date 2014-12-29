@@ -3,16 +3,10 @@ var BaseController = require("./Base");
 
 var MainController = new BaseController("MainController");
 
-MainController.prototype.run = function(req, res, next) {
-    var self = this;
-    self.getContent(function() {
-       res.render('Main.ejs',self.content); 
-    });
-};
-
-MainController.prototype.getContent = function(callback) {
+MainController.run = function(req, res, next) {
     var self = this;
     self.content = {testData: "Test Data"};
+    res.render('Main.ejs',self.content);
 };
 
 module.exports = MainController;
