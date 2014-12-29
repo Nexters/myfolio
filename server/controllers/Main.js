@@ -1,5 +1,4 @@
 var BaseController = require("./Base");
-    //view = require("../views/Main"),
     //model = new (require("../models/MainModel"));
 
 var MainController = new BaseController("MainController");

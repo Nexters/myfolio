@@ -1,0 +1,12 @@
+body {
+    margin: 0px;
+}
+
+#nav_menu {
+    display: block;
+    min-width: 1200px;
+    height: 50px;
+    box-shadow: 0 0 3px rgba(0,0,0,.2);
+    background-color: #ffffff;
+    margin: 0px;
+}
