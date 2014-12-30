@@ -8,15 +8,17 @@ function MainModel() {
 
 MainModel.prototype.select = function(paramMap, callback) {
     var query = "SELECT * FROM test";
-    pool.query(query, function(err, rows, fields) {
-        if (err) {
-            throw err;
-        }
+    callback([]);
 
-        console.log('Result: ', rows);
-
-        callback(rows);
-    });
+    //pool.query(query, function(err, rows, fields) {
+    //    if (err) {
+    //        throw err;
+    //    }
+    //
+    //    console.log('Result: ', rows);
+    //
+    //    callback(rows);
+    //});
 };
 
 MainModel.prototype.insert = function(paramMap, callback) {
