@@ -21,6 +21,14 @@ MainController.prototype.run = function(req, res, next) {
     });
 };
 
+MainController.prototype.testRun = function(req,res,next){
+    var content = {};
+    var paramMap = {};
+
+    content.test = "asdf";
+    res.render('test.ejs',content);
+};
+
 module.exports = MainController;
 
 
