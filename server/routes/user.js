@@ -5,12 +5,13 @@ var userController = new (require('../controllers/User'))();
 /* GET user listing. */
 
 router.route('/')
-    .get(userController.getUsers)
+    .get(userController.getUsers);
+
+router.route('/join')
     .post(userController.join);
 
 router.route('/login')
     .post(userController.login);
-
 
 module.exports = router;
 

@@ -1,5 +1,6 @@
 var BaseController = require('./Base'),
     userService = new (require('../service/UserService'))(),
+    sessionService = new (require('../service/SessionService'))(),
     bcrypt = require('bcrypt');
 
 var salt = bcrypt.genSaltSync(10);
@@ -15,6 +16,7 @@ UserController.prototype = new BaseController('UserController');
 UserController.prototype.getUsers = function(req, res, next) {
     var params = {};
 
+    console.log(sessionService.getSession(req));
     userService.getUsers(params, function(err, result){
         if (err) {
             res.status(404).send(err);
@@ -36,6 +38,7 @@ UserController.prototype.join = function(req, res, next) {
             res.status(404).send(err);
             return;
         }
+        sessionService.registerSession(req, params.id, params.name);
         res.status(200).send(result);
     });
 };

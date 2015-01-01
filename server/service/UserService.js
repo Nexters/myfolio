@@ -16,7 +16,6 @@ UserService.prototype.getUsers = function(params, callback) {
     });
 };
 
-
 UserService.prototype.joinUser = function(params, callback) {
     var criteria = {
         ID: params.id,
