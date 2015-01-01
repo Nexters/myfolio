@@ -16,7 +16,6 @@ UserController.prototype = new BaseController('UserController');
 UserController.prototype.getUsers = function(req, res, next) {
     var params = {};
 
-    console.log(sessionService.getSession(req));
     userService.getUsers(params, function(err, result){
         if (err) {
             res.status(404).send(err);
@@ -30,7 +29,7 @@ UserController.prototype.join = function(req, res, next) {
     var params = {
         id: req.body.id,
         pw: bcrypt.hashSync(req.body.pw, salt),
-        name: (typeof req.body.name !== "undefined") ? req.body.name : null
+        name: req.body.name
     };
 
     userService.joinUser(params, function(err, result){

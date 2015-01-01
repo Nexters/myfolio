@@ -2,11 +2,35 @@ body {
     margin: 0px;
 }
 
-#nav_menu {
-    display: block;
+.main-nav-container {
+    width: 100%;
     min-width: 1200px;
     height: 50px;
     box-shadow: 0 0 3px rgba(0,0,0,.2);
     background-color: #ffffff;
     margin: 0px;
+    display: block;
+}
+
+.main-page-container {
+    display: block;
+}
+
+#nav_menu {
+    width: 1200px;
+    height: 50px;
+    background-color: #ffffff;
+    margin: 0 auto;
+}
+
+
+nav .nav-logo {
+    float: left;
+    display: block;
+}
+
+
+nav .nav-profile {
+    float: right;
+    display: block;
 }
