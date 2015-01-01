@@ -6,7 +6,7 @@ function UserService() {
     }
 }
 
-UserService.prototype.getUsers = function(paramMap, callback) {
+UserService.prototype.getUsers = function(params, callback) {
     var criteria = {};
     var options = {};
 
@@ -16,11 +16,11 @@ UserService.prototype.getUsers = function(paramMap, callback) {
 };
 
 
-UserService.prototype.insertUser = function(paramMap, callback) {
+UserService.prototype.insertUser = function(params, callback) {
     var criteria = {
-        ID: paramMap.id,
-        PW: paramMap.pw,
-        NAME: paramMap.name
+        ID: params.id,
+        PW: params.pw,
+        NAME: params.name
     };
     var options = {};
 

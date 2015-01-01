@@ -20,8 +20,6 @@ UserModel.prototype.insert = function(criteria, options, callback) {
     var inserts = [ criteria.ID, criteria.PW, criteria.NAME ];
     sql = mysql.format(sql, inserts);
 
-    console.log(sql);
-
     pool.query(sql, function(err, result) {
        callback(err, result);
     });
@@ -34,7 +32,6 @@ UserModel.prototype.update = function(paramMap, callback) {
 UserModel.prototype.remove = function(paramMap, callback) {
 
 };
-
 
 module.exports = UserModel;
 

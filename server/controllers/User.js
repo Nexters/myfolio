@@ -10,9 +10,9 @@ function UserController() {
 UserController.prototype = new BaseController("UserController");
 
 UserController.prototype.getUsers = function(req, res, next) {
-    var paramMap = {};
+    var params = {};
 
-    userService.getUsers(paramMap, function(err, result){
+    userService.getUsers(params, function(err, result){
         if (err) {
             res.status(404).send(err);
             return;
@@ -22,13 +22,13 @@ UserController.prototype.getUsers = function(req, res, next) {
 };
 
 UserController.prototype.join = function(req, res, next) {
-    var paramMap = {
+    var params = {
         id: req.body.id,
         pw: req.body.pw,
         name: req.body.name ? req.body.name : null
     };
 
-    userService.insertUser(paramMap, function(err, result){
+    userService.insertUser(params, function(err, result){
         if (err) {
             res.status(404).send(err);
             return;
