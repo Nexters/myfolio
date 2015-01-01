@@ -14,7 +14,6 @@ MainController.prototype.run = function(req, res, next) {
     var content = {};
     var paramMap = {};
     var userSession = sessionService.getSession(req);
-    var userId, userName;
 
     if (userSession.userId && userSession.userName) {
         content.userId = userSession.userId;

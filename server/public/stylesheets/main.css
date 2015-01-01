@@ -16,6 +16,11 @@ body {
     display: block;
 }
 
+.nav-profile-item {
+    display: block;
+    float: left;
+}
+
 #nav_menu {
     width: 1200px;
     height: 50px;
@@ -23,14 +28,21 @@ body {
     margin: 0 auto;
 }
 
-
 nav .nav-logo {
     float: left;
     display: block;
 }
 
-
 nav .nav-profile {
     float: right;
     display: block;
 }
+
+nav .nav-start {
+    width: 100px;
+}
+
+nav .nav-user {
+    width: 120px;
+}
+
