@@ -1,3 +1,5 @@
+DROP TABLE `myfolio`.`Template_TB`;
+
 CREATE TABLE `myfolio`.`Template_TB` (
   `TEMPLATE_ID` VARCHAR(20) NOT NULL,
   `TEMPLATE_TITLE` VARCHAR(50) NOT NULL,
