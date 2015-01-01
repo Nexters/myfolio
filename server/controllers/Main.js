@@ -1,5 +1,5 @@
-var BaseController = require("./Base"),
-    mainModel = new (require("../models/MainModel"))();
+var BaseController = require('./Base'),
+    mainModel = new (require('../models/MainModel'))();
 
 function MainController() {
     if(!(this instanceof MainController)) {
@@ -7,7 +7,7 @@ function MainController() {
     }
 }
 
-MainController.prototype = new BaseController("MainController");
+MainController.prototype = new BaseController('MainController');
 
 MainController.prototype.run = function(req, res, next) {
     var content = {};

@@ -1,4 +1,4 @@
-var _ = require("underscore");
+var _ = require('underscore');
 
 function BaseController(name) {
     this.name = name;

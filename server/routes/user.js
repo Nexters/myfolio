@@ -8,6 +8,9 @@ router.route('/')
     .get(userController.getUsers)
     .post(userController.join);
 
+router.route('/login')
+    .post(userController.login);
+
 
 module.exports = router;
 
