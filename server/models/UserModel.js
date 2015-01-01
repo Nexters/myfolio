@@ -1,28 +1,30 @@
-var pool = require("./db").pool;
+var mysql = require("./db").mysql,
+    pool = require("./db").pool;
 
 function UserModel() {
-    if(!(this instanceof MainModel)) {
-        return new MainModel();
+    if(!(this instanceof UserModel)) {
+        return new UserModel();
     }
 }
 
-UserModel.prototype.select = function(paramMap, callback) {
-    var query = "SELECT * FROM test";
-    callback([]);
+UserModel.prototype.select = function(criteria, options, callback) {
+    var query = "SELECT * FROM User_TB;";
 
-    //pool.query(query, function(err, rows, fields) {
-    //    if (err) {
-    //        throw err;
-    //    }
-    //
-    //    console.log('Result: ', rows);
-    //
-    //    callback(rows);
-    //});
+    pool.query(query, function(err, rows, fields) {
+        callback(err, rows);
+    });
 };
 
-UserModel.prototype.insert = function(paramMap, callback) {
-    
+UserModel.prototype.insert = function(criteria, options, callback) {
+    var sql = "INSERT INTO User_TB (USER_ID,USER_PW,USER_NAME) VALUES (?,?,?);";
+    var inserts = [ criteria.ID, criteria.PW, criteria.NAME ];
+    sql = mysql.format(sql, inserts);
+
+    console.log(sql);
+
+    pool.query(sql, function(err, result) {
+       callback(err, result);
+    });
 };
 
 UserModel.prototype.update = function(paramMap, callback) {

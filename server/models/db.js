@@ -8,5 +8,6 @@ var pool  = mysql.createPool({
 });
 
 module.exports = {
+    mysql: mysql,
     pool: pool
 };
