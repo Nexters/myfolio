@@ -1,7 +1,7 @@
 var config = {
     local: {
         mode: 'local',
-        port: 3000,
+        port: 2014,
         db: {
             host: '127.0.0.1',
             port: 3306
