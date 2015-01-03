@@ -1,9 +1,9 @@
 var BaseController = require('./Base'),
     userService = new (require('../service/UserService'))(),
     sessionService = new (require('../service/SessionService'))(),
-    bcrypt = require('bcrypt');
+    crypto = require('crypto');
 
-var salt = bcrypt.genSaltSync(10);
+var CRYPTO_SALT = "myfolio";
 
 function UserController() {
     if(!(this instanceof UserController)) {
@@ -28,7 +28,7 @@ UserController.prototype.getUsers = function(req, res, next) {
 UserController.prototype.join = function(req, res, next) {
     var params = {
         id: req.body.id,
-        pw: bcrypt.hashSync(req.body.pw, salt),
+        pw: crypto.createHmac('sha1', CRYPTO_SALT).update(req.body.pw).digest('hex'),
         name: req.body.name
     };
 
@@ -45,7 +45,7 @@ UserController.prototype.join = function(req, res, next) {
 UserController.prototype.login = function(req, res, next) {
     var params = {
         id: req.body.id,
-        pw: bcrypt.hashSync(req.body.pw, salt)
+        pw: crypto.createHmac('sha1', CRYPTO_SALT).update(req.body.pw).digest('hex')
     };
 
     userService.loginUser(params, function(err, result){
