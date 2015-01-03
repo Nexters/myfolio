@@ -31,4 +31,4 @@ node_modules
 .idea
 
 # Config file
-server/config/index.js
+server/config/
