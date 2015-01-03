@@ -3,6 +3,8 @@ var BaseController = require('./Base'),
     sessionService = new (require('../service/SessionService'))(),
     crypto = require('crypto');
 
+var CRYPTO_SALT = "myfolio";
+
 function UserController() {
     if(!(this instanceof UserController)) {
         return new UserController();
@@ -26,7 +28,7 @@ UserController.prototype.getUsers = function(req, res, next) {
 UserController.prototype.join = function(req, res, next) {
     var params = {
         id: req.body.id,
-        pw: crypto.createHmac('sha1', 'myfolio').update(req.body.pw).digest('hex'),
+        pw: crypto.createHmac('sha1', CRYPTO_SALT).update(req.body.pw).digest('hex'),
         name: req.body.name
     };
 
@@ -43,7 +45,7 @@ UserController.prototype.join = function(req, res, next) {
 UserController.prototype.login = function(req, res, next) {
     var params = {
         id: req.body.id,
-        pw: crypto.createHmac('sha1', 'myfolio').update(req.body.pw).digest('hex')
+        pw: crypto.createHmac('sha1', CRYPTO_SALT).update(req.body.pw).digest('hex')
     };
 
     userService.loginUser(params, function(err, result){
