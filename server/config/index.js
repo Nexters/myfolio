@@ -3,6 +3,16 @@ var config = {
         mode: 'local',
         port: 3000,
         db: {
+            host: 'localhost',
+            port: 3307,
+            user: 'dev',
+            password: 'qwert123'
+        }
+    },
+    test: {
+        mode: 'local',
+        port: 4000,
+        db: {
             host: '127.0.0.1',
             port: 3307
         }

@@ -1,5 +1,9 @@
-var BaseController = require("./Base"),
-    userService = new (require("../service/UserService"))();
+var BaseController = require('./Base'),
+    userService = new (require('../service/UserService'))(),
+    sessionService = new (require('../service/SessionService'))(),
+    bcrypt = require('bcrypt');
+
+var salt = bcrypt.genSaltSync(10);
 
 function UserController() {
     if(!(this instanceof UserController)) {
@@ -7,12 +11,12 @@ function UserController() {
     }
 }
 
-UserController.prototype = new BaseController("UserController");
+UserController.prototype = new BaseController('UserController');
 
 UserController.prototype.getUsers = function(req, res, next) {
-    var paramMap = {};
+    var params = {};
 
-    userService.getUsers(paramMap, function(err, result){
+    userService.getUsers(params, function(err, result){
         if (err) {
             res.status(404).send(err);
             return;
@@ -22,13 +26,29 @@ UserController.prototype.getUsers = function(req, res, next) {
 };
 
 UserController.prototype.join = function(req, res, next) {
-    var paramMap = {
+    var params = {
         id: req.body.id,
-        pw: req.body.pw,
-        name: req.body.name ? req.body.name : null
+        pw: bcrypt.hashSync(req.body.pw, salt),
+        name: req.body.name
     };
 
-    userService.insertUser(paramMap, function(err, result){
+    userService.joinUser(params, function(err, result){
+        if (err) {
+            res.status(404).send(err);
+            return;
+        }
+        sessionService.registerSession(req, params.id, params.name);
+        res.status(200).send(result);
+    });
+};
+
+UserController.prototype.login = function(req, res, next) {
+    var params = {
+        id: req.body.id,
+        pw: bcrypt.hashSync(req.body.pw, salt)
+    };
+
+    userService.loginUser(params, function(err, result){
         if (err) {
             res.status(404).send(err);
             return;
@@ -36,6 +56,7 @@ UserController.prototype.join = function(req, res, next) {
         res.status(200).send(result);
     });
 };
+
 
 module.exports = UserController;
 

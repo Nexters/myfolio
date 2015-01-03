@@ -1,9 +1,11 @@
-var mysql      = require('mysql');
-var pool  = mysql.createPool({
+var mysql = require('mysql');
+var config = require('../config/index')(process.env.NODE_ENV);
+var pool = mysql.createPool({
     connectionLimit : 10,
-    host            : 'localhost',
-    user            : 'dev',
-    password        : 'qwert123',
+    host            : config.db.host,
+    port            : config.db.port,
+    user            : config.db.user,
+    password        : config.db.password,
     database: 'myfolio'
 });
 
