@@ -3,7 +3,14 @@ $(document).ready(function() {
 });
 
 function init() {
+    addLoginEvent();
     addJoinEvent();
+}
+
+function addLoginEvent() {
+    $('#login_modal_login_btn').click(function() {
+        console.log("여기에 로그인 코드 구현!");
+    });
 }
 
 function addJoinEvent() {
@@ -11,19 +18,24 @@ function addJoinEvent() {
         var regTest = /^[A-Za-z0-9+]*$/;
         var inputId = $('#join_modal_input_id').val();
         var inputPw = $('#join_modal_input_pw').val();
+        var inputPwConfirm = $('#join_modal_input_pw_confirm').val();
         var inputName = $('#join_modal_input_name').val();
         var params;
 
-        if(!inputId || !regTest.test(inputId)){
+        if (!inputId || !regTest.test(inputId)) {
             alert("ID는 숫자, 알파벳만 사용 가능합니다.");
             return;
         }
-        if(!inputPw || !regTest.test(inputPw)){
+        if (!inputPw || !regTest.test(inputPw)) {
             alert("비밀번호는 숫자, 알파벳 대소문자만 사용 가능합니다.");
             return;
         }
-        if(!inputName){
+        if (!inputName) {
             alert("이름을 입력해주세요.");
+            return;
+        }
+        if (inputPw !== inputPwConfirm) {
+            alert("패스워드를 확인해주세요.");
             return;
         }
 
