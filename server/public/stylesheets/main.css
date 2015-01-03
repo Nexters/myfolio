@@ -4,7 +4,7 @@ body {
 
 .main-nav-container {
     width: 100%;
-    min-width: 1200px;
+    min-width: 1100px;
     height: 50px;
     box-shadow: 0 0 3px rgba(0,0,0,.2);
     background-color: #ffffff;
@@ -22,7 +22,7 @@ body {
 }
 
 #nav_menu {
-    width: 1200px;
+    width: 1100px;
     height: 50px;
     background-color: #ffffff;
     margin: 0 auto;
