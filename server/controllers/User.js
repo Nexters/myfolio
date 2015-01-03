@@ -26,7 +26,7 @@ UserController.prototype.getUsers = function(req, res, next) {
 UserController.prototype.join = function(req, res, next) {
     var params = {
         id: req.body.id,
-        pw: crypto.createHmac('sha1',req.body.pw),
+        pw: crypto.createHmac('sha1', 'myfolio').update(req.body.pw).digest('hex'),
         name: req.body.name
     };
 
@@ -43,7 +43,7 @@ UserController.prototype.join = function(req, res, next) {
 UserController.prototype.login = function(req, res, next) {
     var params = {
         id: req.body.id,
-        pw: crypto.createHmac('sha1',req.body.pw)
+        pw: crypto.createHmac('sha1', 'myfolio').update(req.body.pw).digest('hex')
     };
 
     userService.loginUser(params, function(err, result){
