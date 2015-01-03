@@ -32,3 +32,4 @@ node_modules
 
 # Config file
 server/config/
+server/config/index.js

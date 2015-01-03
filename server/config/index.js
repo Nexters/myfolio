@@ -6,7 +6,7 @@ var config = {
             host: 'localhost',
             port: 3307,
             user: 'dev',
-            password: 'qwert123'
+            password: 'asdf'
         }
     },
     test: {
