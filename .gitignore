@@ -29,6 +29,3 @@ node_modules
 
 # IDEA Settings
 .idea
-
-# Config file
-server/config
