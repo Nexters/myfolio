@@ -5,12 +5,15 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
         <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+
         <script src="/javascripts/Main.js"></script>
     </head>
 
     <body>
         <%- include partials/Nav.ejs %>
-        <div><%= testData %></div>
+        <%- include partials/JoinModal.ejs %>
+        <%- include partials/LoginModal.ejs %>
+        <div class="main-page-container"><%= testData %></div>
     </body>
 
 </html>
