@@ -9,7 +9,41 @@ function init() {
 
 function addLoginEvent() {
     $('#login_modal_login_btn').click(function() {
-        console.log("여기에 로그인 코드 구현!");
+        var inputId = $('#login_modal_input_id').val();
+        var inputPw = $('#login_modal_input_pw').val();
+        var params;
+
+        if (!inputId) {
+            alert("ID를 입력해주세요.");
+            return;
+        }
+        if (!inputPw) {
+            alert("비밀번호를 입력해주세요.");
+            return;
+        }
+
+        params = {
+            id: inputId,
+            pw: inputPw
+        };
+
+        $.ajax({
+            url: '/user/login',
+            type: 'POST',
+            data: params,
+            error: function errorHandler(jqXHR, textStatus, errorThrown) {
+                alert("로그인 실패(서버 에러 발생)");
+            },
+            success: function successHandler(data, status, xhr) {
+                if (data.code === 1 && data.msg === "login success") {
+                    console.log("로그인 성공");
+                } else {
+                    alert("ID와 비밀번호를 확인해주세요.");
+                }
+                //location.reload(true);
+            }
+        });
+
     });
 }
 
@@ -50,7 +84,7 @@ function addJoinEvent() {
             type: 'POST',
             data: params,
             error: function errorHandler(jqXHR, textStatus, errorThrown) {
-                alert(textStatus);
+                alert("회원가입 실패(서버 에러 발생)");
             },
             success: function successHandler(data, status, xhr) {
                 alert("회원가입 완료");
