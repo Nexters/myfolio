@@ -7,12 +7,19 @@
                 <h4 class="modal-title">Modal title</h4>
             </div>
             <div class="modal-body">
-                <p>One fine body&hellip;</p>
+                <div>
+                    <label> ID </label>
+                    <input id="login_modal_input_id" type="text" />
+                </div>
+                <div>
+                    <label> PW </label>
+                    <input id="login_modal_input_pw" type="password" />
+                </div>
             </div>
             <div class="modal-footer">
                 <a href="#join_modal" class="btn btn-lg btn-primary" data-toggle="modal" data-dismiss="modal">회원가입</a>
+                <button id="login_modal_login_btn" type="button" class="btn btn-primary">로그인</button>
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
             </div>
         </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
