@@ -52,7 +52,8 @@ UserService.prototype.loginUser = function(params, callback) {
             } else {
                 result = {
                     code: 1,
-                    msg: "login success"
+                    msg: "login success",
+                    data: user[0]
                 };
             }
             callback(null, result);

@@ -37,6 +37,8 @@ function addLoginEvent() {
             success: function successHandler(data, status, xhr) {
                 if (data.code === 1 && data.msg === "login success") {
                     console.log("로그인 성공");
+                    $('#login_modal').modal('hide');
+                    location.reload(true);
                 } else {
                     alert("ID와 비밀번호를 확인해주세요.");
                 }

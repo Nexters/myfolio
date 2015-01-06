@@ -53,6 +53,7 @@ UserController.prototype.login = function(req, res, next) {
             res.status(404).send(err);
             return;
         }
+        sessionService.registerSession(req, result.data.USER_ID, result.data.USER_NAME);
         res.status(200).send(result);
     });
 };
