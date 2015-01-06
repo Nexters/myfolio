@@ -29,7 +29,7 @@ MainController.prototype.testRun = function(req,res,next){
     var content = {};
     var paramMap = {};
 
-    content.test = "asdf";
+    content.test = "test pineoc page";
     res.render('test.ejs',content);
 };
 

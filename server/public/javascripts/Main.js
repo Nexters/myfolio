@@ -10,6 +10,46 @@ function init() {
 function addLoginEvent() {
     $('#login_modal_login_btn').click(function() {
         console.log("여기에 로그인 코드 구현!");
+        var loginId = $('#login_modal_input_id').val();
+        var loginPwd = $('#login_modal_input_pw').val();
+
+        if(!loginId){
+            alert("아이디를 입력해주세요.");
+            return;
+        }
+        if(!loginPwd){
+            alert("비밀번호를 입력해주세요.");
+            return;
+        }
+
+        params = {
+            id: loginId,
+            pw: loginPwd
+        };
+
+        $.ajax({
+            url: '/user/login',
+            type: 'POST',
+            data: params,
+            error: function errorHandler(jqXHR, textStatus, errorThrown) {
+                alert(textStatus);
+            },
+            success: function successHandler(data, status, xhr) {
+                //이 로그들은 브라우져 콘솔에서 확인할수 있음
+                console.log('login Main.js data : ',data);
+                console.log('login Main.js status : ',status);
+
+                if(data.code==1){
+                    alert("로그인 성공");
+                    $('#login_modal').modal('hide');
+                    location.reload(true);
+                }else{
+                    alert("아이디 또는 비밀번호를 정확히 입력해주세요.");
+                    return;
+                }
+
+            }
+        });
     });
 }
 
