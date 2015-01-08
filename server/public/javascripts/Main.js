@@ -10,8 +10,50 @@ function init() {
 function addLoginEvent() {
     $('#login_modal_login_btn').click(function() {
         console.log("여기에 로그인 코드 구현!");
+        var loginId=$('#join_modal_login_id').val();
+        var loginPw = $('#join_modal_login_pw').val();
+        var params;
     });
+
+    params = {
+        id: loginId,
+        pw: loginPw
+    };
+
+
+    if(!loginId){
+        alert("ID를 입력해주세요.");
+        return;
+    }
+    if(!loginPw){
+        alert("PW를 입력해주세요.");
+        return;
+    }
+
+    /*if(loginId == user.USER_ID && user.loginId ==USER_PW){
+        alert("로그인 성공!");
+    }
+    else
+    alert("로그인 실패!");*/
+
+    $.ajax({
+        url: '/user/login',
+        type: 'POST',
+        data: params,
+        error: function errorHandler(jqXHR, textStatus, errorThrown) {
+            alert(textStatus);
+        },
+        success: function successHandler(data, status, xhr) {
+            alert("로그인 완료");
+            $('#login_modal').modal('hide');
+            location.reload(true);
+        }
+    });
+});
+
 }
+
+
 
 function addJoinEvent() {
     $('#join_modal_join_btn').click(function() {
