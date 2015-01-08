@@ -1,9 +1,9 @@
 <div class="main-nav-container">
     <nav id="nav_menu">
-        <div class="nav-logo">myFolio</div>
+        <img src="/images/myfolio_logo.png" class="nav-logo" />
         <div class="nav-profile">
+            <a id="nav_start_btn" class="start-portfolio nav-profile-item">Start</a>
             <% if (typeof userName !== "undefined") { %>
-            <div class="start-portfolio nav-profile-item nav-start">시작하기</div>
             <div class="nav-profile-item nav-user dropdown">
                 <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
                     <%= userName %>
@@ -17,7 +17,7 @@
                 </ul>
             </div>
             <% } else { %>
-            <a href="#login_modal" class="btn btn-lg btn-primary" data-toggle="modal">Login</a>
+            <a href="#login_modal" id="nav_login_btn" data-toggle="modal">Login</a>
             <% } %>
         </div>
     </nav>

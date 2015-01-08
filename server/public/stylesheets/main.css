@@ -16,6 +16,13 @@ body {
     display: block;
 }
 
+.main-image-container {
+    display: block;
+    width: 100%;
+    height: 400px;
+    position: relative;
+}
+
 .nav-profile-item {
     display: block;
     float: left;
@@ -31,18 +38,50 @@ body {
 nav .nav-logo {
     float: left;
     display: block;
+    margin-left: 57px;
+    margin-top: 5px;
+    height: 40px;
 }
 
 nav .nav-profile {
     float: right;
     display: block;
+    line-height: 50px;
+    margin-right: 57px;
 }
 
-nav .nav-start {
-    width: 100px;
-}
+/*nav .nav-start {*/
+    /*width: 100px;*/
+/*}*/
 
 nav .nav-user {
     width: 120px;
 }
+
+#nav_start_btn {
+    width: 60px;
+    font-size: 16px;
+}
+
+#nav_login_btn {
+    width: 60px;
+    font-size: 16px;
+}
+
+
+.main-image-container .main-image {
+    position: absolute;
+    vertical-align: middle;
+    max-width: none!important;
+    width: 100%;
+    margin: 0 auto;
+    min-width: 1100px;
+    min-height: 400px;
+    overflow: hidden;
+}
+
+.main-image-container .main-content {
+
+}
+
 

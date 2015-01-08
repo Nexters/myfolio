@@ -19,7 +19,9 @@ MainController.prototype.run = function(req, res, next) {
         content.userId = userSession.userId;
         content.userName = userSession.userName;
     }
-    content.testData = "Test Data";
+
+    content.mainImage = "/images/myfolio_main_screen.png";
+
     mainModel.select(paramMap,function(records){
         res.render('Main.ejs',content);
     });
