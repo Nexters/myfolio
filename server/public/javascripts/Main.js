@@ -44,9 +44,13 @@ function addLoginEvent() {
             alert(textStatus);
         },
         success: function successHandler(data, status, xhr) {
+            if(data.code==1){
             alert("로그인 완료");
             $('#login_modal').modal('hide');
-            location.reload(true);
+            location.reload(true);}
+            else
+            {alert("로그인실패");}
+            return;
         }
     });
 });
