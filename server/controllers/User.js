@@ -37,7 +37,7 @@ UserController.prototype.join = function(req, res, next) {
             res.status(404).send(err);
             return;
         }
-        sessionService.registerSession(req, params.id, params.name);
+        sessionService.registerSession(req, params.id, params.name);//session을 등록
         res.status(200).send(result);
     });
 };
@@ -52,6 +52,10 @@ UserController.prototype.login = function(req, res, next) {
         if (err) {
             res.status(404).send(err);
             return;
+        }
+        console.log('controller result : ',result);
+        if(result.code==1){
+            sessionService.registerSession(req,params.id,result.userName);//session을 등록
         }
         res.status(200).send(result);
     });

@@ -54,6 +54,7 @@ UserService.prototype.loginUser = function(params, callback) {
                     code: 1,
                     msg: "login success"
                 };
+                result.userName = user[0].USER_NAME;//이름 추가해서 NAV에 나올수 있게.
             }
             callback(null, result);
         }
