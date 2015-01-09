@@ -5,7 +5,23 @@ $(document).ready(function() {
 function init() {
     addLoginEvent();
     addJoinEvent();
+
+    //test code
+    addUploadButtonEvent();
 }
+
+
+function addUploadButtonEvent() {
+    $('#file-upload').fileupload({
+        dataType: 'json',
+        done: function (e, data) {
+            $.each(data.result.files, function (index, file) {
+                $('<p/>').text(file.name).appendTo(document.body);
+            });
+        }
+    });
+}
+
 
 function addLoginEvent() {
     $('#login_modal_login_btn').click(function() {
