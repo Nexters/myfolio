@@ -34,21 +34,22 @@ UploadController.prototype.checkFileSize = function (fileSize) {
 
 UploadController.prototype.run = function(req, res, next) {
     var busboy = new Busboy({ headers: req.headers });
+    var savedFileName, saveTo;
     busboy.on('file', function(fieldname, file, filename, encoding, mimetype) {
-        var newFileName = new Date().getTime() + "_" + filename;
-        var saveTo = path.join(__dirname, '../files', newFileName);
+        savedFileName = new Date().getTime() + "_" + filename;
+        saveTo = path.join(__dirname, '../upload', savedFileName);
         console.log('File [' + fieldname + ']: filename: ' + filename + ', encoding: ' + encoding + ', mimetype: ' + mimetype);
         console.log("SAVE PATH:",saveTo);
         file.pipe(fs.createWriteStream(saveTo));
-
     });
     busboy.on('field', function(fieldname, val, fieldnameTruncated, valTruncated) {
         console.log('Field [' + fieldname + ']: value: ' + inspect(val));
     });
     busboy.on('finish', function() {
-        console.log('Done parsing form!');
+        res.set('Content-type', 'text/html; charset=utf-8');
         res.writeHead(200, { 'Connection': 'close' });
-        res.end("That's all folks!");
+        res.write(JSON.stringify(savedFileName));
+        res.end();
     });
     return req.pipe(busboy);
 };

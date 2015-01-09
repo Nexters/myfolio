@@ -34,4 +34,4 @@ node_modules
 server/config
 
 # Uploaded files
-server/files
+server/upload

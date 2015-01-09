@@ -14,10 +14,11 @@ function init() {
 function addUploadButtonEvent() {
     $('#file-upload').fileupload({
         dataType: 'json',
+        progressall: function (e, data) {
+            console.log("progress");
+        },
         done: function (e, data) {
-            $.each(data.result.files, function (index, file) {
-                $('<p/>').text(file.name).appendTo(document.body);
-            });
+            console.log("upload image url: ",data.url+"/"+data.result);
         }
     });
 }
