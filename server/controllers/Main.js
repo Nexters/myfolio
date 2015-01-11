@@ -20,7 +20,7 @@ MainController.prototype.run = function(req, res, next) {
         content.userName = userSession.userName;
     }
 
-    content.mainImage = "/images/myfolio_main_screen.png";
+    content.mainImage = "";
 
     mainModel.select(paramMap,function(records){
         res.render('Main.ejs',content);

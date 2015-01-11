@@ -8,6 +8,7 @@
 
 body {
     margin: 0px;
+    background-color: #ffffff;
 }
 
 .main-nav-container {
@@ -21,13 +22,24 @@ body {
 }
 
 .main-page-container {
-    display: block;
+    width: 100%;
+    min-width: 1100px;
+    min-height: 700px;
+    margin: 0px;
 }
 
 .main-image-container {
     display: block;
-    width: 100%;
+    width: 1100px;
     height: 400px;
+    overflow: hidden;
+}
+
+.main-page-template-container {
+    display: block;
+    z-index: 10;
+    min-height: 200px;
+    background-color: #ffffff;
     position: relative;
 }
 
@@ -44,9 +56,10 @@ body {
 }
 
 nav .nav-logo {
+    position: absolute;
+    left: 57px;
     float: left;
     display: block;
-    margin-left: 57px;
     margin-top: 5px;
     height: 40px;
 }
@@ -57,10 +70,6 @@ nav .nav-profile {
     line-height: 50px;
     margin-right: 57px;
 }
-
-/*nav .nav-start {*/
-    /*width: 100px;*/
-/*}*/
 
 nav .nav-user {
     width: 120px;
@@ -84,14 +93,60 @@ nav .nav-user {
     vertical-align: middle;
     max-width: none!important;
     width: 100%;
-    margin: 0 auto;
     min-width: 1100px;
     min-height: 400px;
     overflow: hidden;
 }
 
 .main-image-container .main-content {
+    display: block;
+    position: absolute;
+    margin-top: 88px;
+    margin-left: 57px;
+    z-index: 5;
+}
 
+.main-image-container .main-content-start-btn {
+    display: block;
+    position: absolute;
+    width: 167px;
+    heigth: 58px;
+    text-align: center;
+    line-height: 58px;
+    margin-top: 171px;
+    right: 57px;
+    z-index: 5;
+    background: url('/images/myfolio_start_btn.png');
+}
+
+.main-content-big-text {
+    font-family: PalatinoRoman;
+    font-size: 47px;
+    line-height: 72px;
+    color: #ffffff;
+}
+
+.main-content-small-text {
+    font-family: PalatinoRoman;
+    font-size: 18px;
+    color: #ffffff;
 }
 
 
+.main-content > h1 {
+    display: block;
+    margin-top: -22px;
+}
+
+.main-content > h2 {
+    display: block;
+    margin-top: -22px;
+}
+
+.main-content-start-btn > .start-portfolio {
+    font-family: PalatinoRoman;
+    font-size: 24px;
+    vertical-align: middle;
+    line-height: 30px;
+    color: #ffffff;
+}

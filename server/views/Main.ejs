@@ -17,15 +17,27 @@
         <%- include partials/LoginModal.ejs %>
         <div class="main-page-container">
             <div class="main-image-container">
-                <img class="main-image" src="<%= mainImage %>" />
+                <img class="main-image" src="/images/myfolio_main_screen.png" />
                 <div class="main-content">
-
+                    <h1>
+                        <span class="main-content-big-text">Create Your</span><br>
+                        <span class="main-content-big-text">Stunning Website.</span><br>
+                        <span class="main-content-big-text">It's Free</span>
+                    </h1>
+                    <h2>
+                        <span class="main-content-small-text">Easy to customize. No coding.</span>
+                    </h2>
                 </div>
+                <div class="main-content-start-btn">
+                    <a class="start-portfolio">Start NOW</a>
+                </div>
+            </div>
+
+            <div class="main-page-template-container">
+                <input id="file-upload" type="file" name="files[]" data-url="/upload" multiple></div>
             </div>
         </div>
 
-
-        <input id="file-upload" type="file" name="files[]" data-url="/upload" multiple></div>
 
 </body>
 
