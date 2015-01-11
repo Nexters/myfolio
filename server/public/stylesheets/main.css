@@ -65,10 +65,10 @@ nav .nav-logo {
 }
 
 nav .nav-profile {
-    float: right;
     display: block;
+    position: absolute;
+    right: 57px;
     line-height: 50px;
-    margin-right: 57px;
 }
 
 nav .nav-user {
