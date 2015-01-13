@@ -60,6 +60,20 @@ UserController.prototype.login = function(req, res, next) {
     });
 };
 
+UserController.prototype.logout = function(req, res, next) {
+    if (!sessionService.hasSession(req)) {
+        res.status(400).send({
+            code: 0,
+            msg: "not login"
+        });
+        return;
+    }
+    sessionService.removeSession(req);
+    res.status(200).send({
+        code: 1,
+        msg: "logout success"
+    });
+};
 
 module.exports = UserController;
 

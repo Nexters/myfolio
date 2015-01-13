@@ -71,17 +71,24 @@ nav .nav-profile {
     line-height: 50px;
 }
 
-nav .nav-user {
-    width: 120px;
+nav .nav-user .dropdown-menu {
+    left: auto!important;
+    right: 0px;
+}
+
+.dropdown-menu > li {
+    cursor: pointer;
 }
 
 #nav_start_btn {
+    cursor: pointer;
     width: 60px;
     font-family: 'Roboto';
     font-size: 16px;
 }
 
 #nav_login_btn {
+    cursor: pointer;
     width: 60px;
     font-family: 'Roboto';
     font-size: 16px;

@@ -4,6 +4,10 @@ function SessionService() {
     }
 }
 
+SessionService.prototype.hasSession = function(req) {
+    return (typeof req.session !== "undefined" && typeof req.session.userId !== "undefined");
+};
+
 SessionService.prototype.getSession = function(req) {
     var data = {
         userId: req.session.userId,
@@ -12,13 +16,13 @@ SessionService.prototype.getSession = function(req) {
     return data;
 };
 
-SessionService.prototype.hasSession = function(req) {
-    return (req.session && typeof req.session.userId !== "undefined");
-};
-
 SessionService.prototype.registerSession = function(req, id, name) {
     req.session.userId = id;
     req.session.userName = name;
+};
+
+SessionService.prototype.removeSession = function(req) {
+    req.session.destroy();
 };
 
 module.exports = SessionService;

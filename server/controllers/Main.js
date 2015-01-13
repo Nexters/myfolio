@@ -13,14 +13,13 @@ MainController.prototype = new BaseController('MainController');
 MainController.prototype.run = function(req, res, next) {
     var content = {};
     var paramMap = {};
-    var userSession = sessionService.getSession(req);
+    var userSession;
 
-    if (userSession.userId && userSession.userName) {
+    if (sessionService.hasSession(req)) {
+        userSession = sessionService.getSession(req);
         content.userId = userSession.userId;
         content.userName = userSession.userName;
     }
-
-    content.mainImage = "";
 
     mainModel.select(paramMap,function(records){
         res.render('Main.ejs',content);

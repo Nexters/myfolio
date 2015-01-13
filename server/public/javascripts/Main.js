@@ -5,6 +5,7 @@ $(document).ready(function() {
 function init() {
     addLoginEvent();
     addJoinEvent();
+    addLogoutEvent();
 
     //test code
     addUploadButtonEvent();
@@ -108,6 +109,22 @@ function addJoinEvent() {
             success: function successHandler(data, status, xhr) {
                 alert("회원가입 완료");
                 $('#join_modal').modal('hide');
+                location.reload(true);
+            }
+        });
+    });
+}
+
+function addLogoutEvent() {
+    $('#nav_logout_btn').click(function() {
+        $.ajax({
+            url: '/user/logout',
+            type: 'POST',
+            error: function errorHandler(jqXHR, textStatus, errorThrown) {
+                alert("로그아웃 실패(서버 에러 발생)");
+            },
+            success: function successHandler(data, status, xhr) {
+                alert("로그아웃 되었습니다");
                 location.reload(true);
             }
         });
