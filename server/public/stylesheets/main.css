@@ -58,6 +58,7 @@ body {
 nav .nav-logo {
     position: absolute;
     left: 57px;
+    cursor: pointer;
     float: left;
     display: block;
     margin-top: 5px;
@@ -76,7 +77,12 @@ nav .nav-user .dropdown-menu {
     right: 0px;
 }
 
+nav .nav-user > button {
+    font-family: 'Roboto';
+}
+
 .dropdown-menu > li {
+    font-family: 'Roboto';
     cursor: pointer;
 }
 

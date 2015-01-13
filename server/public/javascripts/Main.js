@@ -3,6 +3,7 @@ $(document).ready(function() {
 });
 
 function init() {
+    addLogoClickEvent();
     addLoginEvent();
     addJoinEvent();
     addLogoutEvent();
@@ -11,6 +12,11 @@ function init() {
     addUploadButtonEvent();
 }
 
+function addLogoClickEvent() {
+    $('#nav_logo_image').click(function() {
+       location.href = "/";
+    });
+}
 
 function addUploadButtonEvent() {
     $('#file-upload').fileupload({
