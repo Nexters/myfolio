@@ -4,6 +4,7 @@ $(document).ready(function() {
 
 function init() {
     addLogoClickEvent();
+    addStartEvent();
     addLoginEvent();
     addJoinEvent();
     addLogoutEvent();
@@ -15,6 +16,13 @@ function init() {
 function addLogoClickEvent() {
     $('#nav_logo_image').click(function() {
        location.href = "/";
+    });
+}
+
+function addStartEvent() {
+    $('.start-portfolio').click(function() {
+        // TODO: 여기에 포트폴리오 시작하기 구현
+        console.log("Start!");
     });
 }
 
