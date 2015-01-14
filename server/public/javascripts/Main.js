@@ -30,12 +30,6 @@ function addLoginEvent() {
         return;
     }
 
-    /*if(loginId == user.USER_ID && user.loginId ==USER_PW){
-        alert("로그인 성공!");
-    }
-    else
-    alert("로그인 실패!");*/
-
     $.ajax({
         url: '/user/login',
         type: 'POST',

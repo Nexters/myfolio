@@ -54,6 +54,7 @@ UserService.prototype.loginUser = function(params, callback) {
                     code: 1,
                     msg: "login success"
                 };
+                result.userName = user[0].USER_NAME;
             }
             callback(null, result);
         }

@@ -54,7 +54,7 @@ UserController.prototype.login = function(req, res, next) {
             return;
         }
         else if(result.code==1){
-        sessionService.registerSession(req,params.id,params.name);}
+        sessionService.registerSession(req,params.id,params.username);}
         res.status(200).send(result);
     });
 };
