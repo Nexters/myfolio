@@ -31,16 +31,8 @@ body {
 .main-image-container {
     display: block;
     width: 1100px;
-    height: 400px;
+    height: 350px;
     overflow: hidden;
-}
-
-.main-page-template-container {
-    display: block;
-    z-index: 10;
-    min-height: 200px;
-    background-color: #ffffff;
-    position: relative;
 }
 
 .nav-profile-item {
@@ -49,15 +41,16 @@ body {
 }
 
 #nav_menu {
-    width: 1100px;
+    width: 100%;
     height: 50px;
     background-color: #ffffff;
     margin: 0 auto;
 }
 
+
 nav .nav-logo {
     position: absolute;
-    left: 57px;
+    left: 55px;
     cursor: pointer;
     float: left;
     display: block;
@@ -68,7 +61,7 @@ nav .nav-logo {
 nav .nav-profile {
     display: block;
     position: absolute;
-    right: 57px;
+    right: 55px;
     line-height: 50px;
 }
 
@@ -102,22 +95,21 @@ nav .nav-user > button {
     color: #000000;
 }
 
-
 .main-image-container .main-image {
     position: absolute;
     vertical-align: middle;
     max-width: none!important;
     width: 100%;
     min-width: 1100px;
-    min-height: 400px;
+    min-height: 350px;
     overflow: hidden;
 }
 
 .main-image-container .main-content {
     display: block;
     position: absolute;
-    margin-top: 88px;
-    margin-left: 57px;
+    margin-top: 75px;
+    margin-left: 55px;
     z-index: 5;
 }
 
@@ -129,7 +121,7 @@ nav .nav-user > button {
     text-align: center;
     line-height: 58px;
     margin-top: 171px;
-    right: 57px;
+    right: 55px;
     z-index: 5;
     background: url('/images/myfolio_start_btn.png');
 }
@@ -168,3 +160,92 @@ nav .nav-user > button {
 .start-portfolio {
     cursor: pointer;
 }
+
+/* 템플릿 영역 관련 */
+
+.main-page-template-container {
+    display: block;
+    z-index: 10;
+    min-height: 350px;
+    padding: 25px 55px;
+    background-color: #ffffff;
+    position: relative;
+    overflow-y: auto;
+}
+
+.select-template-title-container {
+    width: 400px;
+    height: 100px;
+    margin: auto;
+    text-align: center;
+    border-style: solid;
+    border-width: 1px;
+    border-left: none;
+    border-right: none;
+    border-color: #8f8f8f;
+}
+
+.select-template-title {
+    color: #333333;
+    font-family: 'PalatinoRoman';
+    text-shadow: 0 0 1px #000000;
+}
+
+.select-template-content {
+    color: #333333;
+    font-family: 'PalatinoRoman';
+}
+
+.select-template-container {
+    text-align:center;
+    display: block;
+    min-width: 986px;
+    margin: 25px auto;
+}
+
+.select-template-box {
+    width: 300px;
+    height: 230px;
+    display: block;
+    float: left;
+    margin: 20px 15px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #000000;
+}
+
+.select-template-box > img {
+    width: 300px;
+    height: 200px;
+}
+
+.select-template-box > .tag-icon {
+    float: left;
+    width: 30px;
+    height: 30px;
+}
+
+.select-template-box > .template-tag {
+    height: 30px;ßß
+    line-height: 30px;
+    font-family: 'Roboto';
+    color: #333333;
+    margin: 0px!important;
+}
+
+.select-template-box > .template-tag > p {
+    text-align: left;
+    margin-left: 35px;
+    margin-bottom: 0px;
+}
+
+/* 푸터 영역 관련 */
+
+#footer_menu {
+    width: 100%;
+    height: 50px;
+    padding: 5px 55px;
+    background-color: #000000;
+    margin: 0 auto;
+}
+

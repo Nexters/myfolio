@@ -12,9 +12,9 @@
     </head>
 
     <body>
-        <%- include partials/Nav.ejs %>
-        <%- include partials/JoinModal.ejs %>
-        <%- include partials/LoginModal.ejs %>
+        <% include partials/Nav.ejs %>
+        <% include partials/JoinModal.ejs %>
+        <% include partials/LoginModal.ejs %>
         <div class="main-page-container">
             <div class="main-image-container">
                 <img class="main-image" src="/images/myfolio_main_screen.png" />
@@ -34,11 +34,30 @@
             </div>
 
             <div class="main-page-template-container">
-                <input id="file-upload" type="file" name="files[]" data-url="/upload" multiple></div>
+                <div class="select-template-title-container">
+                    <h2 class="select-template-title"><p>Select a Template</p></h2>
+                    <h5 class="select-template-content"><p>Choose yours and create something totally original.</p></h5>
+                </div>
+                <div class="select-template-container">
+                    <div class="select-template-box">
+                        <img src="" />
+                        <img src="" class="tag-icon" />
+                        <h4 class="template-tag">
+                            <p>Simple, Black, White</p>
+                        </h4>
+                    </div>
+                    <div class="select-template-box">
+
+                    </div>
+                    <div class="select-template-box">
+
+                    </div>
+                </div>
+
+                <!--<input id="file-upload" type="file" name="files[]" data-url="/upload" multiple></div>-->
             </div>
         </div>
-
-
-</body>
+        <% include partials/Footer.ejs %>
+    </body>
 
 </html>
