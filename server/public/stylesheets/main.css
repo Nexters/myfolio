@@ -206,6 +206,7 @@ nav .nav-user > button {
 .select-template-box {
     width: 300px;
     height: 230px;
+    cursor: pointer;
     display: block;
     float: left;
     margin: 20px 15px;
