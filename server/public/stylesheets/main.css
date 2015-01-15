@@ -108,10 +108,9 @@ nav .nav-user > button {
     display: block;
     position: absolute;
     width: 167px;
-    heigth: 58px;
     text-align: center;
     line-height: 58px;
-    margin-top: 171px;
+    margin-top: 146px;
     right: 55px;
     z-index: 5;
     background: url('/images/myfolio_start_btn.png');
