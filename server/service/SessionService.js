@@ -17,6 +17,10 @@ SessionService.prototype.registerSession = function(req, id, name) {
     req.session.userName = name;
 };
 
+SessionService.prototype.removeSession = function(req) {
+    req.session.destroy();
+};
+
 module.exports = SessionService;
 
 
