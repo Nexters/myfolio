@@ -280,3 +280,38 @@ footer .footer-copyright {
     text-align: center;
     color: #ffffff;
 }
+
+
+/* 로그인 모달 관련 */
+#login_modal .modal-dialog {
+    width:400px;
+}
+
+#login_modal .modal-content .modal-header {
+    padding: 15px 30px;
+}
+
+#login_modal .modal-content .modal-header button {
+    margin-right: -15px;
+}
+
+
+#login_modal .modal-content .modal-body {
+    padding: 15px 30px;
+}
+
+#login_modal .modal-content .modal-footer {
+    padding: 15px 30px;
+}
+
+#login_modal_title {
+    font-family: 'Roboto';
+    font-size: 30px;
+}
+
+#login_modal .modal-body input {
+    width: 340px;
+}
+
+
+/* 회원가입 모달 관련 */
