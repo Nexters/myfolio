@@ -232,10 +232,10 @@ nav .nav-user > button {
 
 #footer_menu {
     width: 100%;
-    height: 200px;
+    height: 150px;
     padding-left: 55px;
     padding-right: 55px;
-    padding-top: 75px;
+    padding-top: 50px;
     min-width: 990px;
     background-color: #9d9d9d;
 }
@@ -277,7 +277,7 @@ footer .footer-content {
 footer .footer-copyright {
     font-family: 'Roboto';
     font-size: 11px;
-    margin-top: 30px;
+    margin-top: 15px;
     text-align: center;
     color: #ffffff;
 }
