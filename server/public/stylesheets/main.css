@@ -250,7 +250,6 @@ footer .footer-logo {
 footer .footer-team {
     position: absolute;
     right: 55px;
-    margin-top: -75px;
     display: block;
     height: 50px;
 }
@@ -266,8 +265,14 @@ footer .footer-team > a {
 footer .footer-content {
     font-family: 'Roboto';
     font-size: 11px;
-    text-align: center;
+    text-align: left;
     color: #ffffff;
+    line-height: 20px;
+}
+
+.footer-content-container {
+    margin: 0px auto;
+    width: 500px;
 }
 
 footer .footer-copyright {
