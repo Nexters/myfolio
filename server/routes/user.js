@@ -12,6 +12,9 @@ router.route('/join')
 
 router.route('/login')
     .post(userController.login);
+    
+router.route('/logout')
+    .post(userController.logout);
 
 module.exports = router;
 
