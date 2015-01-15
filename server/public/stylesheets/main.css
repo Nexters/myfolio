@@ -190,7 +190,7 @@ nav .nav-user > button {
 .select-template-container {
     text-align:center;
     display: block;
-    min-width: 990px;
+    width: 990px;
     margin: 25px auto;
 }
 
@@ -260,7 +260,6 @@ footer .footer-team > a {
     line-height: 25px;
     color: #ffffff;
 }
-
 
 footer .footer-content {
     font-family: 'Roboto';
