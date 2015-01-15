@@ -46,11 +46,11 @@ function addLoginEvent() {
         var params;
 
         if (!inputId) {
-            alert("ID를 입력해주세요.");
+            alert("Input your ID!");
             return;
         }
         if (!inputPw) {
-            alert("비밀번호를 입력해주세요.");
+            alert("Input your Password!");
             return;
         }
 
@@ -64,17 +64,15 @@ function addLoginEvent() {
             type: 'POST',
             data: params,
             error: function errorHandler(jqXHR, textStatus, errorThrown) {
-                alert("로그인 실패(서버 에러 발생)");
+                alert("Login fail! (Server error)");
             },
             success: function successHandler(data, status, xhr) {
                 if (data.code === 1 && data.msg === "login success") {
-                    console.log("로그인 성공");
                     $('#login_modal').modal('hide');
                     location.reload(true);
                 } else {
-                    alert("ID와 비밀번호를 확인해주세요.");
+                    alert("Check your ID and Password!");
                 }
-                //location.reload(true);
             }
         });
 
@@ -91,19 +89,19 @@ function addJoinEvent() {
         var params;
 
         if (!inputId || !regTest.test(inputId)) {
-            alert("ID는 숫자, 알파벳만 사용 가능합니다.");
+            alert("ID is allowed only number and alphaber.");
             return;
         }
         if (!inputPw || !regTest.test(inputPw)) {
-            alert("비밀번호는 숫자, 알파벳 대소문자만 사용 가능합니다.");
+            alert("Password is allowed only number and alphabet.");
             return;
         }
         if (!inputName) {
-            alert("이름을 입력해주세요.");
+            alert("Input your name.");
             return;
         }
         if (inputPw !== inputPwConfirm) {
-            alert("패스워드를 확인해주세요.");
+            alert("Input your password.");
             return;
         }
 
@@ -118,10 +116,10 @@ function addJoinEvent() {
             type: 'POST',
             data: params,
             error: function errorHandler(jqXHR, textStatus, errorThrown) {
-                alert("회원가입 실패(서버 에러 발생)");
+                alert("Signup fail! (Server error)");
             },
             success: function successHandler(data, status, xhr) {
-                alert("회원가입 완료");
+                alert("Signup success!");
                 $('#join_modal').modal('hide');
                 location.reload(true);
             }
@@ -135,10 +133,10 @@ function addLogoutEvent() {
             url: '/user/logout',
             type: 'POST',
             error: function errorHandler(jqXHR, textStatus, errorThrown) {
-                alert("로그아웃 실패(서버 에러 발생)");
+                alert("Logout fail! (Server error)");
             },
             success: function successHandler(data, status, xhr) {
-                alert("로그아웃 되었습니다");
+                alert("Logout success!");
                 location.reload(true);
             }
         });
