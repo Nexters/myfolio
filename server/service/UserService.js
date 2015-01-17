@@ -65,6 +65,9 @@ UserService.prototype.loginUser = function(params, callback) {
 
 };
 
+
+
+
 module.exports = UserService;
 
 

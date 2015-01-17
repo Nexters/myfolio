@@ -5,6 +5,7 @@ $(document).ready(function() {
 function init() {
     addLoginEvent();
     addJoinEvent();
+    outEvent();
 }
 
 function addLoginEvent() {
@@ -98,5 +99,26 @@ function addJoinEvent() {
                 location.reload(true);
             }
         });
+
+
+
     });
+}
+
+
+function outEvent(){
+    $('#btn_logout').click(function(){
+
+        $.ajax({
+            url:'/user/logout',
+            type:'POST',
+            success: function successHandeler(data, status, xhr){
+                alert("로그아웃");
+                location.reload(true);
+            }
+        })
+
+    })
+
+
 }
