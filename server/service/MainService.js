@@ -1,4 +1,4 @@
-var templateModel = new (require('../models/templateModel'))(),
+var templateModel = new (require('../models/TemplateModel'))(),
     imageService = new (require('./ImageService')),
     async = require('async');
 
