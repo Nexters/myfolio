@@ -30,11 +30,12 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Session
 if (app.get('env') === 'production') {
-    console.log("use Mongo session store!");
     MongoStore = require('connect-mongo')(session);
     app.use(session({
         secret: 'myfolio-session',
-        store: new MongoStore({ url: 'mongodb://localhost:27017/myfolio' })
+        store: new MongoStore({ url: 'mongodb://localhost:27017/myfolio' }),
+        resave: false,
+        saveUninitialized: true
     }));
 } else {
     app.use(session({
