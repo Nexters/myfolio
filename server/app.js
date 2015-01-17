@@ -30,6 +30,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Session
 if (app.get('env') === 'production') {
+    console.log("use Mongo session store!");
     app.use(session({
         secret: 'myfolio-session',
         resave: false,
