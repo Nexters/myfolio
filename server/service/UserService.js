@@ -1,5 +1,5 @@
-var userModel = new (require('../models/UserModel'))();
-var async = require('async');
+var userModel = new (require('../models/UserModel'))(),
+    async = require('async');
 
 function UserService() {
     if(!(this instanceof UserService)) {

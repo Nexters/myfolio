@@ -39,27 +39,16 @@
                     <h5 class="select-template-content"><p>Choose yours and create something totally original.</p></h5>
                 </div>
                 <div class="select-template-container">
-                    <div class="select-template-box">
-                        <img src="/images/thumbnail_template_black.png" />
-                        <img src="/images/thumbnail_tag_icon.png" class="tag-icon" />
-                        <h4 class="template-tag">
-                            <p>Simple, Black, White</p>
-                        </h4>
-                    </div>
-                    <div class="select-template-box">
-                        <img src="/images/thumbnail_template_2.png" />
-                        <img src="/images/thumbnail_tag_icon.png" class="tag-icon" />
-                        <h4 class="template-tag">
-                            <p>Simple, Line, White</p>
-                        </h4>
-                    </div>
-                    <div class="select-template-box">
-                        <img src="/images/thumbnail_template_3.png" />
-                        <img src="/images/thumbnail_tag_icon.png" class="tag-icon" />
-                        <h4 class="template-tag">
-                            <p>Various, Vertical, White</p>
-                        </h4>
-                    </div>
+                    <% for (var i=0; i<templates.length; i++) { %>
+                    <% var template = templates[i]; %>
+                        <div class="select-template-box">
+                            <img src="/images/<%= template.THUMB_IMG %>" />
+                            <img src="/images/thumb_tag_icon.png" class="tag-icon" />
+                            <h4 class="template-tag">
+                                <p><%= template.TEMPLATE_DESCRIPTION %></p>
+                            </h4>
+                        </div>
+                    <% } %>
                 </div>
 
                 <!--<input id="file-upload" type="file" name="files[]" data-url="/upload" multiple></div>-->

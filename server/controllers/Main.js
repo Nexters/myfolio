@@ -1,6 +1,7 @@
 var BaseController = require('./Base'),
-    mainModel = new (require('../models/MainModel'))(),
-    sessionService = new (require('../service/SessionService'))();
+    mainService = new (require('../service/MainService')),
+    sessionService = new (require('../service/SessionService'))(),
+    _ = require('underscore');
 
 function MainController() {
     if(!(this instanceof MainController)) {
@@ -11,8 +12,8 @@ function MainController() {
 MainController.prototype = new BaseController('MainController');
 
 MainController.prototype.run = function(req, res, next) {
+    var params = {};
     var content = {};
-    var paramMap = {};
     var userSession;
 
     if (sessionService.hasSession(req)) {
@@ -20,8 +21,8 @@ MainController.prototype.run = function(req, res, next) {
         content.userId = userSession.userId;
         content.userName = userSession.userName;
     }
-
-    mainModel.select(paramMap,function(records){
+    mainService.getMainData(params, function(err, result) {
+        _.extend(content, result);
         res.render('Main.ejs',content);
     });
 };
