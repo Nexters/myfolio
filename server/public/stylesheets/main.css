@@ -318,6 +318,7 @@ footer .footer-copyright {
 
 .login-password-container {
     height: 20px;
+    margin-top: 5px;
 }
 
 #login_signup_btn {
