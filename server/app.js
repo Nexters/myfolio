@@ -11,6 +11,7 @@ var user = require('./routes/user');
 var upload = require('./routes/upload');
 
 var config = require('./config/index');
+var MongoStore;
 
 var app = express();
 
@@ -26,12 +27,22 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+
 // Session
-app.use(session({
-    secret: 'myfolio sessions',
-    resave: false,
-    saveUninitialized: true
-}));
+if (app.get('env') === 'production') {
+    app.use(session({
+        secret: 'myfolio-session',
+        resave: false,
+        saveUninitialized: true
+    }));
+} else {
+    MongoStore = require('connect-mongo')(session);
+    app.use(session({
+        secret: 'myfolio-session',
+        store: new MongoStore({ url: 'mongodb://localhost:27017/myfolio' })
+    }));
+}
+
 
 app.use('/', routes);
 app.use('/user', user);
@@ -48,7 +59,7 @@ app.use(function(req, res, next) {
 
 // development error handler
 // will print stacktrace
-if (app.get('env') === 'development') {
+if (app.get('env') === 'local') {
     app.use(function(err, req, res, next) {
         res.status(err.status || 500);
         res.render('error', {
