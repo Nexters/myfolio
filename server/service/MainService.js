@@ -15,6 +15,9 @@ MainService.prototype.getMainData = function(params, callback) {
     var i;
 
     templateModel.selectAll(criteria, options, function(err, templates) {
+        if(!templates) {
+            templates = [];
+        }
         for (i=0; i<templates.length; i++) {
             imageService.makeTemplateThumbImage(templates[i]);
         }
