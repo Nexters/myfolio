@@ -311,7 +311,40 @@ footer .footer-copyright {
 
 #login_modal .modal-body input {
     width: 340px;
+    height: 40px;
+    margin-top: 6px;
+    margin-bottom: 6px;
 }
 
+.login-password-container {
+    height: 20px;
+}
+
+#login_signup_btn {
+    float: left;
+    cursor: pointer;
+    font-family: 'Roboto';
+    font-size: 14px;
+    color: #000000;
+}
+
+#login_forgot_password_btn {
+    float: right;
+    cursor: pointer;
+    font-family: 'Roboto';
+    font-size: 14px;
+    color: #1b94cc;
+}
+
+
+.modal-big-btn {
+    width: 340px;
+    height: 40px;
+    font-size: 20px;
+    font-family: 'Roboto';
+    color: #ffffff;
+    border: none;
+    background-color: #f26522;
+}
 
 /* 회원가입 모달 관련 */
