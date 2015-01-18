@@ -61,6 +61,10 @@ UserController.prototype.login = function(req, res, next) {
     });
 };
 
+UserController.prototype.logout = function(req,res,next){
+    sessionService.removeSession(req);
+    res.status(200).send();
+};
 
 module.exports = UserController;
 
