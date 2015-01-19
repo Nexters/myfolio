@@ -16,6 +16,8 @@ MainController.prototype.run = function(req, res, next) {
     var content = {};
     var userSession;
 
+    sessionService.makeUserSessionData(req, content);
+
     if (sessionService.hasSession(req)) {
         userSession = sessionService.getSession(req);
         content.userId = userSession.userId;
