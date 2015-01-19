@@ -47,8 +47,8 @@ if (app.get('env') === 'production') {
 
 
 app.use('/', routes);
-app.use('/user', user);
-app.use('/upload', upload);
+app.use('/ajax/user', user);
+app.use('/ajax/upload', upload);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
