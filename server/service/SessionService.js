@@ -25,6 +25,18 @@ SessionService.prototype.removeSession = function(req) {
     req.session.destroy();
 };
 
+/**
+ * makeUserSessionData : content Object에 userId, userName 추가
+ * @param req
+ * @param {JSONObject} content
+ */
+SessionService.prototype.makeUserSessionData = function(req, content) {
+    if (this.hasSession(req)) {
+        content.userId = req.session.userId;
+        content.userName = req.session.userName;
+    }
+};
+
 module.exports = SessionService;
 
 
