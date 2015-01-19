@@ -41,7 +41,7 @@
                 <div class="select-template-container">
                     <% for (var i=0; i<templates.length; i++) { %>
                     <% var template = templates[i]; %>
-                        <div class="select-template-box">
+                        <div class="select-template-box" data-id="<%= template.TEMPLATE_ID %>">
                             <img src="/images/<%= template.THUMB_IMG %>" />
                             <img src="/images/thumb_tag_icon.png" class="tag-icon" />
                             <h4 class="template-tag">

@@ -26,16 +26,38 @@ SessionService.prototype.removeSession = function(req) {
 };
 
 /**
- * makeUserSessionData : content Object에 userId, userName 추가
+ * makeUserSessionData
+ * - content Object에 userId, userName 추가
  * @param req
  * @param {JSONObject} content
+ * @returns {boolean} : session 있을 때 true, 없을 때 false
  */
 SessionService.prototype.makeUserSessionData = function(req, content) {
     if (this.hasSession(req)) {
         content.userId = req.session.userId;
         content.userName = req.session.userName;
+        content.isLogin = true;
+        return true;
+    } else {
+        content.isLogin = false;
+        return false;
     }
 };
+
+/**
+ * hasUserAuthority
+ * - 다른 사람 포트폴리오 수정하지 못하도록 권한 검사
+ * @param req
+ * @returns {boolean}
+ */
+SessionService.prototype.hasUserAuthority = function(req) {
+    if (req.params.id && (req.params.id === req.session.userId)) {
+        return true;
+    } else {
+        return false;
+    }
+}
+;
 
 module.exports = SessionService;
 

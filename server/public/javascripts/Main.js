@@ -60,7 +60,7 @@ function addLoginEvent() {
         };
 
         $.ajax({
-            url: '/user/login',
+            url: '/ajax/user/login',
             type: 'POST',
             data: params,
             error: function errorHandler(jqXHR, textStatus, errorThrown) {
@@ -112,7 +112,7 @@ function addJoinEvent() {
         };
 
         $.ajax({
-            url: '/user/join',
+            url: '/ajax/user/join',
             type: 'POST',
             data: params,
             error: function errorHandler(jqXHR, textStatus, errorThrown) {
@@ -130,7 +130,7 @@ function addJoinEvent() {
 function addLogoutEvent() {
     $('#nav_logout_btn').click(function() {
         $.ajax({
-            url: '/user/logout',
+            url: '/ajax/user/logout',
             type: 'POST',
             error: function errorHandler(jqXHR, textStatus, errorThrown) {
                 alert("Logout fail! (Server error)");

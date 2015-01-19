@@ -2,7 +2,7 @@
     <img id="nav_logo_image" src="/images/myfolio_logo.png" class="nav-logo" />
     <div class="nav-profile">
         <a id="nav_start_btn" class="start-portfolio nav-profile-item">Start</a>
-        <% if (typeof userName !== "undefined") { %>
+        <% if (isLogin) { %>
         <div class="nav-profile-item nav-user dropdown">
             <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
                 <%= userName %>
