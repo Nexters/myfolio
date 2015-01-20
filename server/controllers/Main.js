@@ -1,25 +1,30 @@
+'use strict';
+
 var BaseController = require('./Base'),
-    mainService = new (require('../service/MainService')),
+    mainService = new (require('../service/MainService'))(),
     sessionService = new (require('../service/SessionService'))(),
     _ = require('underscore');
 
 function MainController() {
-    if(!(this instanceof MainController)) {
+    if (!(this instanceof MainController)) {
         return new MainController();
     }
 }
 
 MainController.prototype = new BaseController('MainController');
 
-MainController.prototype.run = function(req, res, next) {
-    var params = {};
-    var content = {};
+MainController.prototype.run = function (req, res) {
+    var params = {},
+        content = {};
 
     sessionService.makeUserSessionData(req, content);
 
-    mainService.getMainData(params, function(err, result) {
+    mainService.getMainData(params, function (err, result) {
+        if (err) {
+            res.render('404.ejs', err);
+        }
         _.extend(content, result);
-        res.render('Main.ejs',content);
+        res.render('Main.ejs', content);
     });
 };
 

@@ -1,3 +1,5 @@
+'use strict';
+
 var BaseController = require('./Base'),
     sessionService = new (require('../service/SessionService'))(),
     path = require('path'),
@@ -29,23 +31,24 @@ UploadController.prototype.checkFileSize = function (fileSize) {
         } else {
             next();
         }
-    }
+    };
 };
 
-UploadController.prototype.run = function(req, res, next) {
+UploadController.prototype.run = function (req, res) {
     var busboy = new Busboy({ headers: req.headers });
     var savedFileName, saveTo;
-    busboy.on('file', function(fieldname, file, filename, encoding, mimetype) {
+
+    busboy.on('file', function (fieldname, file, filename, encoding, mimetype) {
         savedFileName = new Date().getTime() + "_" + filename;
         saveTo = path.join(__dirname, '../upload', savedFileName);
         console.log('File [' + fieldname + ']: filename: ' + filename + ', encoding: ' + encoding + ', mimetype: ' + mimetype);
-        console.log("SAVE PATH:",saveTo);
+        console.log("SAVE PATH:", saveTo);
         file.pipe(fs.createWriteStream(saveTo));
     });
-    busboy.on('field', function(fieldname, val, fieldnameTruncated, valTruncated) {
-        console.log('Field [' + fieldname + ']: value: ' + inspect(val));
+    busboy.on('field', function (fieldname, val, fieldnameTruncated, valTruncated) {
+        console.log('Field [' + fieldname);
     });
-    busboy.on('finish', function() {
+    busboy.on('finish', function () {
         res.set('Content-type', 'text/html; charset=utf-8');
         res.writeHead(200, { 'Connection': 'close' });
         res.write(JSON.stringify(savedFileName));
@@ -53,7 +56,6 @@ UploadController.prototype.run = function(req, res, next) {
     });
     return req.pipe(busboy);
 };
-
 
 module.exports = UploadController;
 

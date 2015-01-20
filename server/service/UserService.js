@@ -1,22 +1,24 @@
+'use strict';
+
 var userModel = new (require('../models/UserModel'))(),
     async = require('async');
 
 function UserService() {
-    if(!(this instanceof UserService)) {
+    if (!(this instanceof UserService)) {
         return new UserService();
     }
 }
 
-UserService.prototype.getUsers = function(params, callback) {
+UserService.prototype.getUsers = function (params, callback) {
     var criteria = {};
     var options = {};
 
-    userModel.selectAll(criteria, options, function(err, result) {
+    userModel.selectAll(criteria, options, function (err, result) {
         callback(err, result);
     });
 };
 
-UserService.prototype.joinUser = function(params, callback) {
+UserService.prototype.joinUser = function (params, callback) {
     var criteria = {
         ID: params.id,
         PW: params.pw,
@@ -24,12 +26,12 @@ UserService.prototype.joinUser = function(params, callback) {
     };
     var options = {};
 
-    userModel.insert(criteria, options, function(err, result) {
+    userModel.insert(criteria, options, function (err, result) {
         callback(err, result);
     });
 };
 
-UserService.prototype.loginUser = function(params, callback) {
+UserService.prototype.loginUser = function (params, callback) {
     var criteria = {
         ID: params.id,
         PW: params.pw
@@ -37,12 +39,12 @@ UserService.prototype.loginUser = function(params, callback) {
     var options = {};
 
     async.waterfall([
-        function(callback){
-            userModel.selectOne(criteria, options, function(err, user) {
+        function (callback) {
+            userModel.selectOne(criteria, options, function (err, user) {
                 callback(err, user);
             });
         },
-        function(user, callback){
+        function (user, callback) {
             var result = {};
             if (!user || user.length === 0) {
                 result = {
@@ -62,7 +64,6 @@ UserService.prototype.loginUser = function(params, callback) {
     ], function (err, result) {
         callback(err, result);
     });
-
 };
 
 module.exports = UserService;
