@@ -13,15 +13,20 @@ function PortfolioController() {
 
 PortfolioController.prototype = new BaseController('PortfolioController');
 
-PortfolioController.prototype.getPortfolio = function (req, res, next) {
+PortfolioController.prototype.getAllPortfolio = function (req, res, next) {
+    // TODO: 포트폴리오 선택 페이지 여기에 만들기
+};
+
+
+PortfolioController.prototype.getUserPortfolio = function (req, res, next) {
     // TODO: 여기에 유저 포트폴리오 보여주는 페이지 작업
 };
 
-PortfolioController.prototype.makePortfolio = function (req, res, next) {
+PortfolioController.prototype.makeUserPortfolio = function (req, res, next) {
     // TODO: 여기에 템플릿 선택한 후 포트폴리오 만드는 페이지 작업
 };
 
-PortfolioController.prototype.edit = function (req, res) {
+PortfolioController.prototype.editUserPortfolio = function (req, res) {
     var params = {},
         content = {};
 
