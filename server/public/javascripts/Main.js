@@ -3,23 +3,56 @@ $(document).ready(function() {
 });
 
 function init() {
+    addLogoClickEvent();
+    addStartEvent();
     addLoginEvent();
     addJoinEvent();
     addLogoutEvent();
+
+
+    //test code
+    addUploadButtonEvent();
 }
+
+function addLogoClickEvent() {
+    $('#nav_logo_image').click(function() {
+       location.href = "/";
+    });
+}
+
+function addStartEvent() {
+    $('.start-portfolio').click(function() {
+        // TODO: 여기에 포트폴리오 시작하기 구현
+        console.log("Start!");
+    });
+}
+
+function addUploadButtonEvent() {
+    $('#file-upload').fileupload({
+        dataType: 'json',
+        progressall: function (e, data) {
+            console.log("progress");
+        },
+        done: function (e, data) {
+            console.log("upload image url: ",data.url+"/"+data.result);
+        }
+    });
+
+}
+
 
 function addLoginEvent() {
     $('#login_modal_login_btn').click(function() {
-        console.log("여기에 로그인 코드 구현!");
-        var loginId = $('#login_modal_input_id').val();
-        var loginPwd = $('#login_modal_input_pw').val();
+        var inputId = $('#login_modal_input_id').val();
+        var inputPw = $('#login_modal_input_pw').val();
+        var params;
 
-        if(!loginId){
-            alert("아이디를 입력해주세요.");
+        if (!inputId) {
+            alert("Input your ID!");
             return;
         }
-        if(!loginPwd){
-            alert("비밀번호를 입력해주세요.");
+        if (!inputPw) {
+            alert("Input your Password!");
             return;
         }
 
@@ -64,19 +97,19 @@ function addJoinEvent() {
         var params;
 
         if (!inputId || !regTest.test(inputId)) {
-            alert("ID는 숫자, 알파벳만 사용 가능합니다.");
+            alert("ID is allowed only number and alphaber.");
             return;
         }
         if (!inputPw || !regTest.test(inputPw)) {
-            alert("비밀번호는 숫자, 알파벳 대소문자만 사용 가능합니다.");
+            alert("Password is allowed only number and alphabet.");
             return;
         }
         if (!inputName) {
-            alert("이름을 입력해주세요.");
+            alert("Input your name.");
             return;
         }
         if (inputPw !== inputPwConfirm) {
-            alert("패스워드를 확인해주세요.");
+            alert("Input your password.");
             return;
         }
 
@@ -87,21 +120,20 @@ function addJoinEvent() {
         };
 
         $.ajax({
-            url: '/user/join',
+            url: '/ajax/user/join',
             type: 'POST',
             data: params,
             error: function errorHandler(jqXHR, textStatus, errorThrown) {
-                alert(textStatus);
+                alert("Signup fail! (Server error)");
             },
             success: function successHandler(data, status, xhr) {
-                alert("회원가입 완료");
+                alert("Signup success!");
                 $('#join_modal').modal('hide');
                 location.reload(true);
             }
         });
     });
 }
-
 function addLogoutEvent(){
     $('#nav_logout_btn').click(function(){
 
@@ -113,7 +145,6 @@ function addLogoutEvent(){
             },
             success: function successHandler(data, status, xhr) {
                 alert("로그아웃");
-
                 location.reload(true);
             }
         });

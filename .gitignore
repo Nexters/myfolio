@@ -31,4 +31,8 @@ node_modules
 .idea
 
 # Config file
-server/config/
+server/config
+
+# Uploaded files
+server/upload
+

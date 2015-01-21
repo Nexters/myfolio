@@ -1,3 +1,5 @@
+'use strict';
+
 var mysql = require('mysql');
 var config = require('../config/index')(process.env.NODE_ENV);
 var pool = mysql.createPool({

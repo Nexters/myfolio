@@ -1,3 +1,5 @@
+'use strict';
+
 var express = require('express');
 var router = express.Router();
 var userController = new (require('../controllers/User'))();
@@ -13,6 +15,9 @@ router.route('/join')
 router.route('/login')
     .post(userController.login);
     
+router.route('/logout')
+    .post(userController.logout);
+
 router.route('/logout')
     .post(userController.logout);
 
