@@ -8,7 +8,6 @@ var portfolioController = new (require('../controllers/Portfolio'))();
 
 /* GET main page. */
 router.get('/', mainController.run);
-router.get('/test',mainController.testRun);
 
 /* GET portfolio select page */
 router.get('/portfolio/select', portfolioController.getAllPortfolio);

@@ -136,7 +136,6 @@ function addJoinEvent() {
 }
 function addLogoutEvent(){
     $('#nav_logout_btn').click(function(){
-
         $.ajax({
             url: '/user/logout',
             type: 'POST',
