@@ -28,5 +28,4 @@ MainController.prototype.run = function (req, res) {
     });
 };
 
-
 module.exports = MainController;
