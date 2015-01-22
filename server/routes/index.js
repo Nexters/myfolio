@@ -3,11 +3,15 @@
 var express = require('express');
 var router = express.Router();
 var mainController = new (require('../controllers/Main'))();
+var templateController = new (require('../controllers/Template'))();
 var portfolioController = new (require('../controllers/Portfolio'))();
 
 
 /* GET main page. */
 router.get('/', mainController.run);
+
+/* GET main page. */
+router.get('/template/select', templateController.run);
 
 /* GET portfolio select page */
 router.get('/portfolio/select', portfolioController.getAllPortfolio);

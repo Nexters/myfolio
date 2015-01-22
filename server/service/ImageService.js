@@ -15,4 +15,3 @@ ImageService.prototype.makeTemplateThumbImage = function (templateObj) {
 };
 
 module.exports = ImageService;
-
