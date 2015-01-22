@@ -1,0 +1,352 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto);
+@font-face {
+    font-family:'PalatinoRoman';
+    src: url('/fonts/PalatinoRoman.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    margin: 0px;
+    width: 100%;
+    background-color: #ffffff;
+}
+
+.main-page-container {
+    width: 100%;
+    min-width: 1100px;
+    min-height: 700px;
+    margin: 0px;
+}
+
+.main-image-container {
+    display: block;
+    width: 1100px;
+    height: 350px;
+    overflow: hidden;
+}
+
+.nav-profile-item {
+    display: block;
+    float: left;
+}
+
+#nav_menu {
+    width: 100%;
+    height: 50px;
+    background-color:#FAECC5;
+    margin: 0 auto;
+}
+
+
+nav .nav-logo {
+    position: absolute;
+    left: 55px;
+    cursor: pointer;
+    float: left;
+    display: block;
+    margin-top: 5px;
+    height: 40px;
+}
+
+nav .nav-profile {
+    display: block;
+    position: absolute;
+    right: 55px;
+    line-height: 50px;
+}
+
+nav .nav-user .dropdown-menu {
+    left: auto!important;
+    right: 0px;
+}
+
+nav .nav-user > button {
+    font-family: 'Roboto';
+}
+
+.dropdown-menu > li {
+    font-family: 'Roboto';
+    cursor: pointer;
+}
+
+#nav_start_btn {
+    cursor: pointer;
+    width: 60px;
+    font-family: 'Roboto';
+    font-size: 16px;
+    color: #000000;
+}
+
+#nav_login_btn {
+    cursor: pointer;
+    width: 60px;
+    font-family: 'Roboto';
+    font-size: 16px;
+    color: #000000;
+}
+
+.main-image-container .main-image {
+    position: absolute;
+    vertical-align: middle;
+    max-width: none!important;
+    width: 100%;
+    min-width: 1100px;
+    min-height: 350px;
+    overflow: hidden;
+}
+
+.main-image-container .main-content {
+    display: block;
+    position: absolute;
+    margin-top: 75px;
+    margin-left: 55px;
+    z-index: 5;
+}
+
+.main-image-container .main-content-start-btn {
+    display: block;
+    position: absolute;
+    width: 167px;
+    text-align: center;
+    line-height: 58px;
+    margin-top: 146px;
+    right: 55px;
+    z-index: 5;
+    background: url('/images/myfolio_start_btn.png');
+}
+
+.main-content-big-text {
+    font-family: PalatinoRoman;
+    font-size: 47px;
+    line-height: 72px;
+    color: #ffffff;
+}
+
+.main-content-small-text {
+    font-family: PalatinoRoman;
+    font-size: 18px;
+    color: #ffffff;
+}
+
+.main-content > h1 {
+    display: block;
+    margin-top: -22px;
+}
+
+.main-content > h2 {
+    display: block;
+    margin-top: -22px;
+}
+
+.main-content-start-btn > .start-portfolio {
+    font-family: PalatinoRoman;
+    font-size: 24px;
+    vertical-align: middle;
+    line-height: 30px;
+    color: #ffffff;
+}
+
+.start-portfolio {
+    cursor: pointer;
+}
+
+/* 템플릿 영역 관련 */
+
+.main-page-template-container {
+    display: block;
+    z-index: 10;
+    min-height: 350px;
+    padding: 25px 55px;
+    background-color: #FAECC5;
+    position: relative;
+    overflow-y: auto;
+}
+
+.select-template-title-container {
+    width: 400px;
+    height: 100px;
+    margin: auto;
+    text-align: center;
+    border-style: solid;
+    border-width: 1px;
+    border-left: none;
+    border-right: none;
+    border-color: #8f8f8f;
+}
+
+.select-template-title {
+    color: #333333;
+    font-family: 'PalatinoRoman';
+    text-shadow: 0 0 1px #000000;
+}
+
+.select-template-content {
+    color: #333333;
+    font-family: 'PalatinoRoman';
+}
+
+.select-template-container {
+    text-align:center;
+    display: block;
+    width: 990px;
+    margin: 25px auto;
+}
+
+.select-template-box {
+    width: 300px;
+    height: 230px;
+    cursor: pointer;
+    display: block;
+    float: left;
+    margin: 20px 15px;
+}
+
+.select-template-box > img {
+    width: 300px;
+    height: 200px;
+    margin-bottom: 6px;
+}
+
+.select-template-box > .tag-icon {
+    float: left;
+    width: 30px;
+    height: 30px;
+}
+
+.select-template-box > .template-tag {
+    height: 30px;
+    line-height: 30px;
+    font-family: 'Roboto';
+    color: #333333;
+    margin: 0px!important;
+}
+
+.select-template-box > .template-tag > p {
+    text-align: left;
+    margin-left: 35px;
+    margin-bottom: 0px;
+}
+
+/* 푸터 영역 관련 */
+
+#footer_menu {
+    width: 100%;
+    height: 150px;
+    padding-left: 55px;
+    padding-right: 55px;
+    padding-top: 50px;
+    min-width: 990px;
+    background-color: #9d9d9d;
+}
+
+footer .footer-logo {
+    position: absolute;
+    left: 55px;
+    display: block;
+    height: 50px;
+}
+
+footer .footer-team {
+    position: absolute;
+    right: 55px;
+    display: block;
+    height: 50px;
+}
+
+footer .footer-team > a {
+    font-family: 'Roboto';
+    font-size: 14px;
+    line-height: 25px;
+    color: #ffffff;
+}
+
+footer .footer-content {
+    font-family: 'Roboto';
+    font-size: 11px;
+    text-align: left;
+    color: #ffffff;
+    line-height: 16px;
+}
+
+.footer-content-container {
+    margin: 0px auto;
+    width: 500px;
+}
+
+footer .footer-copyright {
+    font-family: 'Roboto';
+    font-size: 11px;
+    margin-top: 15px;
+    text-align: center;
+    color: #ffffff;
+}
+
+
+/* 로그인 모달 관련 */
+#login_modal .modal-dialog {
+    width:400px;
+}
+
+#login_modal .modal-content .modal-header {
+    padding: 15px 30px;
+}
+
+#login_modal .modal-content .modal-header button {
+    margin-right: -15px;
+}
+
+
+#login_modal .modal-content .modal-body {
+    padding: 15px 30px;
+}
+
+#login_modal .modal-content .modal-footer {
+    padding: 15px 30px;
+}
+
+#login_modal_title {
+    font-family: 'Roboto';
+    font-size: 30px;
+}
+
+#login_modal .modal-body input {
+    width: 340px;
+    height: 40px;
+    margin-top: 6px;
+    margin-bottom: 6px;
+}
+
+.login-password-container {
+    height: 20px;
+    margin-top: 5px;
+}
+
+#login_signup_btn {
+    float: left;
+    cursor: pointer;
+    font-family: 'Roboto';
+    font-size: 14px;
+    color: #000000;
+}
+
+#login_forgot_password_btn {
+    float: right;
+    cursor: pointer;
+    font-family: 'Roboto';
+    font-size: 14px;
+    color: #1b94cc;
+}
+
+
+.modal-big-btn {
+    width: 340px;
+    height: 40px;
+    font-size: 20px;
+    font-family: 'Roboto';
+    color: #ffffff;
+    border: none;
+    background-color: #f26522;
+}
+
+/* 회원가입 모달 관련 */
