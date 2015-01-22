@@ -10,7 +10,7 @@ function TemplateModel() {
 }
 
 TemplateModel.prototype.selectAll = function (criteria, options, callback) {
-    var query = "SELECT * FROM TEMPLATE_TB;";
+    var query = "SELECT * FROM TEMPLATE_TB WHERE NOT TEMPLATE_ID=0";
 
     pool.query(query, function (err, rows, fields) {
         callback(err, rows);
