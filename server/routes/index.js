@@ -7,14 +7,11 @@ var templateController = new (require('../controllers/Template'))();
 var portfolioController = new (require('../controllers/Portfolio'))();
 
 
-/* GET main page. */
+/* GET main page */
 router.get('/', mainController.run);
 
-/* GET main page. */
+/* GET template select page */
 router.get('/template/select', templateController.run);
-
-/* GET portfolio select page */
-router.get('/portfolio/select', portfolioController.getAllPortfolio);
 
 /* GET user portfolio page */
 router.get('/user/:id', portfolioController.getUserPortfolio);
