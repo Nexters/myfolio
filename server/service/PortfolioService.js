@@ -30,6 +30,7 @@ PortfoiloService.prototype.makeUserPortfolioData = function (params, callback) {
     var result = {};
 
     async.waterfall([
+        // TODO: 기존에 포트폴리오 있는지 검사해서 있으면 에러로 처리 (내 페이지로 이동)
         function (callback) {
             portfolioModel.insert(criteria, options, function (err) {
                 callback(err);

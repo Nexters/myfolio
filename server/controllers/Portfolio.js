@@ -41,8 +41,6 @@ PortfolioController.prototype.makeUserPortfolio = function (req, res) {
         content = {};
 
     if (!sessionService.hasSession(req)) {
-        // TODO: 로그인 안했을 때
-        console.log("401 error");
         res.render('401.ejs');
         return;
     }
