@@ -27,6 +27,14 @@ UserController.prototype.getUsers = function (req, res) {
     });
 };
 
+UserController.prototype.checkId = function (req, res) {
+    // TODO: id 중복 검사 해야함
+};
+
+UserController.prototype.checkName = function (req, res) {
+    // TODO: name 중복 검사 해야함
+};
+
 UserController.prototype.join = function (req, res) {
     var params = {
         id: req.body.id,
@@ -39,6 +47,7 @@ UserController.prototype.join = function (req, res) {
             res.status(404).send(err);
             return;
         }
+        console.log(result);
         sessionService.registerSession(req, params.id, params.name, null);
         res.status(200).send(result);
     });

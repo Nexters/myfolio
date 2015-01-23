@@ -26,6 +26,7 @@ UserService.prototype.joinUser = function (params, callback) {
     };
     var options = {};
 
+    // TODO: userId, userName 체크 후 저장 필요
     userModel.insert(criteria, options, function (err, result) {
         callback(err, result);
     });

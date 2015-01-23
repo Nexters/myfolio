@@ -8,10 +8,12 @@ function init() {
     addLoginEvent();
     addJoinEvent();
     addLogoutEvent();
+    addTemplateSelectEvent();
 
     //test code
     addUploadButtonEvent();
 }
+
 
 function addLogoClickEvent() {
     $('#nav_logo_image').click(function() {
@@ -36,7 +38,6 @@ function addUploadButtonEvent() {
         }
     });
 }
-
 
 function addLoginEvent() {
     $('#login_modal_login_btn').click(function() {
@@ -137,6 +138,28 @@ function addLogoutEvent() {
             success: function successHandler(data, status, xhr) {
                 alert("Logout success!");
                 location.reload(true);
+            }
+        });
+    });
+}
+
+function addTemplateSelectEvent() {
+    $('.select-template-container > div').click(function() {
+        var templateId = $(this).data('id');
+        if (!IS_LOGIN) {
+            $('#login_modal').modal('show');
+            return;
+        }
+        $.ajax({
+            url: '/ajax/portfolio/template/' + templateId,
+            type: 'POST',
+            error: function errorHandler(jqXHR, textStatus, errorThrown) {
+                alert("Portfolio make fail! (Server error)");
+            },
+            success: function successHandler(data, status, xhr) {
+                if (data.code === 1) {
+                    location.href = "/" + data.result.userName;
+                }
             }
         });
     });
