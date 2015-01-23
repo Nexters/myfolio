@@ -13,11 +13,6 @@ function PortfolioController() {
 
 PortfolioController.prototype = new BaseController('PortfolioController');
 
-PortfolioController.prototype.getAllPortfolio = function (req, res, next) {
-    // TODO: 포트폴리오 선택 페이지 여기에 만들기
-};
-
-
 PortfolioController.prototype.getUserPortfolio = function (req, res, next) {
     // TODO: 여기에 유저 포트폴리오 보여주는 페이지 작업
 };

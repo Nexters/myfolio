@@ -13,14 +13,16 @@ SessionService.prototype.hasSession = function (req) {
 SessionService.prototype.getSession = function (req) {
     var data = {
         userId: req.session.userId,
-        userName: req.session.userName
+        userName: req.session.userName,
+        portfolioId: req.session.portfolioId
     };
     return data;
 };
 
-SessionService.prototype.registerSession = function (req, id, name) {
+SessionService.prototype.registerSession = function (req, id, name, portfolio) {
     req.session.userId = id;
     req.session.userName = name;
+    req.session.portfolioId = portfolio || null;
 };
 
 SessionService.prototype.removeSession = function (req) {
@@ -39,6 +41,7 @@ SessionService.prototype.makeUserSessionData = function (req, content) {
     if (this.hasSession(req)) {
         content.userId = req.session.userId;
         content.userName = req.session.userName;
+        content.portfolioId = req.session.portfolioId;
         content.isLogin = true;
         hasSessionResult = true;
     } else {

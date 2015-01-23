@@ -21,8 +21,7 @@ function addLogoClickEvent() {
 
 function addStartEvent() {
     $('.start-portfolio').click(function() {
-        // TODO: 여기에 포트폴리오 시작하기 구현
-        console.log("Start!");
+        location.href = "/template/start";
     });
 }
 

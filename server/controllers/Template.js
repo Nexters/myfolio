@@ -13,7 +13,24 @@ function TemplateController() {
 
 TemplateController.prototype = new BaseController('TemplateController');
 
-TemplateController.prototype.run = function (req, res) {
+TemplateController.prototype.start = function (req, res) {
+    var content = {};
+
+    if (!sessionService.hasSession(req)) {
+        res.redirect('/template/select');
+        return;
+    }
+
+    sessionService.makeUserSessionData(req, content);
+
+    if (content.portfolioId) {
+        res.redirect('/' + content.userId);
+        return;
+    }
+    res.redirect('/template/select');
+};
+
+TemplateController.prototype.select = function (req, res) {
     var params = {},
         content = {};
 
