@@ -1,7 +1,58 @@
-CREATE TABLE `myfolio`.`Template_TB` (
-  `ID` VARCHAR(20) NOT NULL,
-  `TITLE` VARCHAR(50) NOT NULL,
-  `OWNER_ID` VARCHAR(20) NULL,
-  `DESCRIPTION` VARCHAR(200) NULL,
-  PRIMARY KEY (`ID`),
-  UNIQUE INDEX `ID_UNIQUE` (`ID` ASC));
+-- -----------------------------------------------------
+-- Use myfolio database
+-- -----------------------------------------------------
+USE myfolio;
+
+-- -----------------------------------------------------
+-- Add template
+-- -----------------------------------------------------
+
+INSERT INTO
+	TEMPLATE_TB
+	(
+	    TEMPLATE_ID,
+		TEMPLATE_TITLE,
+		TEMPLATE_OWNER_USER_ID,
+		TEMPLATE_DESCRIPTION
+	)
+VALUES
+	(
+	    1,
+		'template1',
+		'admin',
+		'Simple, Black, White, Blur, Gray'
+	);
+
+
+INSERT INTO
+    TEMPLATE_TB
+    (
+        TEMPLATE_ID,
+        TEMPLATE_TITLE,
+        TEMPLATE_OWNER_USER_ID,
+        TEMPLATE_DESCRIPTION
+    )
+VALUES
+    (
+        2,
+        'template2',
+        'admin',
+        'Line, White, Image'
+    );
+
+
+INSERT INTO
+    TEMPLATE_TB
+    (
+        TEMPLATE_ID,
+        TEMPLATE_TITLE,
+        TEMPLATE_OWNER_USER_ID,
+        TEMPLATE_DESCRIPTION
+    )
+VALUES
+    (
+        3,
+        'template3',
+        'admin',
+        'Vertical, Various, Circle'
+    );

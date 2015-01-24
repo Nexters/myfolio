@@ -1,7 +1,22 @@
-CREATE TABLE `myfolio`.`User_TB` (
-  `ID` VARCHAR(20) NOT NULL,
-  `NAME` VARCHAR(20) NULL,
-  `PW` VARCHAR(128) NOT NULL,
-  `CREATE_TIME` TIMESTAMP(6) NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  PRIMARY KEY (`ID`),
-  UNIQUE INDEX `ID_UNIQUE` (`ID` ASC));
+-- -----------------------------------------------------
+-- Use myfolio database
+-- -----------------------------------------------------
+USE myfolio;
+
+-- -----------------------------------------------------
+-- Add admin user
+-- -----------------------------------------------------
+
+INSERT INTO
+    USER_TB
+    (
+        USER_ID,
+        USER_NAME,
+        USER_PW
+    )
+VALUES
+    (
+        'admin',
+        'admin',
+        'da8ce3f9a0db3b26741e864088b09d5c47be3442'
+    );
