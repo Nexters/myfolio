@@ -12,8 +12,10 @@ function UserService() {
 UserService.prototype.getUsers = function (params, callback) {
     var criteria = {};
     var options = {};
+    var result = {};
 
-    userModel.selectAll(criteria, options, function (err, result) {
+    userModel.selectAll(criteria, options, function (err, users) {
+        result.users = users;
         callback(err, result);
     });
 };
@@ -73,9 +75,11 @@ UserService.prototype.joinUser = function (params, callback) {
         NAME: params.name
     };
     var options = {};
+    var result = {};
 
     // TODO: userId, userName 체크 후 저장 필요
-    userModel.insert(criteria, options, function (err, result) {
+    userModel.insert(criteria, options, function (err, state) {
+        result = state;
         callback(err, result);
     });
 };
@@ -109,7 +113,6 @@ UserService.prototype.loginUser = function (params, callback) {
             }
             callback(null, result);
         }
-        // TODO: 여기에 유저 포트폴리오 정보 가져오는 부분 추가해야함!
     ], function (err, result) {
         callback(err, result);
     });

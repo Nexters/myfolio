@@ -67,7 +67,6 @@ UserController.prototype.join = function (req, res) {
             res.status(404).send(err);
             return;
         }
-        console.log(result);
         sessionService.registerSession(req, params.id, params.name, null);
         res.status(200).send(result);
     });

@@ -12,8 +12,8 @@ function UserModel() {
 UserModel.prototype.selectAll = function (criteria, options, callback) {
     var query = "SELECT * FROM USER_TB;";
 
-    pool.query(query, function(err, rows, fields) {
-        callback(err, rows);
+    pool.query(query, function(err, result) {
+        callback(err, result);
     });
 };
 
@@ -22,8 +22,8 @@ UserModel.prototype.selectById = function (criteria, options, callback) {
     var inserts = [ criteria.ID ];
     sql = mysql.format(sql, inserts);
 
-    pool.query(sql, function (err, rows, fields) {
-        callback(err, rows);
+    pool.query(sql, function (err, result) {
+        callback(err, result);
     });
 };
 
@@ -32,8 +32,8 @@ UserModel.prototype.selectByName = function (criteria, options, callback) {
     var inserts = [ criteria.NAME ];
     sql = mysql.format(sql, inserts);
 
-    pool.query(sql, function (err, rows, fields) {
-        callback(err, rows);
+    pool.query(sql, function (err, result) {
+        callback(err, result);
     });
 };
 
@@ -42,8 +42,8 @@ UserModel.prototype.selectByUser = function (criteria, options, callback) {
     var inserts = [ criteria.ID, criteria.PW ];
     sql = mysql.format(sql, inserts);
 
-    pool.query(sql, function (err, rows, fields) {
-        callback(err, rows);
+    pool.query(sql, function (err, result) {
+        callback(err, result);
     });
 };
 
