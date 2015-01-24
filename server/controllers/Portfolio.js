@@ -36,9 +36,7 @@ PortfolioController.prototype.getUserPortfolio = function (req, res, next) {
 };
 
 PortfolioController.prototype.makeUserPortfolio = function (req, res) {
-    //TODO: 템플릿에 해당하는 유저 포트폴리오 만들어주어야함!
-    var params = {},
-        content = {};
+    var params = {};
 
     if (!sessionService.hasSession(req)) {
         res.render('401.ejs');
