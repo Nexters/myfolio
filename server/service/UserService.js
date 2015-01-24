@@ -18,6 +18,54 @@ UserService.prototype.getUsers = function (params, callback) {
     });
 };
 
+UserService.prototype.checkId = function (params, callback) {
+    var criteria = {
+        ID: params.id
+    };
+    var options = {};
+    var result;
+
+    userModel.selectById(criteria, options, function (err, user) {
+        if (user && user.length > 0) {
+            result = {
+                code: 0,
+                msg: "Not Available"
+            };
+            callback(err, result);
+            return;
+        }
+        result = {
+            code: 1,
+            msg: "Available"
+        };
+        callback(err, result);
+    });
+};
+
+UserService.prototype.checkName = function (params, callback) {
+    var criteria = {
+        NAME: params.name
+    };
+    var options = {};
+    var result;
+
+    userModel.selectByName(criteria, options, function (err, user) {
+        if (user && user.length > 0) {
+            result = {
+                code: 0,
+                msg: "Not Available"
+            };
+            callback(err, result);
+            return;
+        }
+        result = {
+            code: 1,
+            msg: "Available"
+        };
+        callback(err, result);
+    });
+};
+
 UserService.prototype.joinUser = function (params, callback) {
     var criteria = {
         ID: params.id,
@@ -41,7 +89,7 @@ UserService.prototype.loginUser = function (params, callback) {
 
     async.waterfall([
         function (callback) {
-            userModel.selectOne(criteria, options, function (err, user) {
+            userModel.selectByUser(criteria, options, function (err, user) {
                 callback(err, user);
             });
         },

@@ -28,11 +28,31 @@ UserController.prototype.getUsers = function (req, res) {
 };
 
 UserController.prototype.checkId = function (req, res) {
-    // TODO: id 중복 검사 해야함
+    var params = {
+        id: req.params.id
+    };
+
+    userService.checkId(params, function (err, result) {
+        if (err) {
+            res.status(404).send(err);
+            return;
+        }
+        res.status(200).send(result);
+    });
 };
 
 UserController.prototype.checkName = function (req, res) {
-    // TODO: name 중복 검사 해야함
+    var params = {
+        name: req.params.name
+    };
+
+    userService.checkName(params, function (err, result) {
+        if (err) {
+            res.status(404).send(err);
+            return;
+        }
+        res.status(200).send(result);
+    });
 };
 
 UserController.prototype.join = function (req, res) {
