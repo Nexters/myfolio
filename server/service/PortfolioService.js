@@ -1,7 +1,6 @@
 'use strict';
 
 var portfolioModel = new (require('../models/PortfolioModel'))(),
-    userModel = new (require('../models/UserModel'))(),
     async = require('async');
 
 function PortfoiloService() {
