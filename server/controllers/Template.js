@@ -13,6 +13,14 @@ function TemplateController() {
 
 TemplateController.prototype = new BaseController('TemplateController');
 
+
+TemplateController.prototype.run = function (req, res) {
+    var templateName = req.params.name;
+    var templatePath = 'template/' + templateName + '.ejs';
+
+    res.render(templatePath);
+};
+
 TemplateController.prototype.start = function (req, res) {
     var content = {};
 
