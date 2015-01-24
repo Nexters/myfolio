@@ -21,16 +21,28 @@ PortfoiloService.prototype.getUserPortfolioData = function (params, callback) {
 };
 
 PortfoiloService.prototype.makeUserPortfolioData = function (params, callback) {
-    var criteria = {
-        TEMPLATE_ID: params.templateId,
-        USER_ID: params.userId
-    };
+    var criteria = {};
     var options = {};
-    var result = {};
 
     async.waterfall([
-        // TODO: 기존에 포트폴리오 있는지 검사해서 있으면 에러로 처리 (내 페이지로 이동)
         function (callback) {
+            criteria = {
+                USER_ID: params.userId
+            };
+            portfolioModel.selectOne(criteria, options, function (err, portfolio) {
+                if (portfolio) {
+                    callback({
+                        code: 0,
+                        msg: "Already have portfolio!"
+                    });
+                }
+            });
+        },
+        function (callback) {
+            criteria = {
+                TEMPLATE_ID: params.templateId,
+                USER_ID: params.userId
+            };
             portfolioModel.insert(criteria, options, function (err) {
                 callback(err);
             });
@@ -48,7 +60,14 @@ PortfoiloService.prototype.makeUserPortfolioData = function (params, callback) {
             callback(null, null);
         }
     ], function (err, result) {
-        callback(err, result);
+        if (err && err.code === 0) {
+            callback(null, err);
+            return;
+        }
+        callback(err, {
+            code: 1,
+            msg: "Success!"
+        });
     });
 };
 

@@ -51,13 +51,10 @@ PortfolioController.prototype.makeUserPortfolio = function (req, res) {
     portfolioService.makeUserPortfolioData(params, function (err, result) {
         if (err) {
             res.render('404.ejs', err);
+            return;
         }
-        res.status(200).send({
-            code: 1,
-            result: {
-                userName: req.session.userName
-            }
-        });
+        result.userName = req.session.userName;
+        res.status(200).send(result);
     });
 };
 

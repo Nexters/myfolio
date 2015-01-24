@@ -159,6 +159,8 @@ function addTemplateSelectEvent() {
             success: function successHandler(data, status, xhr) {
                 if (data.code === 1) {
                     location.href = "/" + data.result.userName;
+                } else {
+                    alert(data.msg);
                 }
             }
         });
