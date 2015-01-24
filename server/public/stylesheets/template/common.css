@@ -13,30 +13,38 @@ body {
 }
 
 /* common nav */
-nav.common-nav-menu {
+nav {
+    height: 60px;
+}
+
+.common-nav-menu {
     width: 360px;
     height: 60px;
     margin: 0px auto;
 }
 
-nav > .common-nav-title {
+.common-nav-menu > .common-nav-title {
     text-align: center;
     line-height: 60px;
 }
 
-nav > .common-nav-title > .nav-title-item {
+.common-nav-menu > .common-nav-title > .nav-title-item {
     margin: 0px 10px;
 }
 /* common nav end */
 
 /* common footer */
-footer.common-footer-menu {
+footer {
+    height: 60px;
+}
+
+.common-footer-menu {
     width: 200px;
     height: 60px;
     margin: 0px auto;
 }
 
-footer > .common-footer-title {
+.common-footer-menu > .common-footer-title {
     text-align: center;
     line-height: 60px;
 }
