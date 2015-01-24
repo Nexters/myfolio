@@ -296,7 +296,6 @@ footer .footer-copyright {
     margin-right: -15px;
 }
 
-
 #login_modal .modal-content .modal-body {
     padding: 15px 30px;
 }
@@ -338,7 +337,6 @@ footer .footer-copyright {
     color: #1b94cc;
 }
 
-
 .modal-big-btn {
     width: 340px;
     height: 40px;
@@ -350,3 +348,34 @@ footer .footer-copyright {
 }
 
 /* 회원가입 모달 관련 */
+#join_modal .modal-dialog {
+    width:400px;
+}
+
+#join_modal .modal-content .modal-header {
+    padding: 15px 30px;
+}
+
+#join_modal .modal-content .modal-header button {
+    margin-right: -15px;
+}
+
+#join_modal .modal-content .modal-body {
+    padding: 15px 30px;
+}
+
+#join_modal .modal-content .modal-footer {
+    padding: 15px 30px;
+}
+
+#join_modal_title {
+    font-family: 'Roboto';
+    font-size: 30px;
+}
+
+#join_modal .modal-body input {
+    width: 340px;
+    height: 40px;
+    margin-top: 6px;
+    margin-bottom: 6px;
+}

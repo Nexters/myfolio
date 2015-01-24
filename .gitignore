@@ -36,3 +36,5 @@ server/config
 # Uploaded files
 server/upload
 
+# Build files
+server/build

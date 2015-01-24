@@ -18,7 +18,7 @@ SessionService.prototype.getSession = function (req) {
     return data;
 };
 
-SessionService.prototype.registerSession = function (req, id, name) {
+SessionService.prototype.registerSession = function (req, id, name, portfolio) {
     req.session.userId = id;
     req.session.userName = name;
 };

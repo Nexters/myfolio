@@ -10,12 +10,14 @@ USE myfolio;
 INSERT INTO
 	TEMPLATE_TB
 	(
+	    TEMPLATE_ID,
 		TEMPLATE_TITLE,
 		TEMPLATE_OWNER_USER_ID,
 		TEMPLATE_DESCRIPTION
 	)
 VALUES
 	(
+	    1,
 		'template1',
 		'admin',
 		'Simple, Black, White, Blur, Gray'
@@ -25,12 +27,14 @@ VALUES
 INSERT INTO
     TEMPLATE_TB
     (
+        TEMPLATE_ID,
         TEMPLATE_TITLE,
         TEMPLATE_OWNER_USER_ID,
         TEMPLATE_DESCRIPTION
     )
 VALUES
     (
+        2,
         'template2',
         'admin',
         'Line, White, Image'
@@ -40,12 +44,14 @@ VALUES
 INSERT INTO
     TEMPLATE_TB
     (
+        TEMPLATE_ID,
         TEMPLATE_TITLE,
         TEMPLATE_OWNER_USER_ID,
         TEMPLATE_DESCRIPTION
     )
 VALUES
     (
+        3,
         'template3',
         'admin',
         'Vertical, Various, Circle'

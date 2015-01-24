@@ -27,6 +27,34 @@ UserController.prototype.getUsers = function (req, res) {
     });
 };
 
+UserController.prototype.checkId = function (req, res) {
+    var params = {
+        id: req.params.id
+    };
+
+    userService.checkId(params, function (err, result) {
+        if (err) {
+            res.status(404).send(err);
+            return;
+        }
+        res.status(200).send(result);
+    });
+};
+
+UserController.prototype.checkName = function (req, res) {
+    var params = {
+        name: req.params.name
+    };
+
+    userService.checkName(params, function (err, result) {
+        if (err) {
+            res.status(404).send(err);
+            return;
+        }
+        res.status(200).send(result);
+    });
+};
+
 UserController.prototype.join = function (req, res) {
     var params = {
         id: req.body.id,
@@ -57,7 +85,7 @@ UserController.prototype.login = function (req, res) {
         }
 
         if (result.code === 1) {
-            sessionService.registerSession(req, result.data.USER_ID, result.data.USER_NAME);
+            sessionService.registerSession(req, result.data.USER_ID, result.data.USER_NAME, result.data.USER_PORTFOLIO_ID);
         }
         res.status(200).send(result);
     });

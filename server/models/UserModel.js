@@ -17,7 +17,27 @@ UserModel.prototype.selectAll = function (criteria, options, callback) {
     });
 };
 
-UserModel.prototype.selectOne = function (criteria, options, callback) {
+UserModel.prototype.selectById = function (criteria, options, callback) {
+    var sql = "SELECT USER_ID FROM USER_TB WHERE USER_ID=?";
+    var inserts = [ criteria.ID ];
+    sql = mysql.format(sql, inserts);
+
+    pool.query(sql, function (err, rows, fields) {
+        callback(err, rows);
+    });
+};
+
+UserModel.prototype.selectByName = function (criteria, options, callback) {
+    var sql = "SELECT USER_NAME FROM USER_TB WHERE USER_NAME=?";
+    var inserts = [ criteria.NAME ];
+    sql = mysql.format(sql, inserts);
+
+    pool.query(sql, function (err, rows, fields) {
+        callback(err, rows);
+    });
+};
+
+UserModel.prototype.selectByUser = function (criteria, options, callback) {
     var sql = "SELECT USER_ID, USER_NAME FROM USER_TB WHERE USER_ID=? AND USER_PW=?";
     var inserts = [ criteria.ID, criteria.PW ];
     sql = mysql.format(sql, inserts);

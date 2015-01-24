@@ -8,6 +8,8 @@ var session = require('express-session');
 
 var routes = require('./routes/index');
 var user = require('./routes/user');
+var template = require('./routes/template');
+var portfolio = require('./routes/portfolio');
 var upload = require('./routes/upload');
 
 var config = require('./config/index');
@@ -47,6 +49,8 @@ if (app.get('env') === 'production') {
 
 
 app.use('/', routes);
+app.use('/template', template);
+app.use('/ajax/portfolio', portfolio);
 app.use('/ajax/user', user);
 app.use('/ajax/upload', upload);
 
