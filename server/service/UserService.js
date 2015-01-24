@@ -29,7 +29,7 @@ UserService.prototype.checkId = function (params, callback) {
         if (user && user.length > 0) {
             result = {
                 code: 0,
-                msg: "Not Available"
+                msg: "Not available id."
             };
             callback(err, result);
             return;
@@ -53,7 +53,7 @@ UserService.prototype.checkName = function (params, callback) {
         if (user && user.length > 0) {
             result = {
                 code: 0,
-                msg: "Not Available"
+                msg: "Not available name."
             };
             callback(err, result);
             return;
