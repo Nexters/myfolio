@@ -1,0 +1,24 @@
+.home-title {
+    width: 300px;
+    height: 120px;
+    margin: auto;
+    margin-top: 150px;
+    line-height: 120px;
+    text-align: center;
+}
+
+.home-image-container {
+    text-align:center;
+    display: block;
+    width: 1080px;
+    margin: 10px auto;
+}
+
+.home-image-box {
+    width: 250px;
+    height: 200px;
+    cursor: pointer;
+    display: block;
+    float: left;
+    margin: 10px 10px;
+}
