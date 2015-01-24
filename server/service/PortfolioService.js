@@ -62,7 +62,7 @@ PortfoiloService.prototype.makeUserPortfolioData = function (params, callback) {
             // TODO: 여기에 템플릿 html 가져와서 content_tag에 저장하는 코드 추가
             callback(null, {
                 code: 1,
-                msg: "Success!"
+                msg: "success!"
             });
         }
     ], function (err, state) {
