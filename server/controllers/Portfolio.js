@@ -34,6 +34,7 @@ PortfolioController.prototype.getUserPortfolio = function (req, res, next) {
         }
         // TODO: 여기에 유저 포트폴리오 데이터 가져와서 클라이언트로 내려주는 코드 추가
         // TODO: html로 내려줘야함! (result.PORTFOLIO_CONTENT_TAG)
+        // TODO: 내 포트폴리오 페이지이면 에디터 바 표시
 
         res.status(200).send(result);
     });
