@@ -12,6 +12,13 @@ body {
     background-color: #ffffff;
 }
 
+/* template editor */
+#template_editor {
+    height: 50px;
+    background: #000000;
+}
+/* template editor end */
+
 /* common nav */
 nav {
     height: 60px;

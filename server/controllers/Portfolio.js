@@ -15,9 +15,11 @@ PortfolioController.prototype = new BaseController('PortfolioController');
 
 PortfolioController.prototype.getUserPortfolio = function (req, res, next) {
     var params = {};
-    if (!sessionService.hasSession(req) || !sessionService.hasUserAuthority(req)) {
-        res.render('401.ejs');
-        return;
+    var content = {};
+    var isOwner = false;
+
+    if (sessionService.hasSession(req) && sessionService.hasUserAuthority(req)) {
+        isOwner = true;
     }
 
     params.userId = req.params.id;
@@ -32,9 +34,13 @@ PortfolioController.prototype.getUserPortfolio = function (req, res, next) {
             res.redirect('/');
             return;
         }
+
+        content.isOwner = isOwner;
+
         // TODO: 여기에 유저 포트폴리오 데이터 가져와서 클라이언트로 내려주는 코드 추가
         // TODO: html로 내려줘야함! (result.PORTFOLIO_CONTENT_TAG)
         // TODO: 내 포트폴리오 페이지이면 에디터 바 표시
+
 
         res.status(200).send(result);
     });
