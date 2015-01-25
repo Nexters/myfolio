@@ -36,8 +36,7 @@ PortfolioController.prototype.getUserPortfolio = function (req, res, next) {
             return;
         }
 
-        content.isOwner = isOwner;
-        console.log(content);
+        content.isOwner = isOwner;  // isOwner: 유저 자신의 페이지인지 확인
         portfolioFile = 'portfolio/' + result[0].PORTFOLIO_ID + '.ejs';
 
         res.render(portfolioFile, content);

@@ -35,6 +35,7 @@ PortfoiloService.prototype.makeUserPortfolioData = function (params, callback) {
                 USER_ID: params.userId
             };
             portfolioModel.selectById(criteria, options, function (err, portfolio) {
+                // 유저 포트폴리오가 이미 존재할 때 에러로 리턴
                 if (portfolio && portfolio.length > 0) {
                     callback({
                         code: 0,
@@ -74,14 +75,11 @@ PortfoiloService.prototype.makeUserPortfolioData = function (params, callback) {
             var savPath = path.join(__dirname, '../views/portfolio/', saveFileName);
             fs.readFile(srcPath, 'utf8', function (err, data) {
                 if (err) {
-                    console.log(err);
+                    callback(err, null);
                     return;
                 }
-                //Do your processing, MD5, send a satellite to the moon, etc.
                 fs.writeFile (savPath, data, function(err) {
-                    if (err) throw err;
-                    console.log('complete');
-                    callback(null, {
+                    callback(err, {
                         code: 1,
                         msg: "success"
                     });

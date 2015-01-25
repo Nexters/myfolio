@@ -19,7 +19,7 @@ TemplateController.prototype.run = function (req, res) {
     var templateName = req.params.name;
     var templatePath = 'template/' + templateName + '.ejs';
 
-    // Toolbar test 위해 표시
+    // TODO: Toolbar test 위해 표시. 삭제해야됨
     var content = {
         isOwner: true
     };
@@ -45,12 +45,12 @@ TemplateController.prototype.start = function (req, res) {
             res.render('404.ejs', err);
             return;
         }
-
+        // 유저 포트폴리오가 없을 때 템플릿 선택 페이지 보여줌
         if (!result || result.length === 0) {
             res.redirect('/template/select');
             return;
         }
-
+        // 유저 포트폴리오 있을 때 유저의 포트폴리오 페이지로 이동
         res.redirect('/' + content.userName);
     });
 };
