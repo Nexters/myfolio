@@ -1,28 +1,215 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto);
+@font-face {
+    font-family:'PalatinoRoman';
+    src: url('/fonts/PalatinoRoman.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.page1{
+    width: 100%;
+    margin-top: -45px;
+    height: 854px;
+    padding-top:45px;
+}
+
 .home-content-container {
     height: 800px;
     padding-top: 150px;
 }
 
+.menu-box{
+    margin-top: 45px;
+    margin-left:auto;
+    margin-right:auto;
+    border: 2px solid #FFFFFF;
+    padding: 10px 40px;
+    width:1068px;
+    height:64px;
+    background: rgba(255, 255, 255, .2);
+}
+
 .home-title {
-    width: 300px;
-    height: 120px;
+    margin-top:259px;
+    font-family: Roboto;
+    font-size: 98px;
+    width: 350px;
+    height: 112px;
     margin: auto;
     line-height: 120px;
     text-align: center;
+    color:#ffffff;
+    text-shadow:0 0 30px #000000;
+}
+.sub-title{
+    margin-top:-4px;
+    font-family: Roboto;
+    font-size: 22px;
+    width: 600px;
+    height: 28px;
+    margin: auto;
+    text-align: center;
+    color:#ffffff;
+
+    text-shadow:0 0 10px #000000;
 }
 
 .home-image-container {
     text-align:center;
     display: block;
-    width: 1080px;
+    width: 100%;
     margin: 10px auto;
 }
 
+ .home-image{
+     min-width: 1100px;
+     min-height: 1000px;
+     display: block;
+     position: absolute;
+     z-index: -1;
+     width:100%;
+}
+.common-nav-title > .nav-title-item {
+    font-family: Roboto;
+    font-size: 24px;
+    line-height: 30px;
+    color: #000000;
+}
+
+.nav-title-item {
+    cursor: pointer;
+}
 .home-image-box {
-    width: 250px;
-    height: 200px;
+    width: 1048px;
+    height: 20px;
     cursor: pointer;
     display: block;
     float: left;
     margin: 10px 10px;
 }
+
+.menu-box2{
+    margin-top: 328px;
+    margin-left:auto;
+    margin-right:auto;
+    border: 2px solid #FFFFFF;
+    padding: 10px 40px;
+    width:1068px;
+    height:300px;
+    background: rgba(255, 255, 255, .2);
+}
+
+.bottom-image1{
+    margin-left:-25px;
+    margin-top: 50px;
+    width: 248px;
+    height: 186px;
+    display: block;
+    position: absolute;
+    z-index: 1;
+}
+.bottom-image2{
+    margin-left: 238px;
+    margin-top: 50px;
+    width: 248px;
+    height: 186px;
+    display: block;
+    position: absolute;
+    z-index: 1;
+}
+.bottom-image3{
+    margin-left: 501px;
+    margin-top: 50px;
+    width: 248px;
+    height: 186px;
+    display: block;
+    position: absolute;
+    z-index: 1;
+}
+.bottom-image4{
+    margin-left: 764px;
+    margin-top: 50px;
+    width: 248px;
+    height: 186px;
+    display: block;
+    position: absolute;
+    z-index: 1;
+}
+
+
+@import url(http://fonts.googleapis.com/css?family=Roboto);
+@font-face {
+    font-family:'PalatinoRoman';
+    src: url('/fonts/PalatinoRoman.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    margin: 0px;
+    width: 100%;
+    background-color: #ffffff;
+}
+
+/* template editor */
+#template_editor {
+    height: 50px;
+    background: #000000;
+}
+/* template editor end */
+
+/* common nav */
+nav {
+    height: 60px;
+}
+
+.common-nav-menu {
+    width: 500px;
+    height: 60px;
+    margin: 0px auto;
+    margin-top: -1px;
+}
+
+.common-nav-menu > .common-nav-title {
+    text-align: center;
+    line-height: 50px;
+}
+
+.common-nav-menu > .common-nav-title > .nav-title-item {
+    margin: 0px 30px;
+}
+/* common nav end */
+
+/* common footer */
+footer {
+    height: 60px;
+    margin-top:24px;
+}
+
+.common-footer-menu {
+    min-width:1100px;
+    height:70px;
+    width:100%;
+    background:#969696;
+    padding-top: 27px;
+}
+
+.common-footer-menu > .common-footer-title {
+    margin-top:-10px;
+    width: 500px;
+    margin: 0px auto;
+    font-family:'Roboto';
+    text-align:center;
+    color:#FFFFFF;
+
+}
+/* common footer end */
+
+/* common page */
+div.common-page-container {
+    width: 100%;
+    min-width: 1100px;
+    min-height: 700px;
+    margin: 0px;
+}
+/* common page end */

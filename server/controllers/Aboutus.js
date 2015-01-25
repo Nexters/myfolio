@@ -14,10 +14,12 @@ function AboutusController() {
 
 AboutusController.prototype = new BaseController('AboutusController');
 
+
 AboutusController.prototype.aboutus = function (req, res) {
     var params = {},
         content = {};
     console.log('aboutus!');
+
     res.render('aboutus.ejs',content);
 };
 

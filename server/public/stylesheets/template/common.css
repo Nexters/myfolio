@@ -25,18 +25,18 @@ nav {
 }
 
 .common-nav-menu {
-    width: 360px;
+    width: 500px;
     height: 60px;
     margin: 0px auto;
 }
 
 .common-nav-menu > .common-nav-title {
     text-align: center;
-    line-height: 60px;
+    line-height: 50px;
 }
 
 .common-nav-menu > .common-nav-title > .nav-title-item {
-    margin: 0px 10px;
+    margin: 0px 30px;
 }
 /* common nav end */
 
@@ -46,14 +46,17 @@ footer {
 }
 
 .common-footer-menu {
-    width: 200px;
+    width: 1350px;
     height: 60px;
-    margin: 0px auto;
 }
 
 .common-footer-menu > .common-footer-title {
+    background:#969696;
+    text-align:center;
+    font-family:'Roboto';
+    color:#FFFFFF;
     text-align: center;
-    line-height: 60px;
+    line-height: 65px;
 }
 /* common footer end */
 

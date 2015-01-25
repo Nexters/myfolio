@@ -12,7 +12,7 @@ router.get('/', mainController.run);
 /* GET user portfolio page */
 router.get('/:id', portfolioController.getUserPortfolio);
 
-router.get('/aboutus',aboutusController.aboutus);
+router.get('/aboutus', aboutusController.aboutus);
 
 
 module.exports = router;
