@@ -1,0 +1,67 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto);
+@font-face {
+    font-family:'PalatinoRoman';
+    src: url('/fonts/PalatinoRoman.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    margin: 0px;
+    width: 100%;
+    background-color: #ffffff;
+}
+
+/* template editor */
+#template_editor {
+    height: 50px;
+    background: #000000;
+}
+/* template editor end */
+
+/* common nav */
+nav {
+    height: 60px;
+}
+
+.common-nav-menu {
+    width: 360px;
+    height: 60px;
+    margin: 0px auto;
+}
+
+.common-nav-menu > .common-nav-title {
+    text-align: center;
+    line-height: 60px;
+}
+
+.common-nav-menu > .common-nav-title > .nav-title-item {
+    margin: 0px 10px;
+}
+/* common nav end */
+
+/* common footer */
+footer {
+    height: 60px;
+}
+
+.common-footer-menu {
+    width: 200px;
+    height: 60px;
+    margin: 0px auto;
+}
+
+.common-footer-menu > .common-footer-title {
+    text-align: center;
+    line-height: 60px;
+}
+/* common footer end */
+
+/* common page */
+div.common-page-container {
+    width: 100%;
+    min-width: 1100px;
+    min-height: 700px;
+    margin: 0px;
+}
+/* common page end */

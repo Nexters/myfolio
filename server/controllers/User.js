@@ -68,6 +68,7 @@ UserController.prototype.join = function (req, res) {
             return;
         }
         sessionService.registerSession(req, params.id, params.name);//session을 등록
+
         res.status(200).send(result);
     });
 };

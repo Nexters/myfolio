@@ -10,7 +10,9 @@ function PortfoiloService() {
 }
 
 PortfoiloService.prototype.getUserPortfolioData = function (params, callback) {
-    var criteria = {};
+    var criteria = {
+        USER_ID: params.userId
+    };
     var options = {};
     var result = {};
 
@@ -23,6 +25,8 @@ PortfoiloService.prototype.getUserPortfolioData = function (params, callback) {
 PortfoiloService.prototype.makeUserPortfolioData = function (params, callback) {
     var criteria = {};
     var options = {};
+
+    var result = {};
 
     async.waterfall([
         function (callback) {
@@ -59,13 +63,15 @@ PortfoiloService.prototype.makeUserPortfolioData = function (params, callback) {
             // TODO: 여기에 템플릿 html 가져와서 content_tag에 저장하는 코드 추가
             callback(null, {
                 code: 1,
-                msg: "Success!"
+
+                msg: "success!"
             });
         }
-    ], function (err, result) {
+    ], function (err, state) {
         if (err && err.code === 0) {
-            callback(null, err);
-            return;
+            result = err;
+        } else {
+            result = state;
         }
         callback(err, result);
     });

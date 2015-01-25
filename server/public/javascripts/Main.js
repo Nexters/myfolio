@@ -37,7 +37,6 @@ function addUploadButtonEvent() {
             console.log("upload image url: ",data.url+"/"+data.result);
         }
     });
-
 }
 */
 
