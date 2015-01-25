@@ -33,7 +33,7 @@ nav {
 }
 
 .common-nav-menu {
-    width: 360px;
+    width: 500px;
     height: 60px;
     margin: 0px auto;
 }
@@ -44,7 +44,7 @@ nav {
 }
 
 .common-nav-menu > .common-nav-title > .nav-title-item {
-    margin: 0px 10px;
+    margin: 0px 30px;
 }
 /* common nav end */
 

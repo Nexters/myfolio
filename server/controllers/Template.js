@@ -2,6 +2,7 @@
 
 var BaseController = require('./Base'),
     mainService = new (require('../service/MainService'))(),
+    portfolioService = new (require('../service/PortfolioService'))(),
     sessionService = new (require('../service/SessionService'))(),
     fs = require('fs'),
     _ = require('underscore');
@@ -27,6 +28,7 @@ TemplateController.prototype.run = function (req, res) {
 };
 
 TemplateController.prototype.start = function (req, res) {
+    var params = {};
     var content = {};
 
     if (!sessionService.hasSession(req)) {
@@ -36,11 +38,21 @@ TemplateController.prototype.start = function (req, res) {
 
     sessionService.makeUserSessionData(req, content);
 
-    if (content.portfolioId) {
-        res.redirect('/' + content.userId);
-        return;
-    }
-    res.redirect('/template/select');
+    params.userName = content.userName;
+
+    portfolioService.getUserPortfolioData(params, function (err, result) {
+        if (err) {
+            res.render('404.ejs', err);
+            return;
+        }
+
+        if (!result || result.length === 0) {
+            res.redirect('/template/select');
+            return;
+        }
+
+        res.redirect('/' + content.userName);
+    });
 };
 
 TemplateController.prototype.select = function (req, res) {

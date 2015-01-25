@@ -9,6 +9,6 @@ var portfolioController = new (require('../controllers/Portfolio'))();
 router.get('/', mainController.run);
 
 /* GET user portfolio page */
-router.get('/:id', portfolioController.getUserPortfolio);
+router.get('/:name', portfolioController.getUserPortfolio);
 
 module.exports = router;

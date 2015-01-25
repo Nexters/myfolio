@@ -137,7 +137,7 @@ function addJoinEvent() {
         var params;
 
         if (!inputId || !resEmailTest.test(inputId)) {
-            alert("Check your id.");
+            alert("Check your id.(id must be email)");
             return;
         }
         if (!inputPw || !regTest.test(inputPw)) {
@@ -206,7 +206,8 @@ function addTemplateSelectEvent() {
             },
             success: function successHandler(data, status, xhr) {
                 if (data.code === 1) {
-                    location.href = "/" + data.result.userName;
+                    location.href = "/" + data            // saveFileName: 포트폴리오 이름.ejs
+                        .userName;
                 } else {
                     alert(data.msg);
                 }

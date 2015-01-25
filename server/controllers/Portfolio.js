@@ -17,12 +17,13 @@ PortfolioController.prototype.getUserPortfolio = function (req, res, next) {
     var params = {};
     var content = {};
     var isOwner = false;
+    var portfolioFile;
 
-    if (sessionService.hasSession(req) && sessionService.hasUserAuthority(req)) {
+    params.userName = req.params.name;
+
+    if (sessionService.hasSession(req) && sessionService.hasUserAuthorityByName(req, params.userName)) {
         isOwner = true;
     }
-
-    params.userId = req.params.id;
 
     portfolioService.getUserPortfolioData(params, function (err, result) {
         if (err) {
@@ -36,13 +37,10 @@ PortfolioController.prototype.getUserPortfolio = function (req, res, next) {
         }
 
         content.isOwner = isOwner;
+        console.log(content);
+        portfolioFile = 'portfolio/' + result[0].PORTFOLIO_ID + '.ejs';
 
-        // TODO: 여기에 유저 포트폴리오 데이터 가져와서 클라이언트로 내려주는 코드 추가
-        // TODO: html로 내려줘야함! (result.PORTFOLIO_CONTENT_TAG)
-        // TODO: 내 포트폴리오 페이지이면 에디터 바 표시
-
-
-        res.status(200).send(result);
+        res.render(portfolioFile, content);
     });
 };
 
@@ -53,9 +51,9 @@ PortfolioController.prototype.makeUserPortfolio = function (req, res) {
         res.render('401.ejs');
         return;
     }
-
     params.templateId = req.params.template;
     params.userId = req.session.userId;
+    params.userName = req.session.userName;
 
     portfolioService.makeUserPortfolioData(params, function (err, result) {
         if (err) {
