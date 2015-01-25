@@ -22,13 +22,8 @@ UserModel.prototype.selectById = function (criteria, options, callback) {
     var inserts = [ criteria.ID ];
     sql = mysql.format(sql, inserts);
 
-<<<<<<< HEAD
-    pool.query(sql, function (err, rows, fields) {
-        callback(err, rows);
-=======
     pool.query(sql, function (err, result) {
         callback(err, result);
->>>>>>> origin/dev_gd
     });
 };
 
@@ -37,13 +32,8 @@ UserModel.prototype.selectByName = function (criteria, options, callback) {
     var inserts = [ criteria.NAME ];
     sql = mysql.format(sql, inserts);
 
-<<<<<<< HEAD
-    pool.query(sql, function (err, rows, fields) {
-        callback(err, rows);
-=======
     pool.query(sql, function (err, result) {
         callback(err, result);
->>>>>>> origin/dev_gd
     });
 };
 
