@@ -205,12 +205,10 @@ function addTemplateSelectEvent() {
                 alert("Portfolio make fail! (Server error)");
             },
             success: function successHandler(data, status, xhr) {
-                if (data.code === 1) {
-                    location.href = "/" + data            // saveFileName: 포트폴리오 이름.ejs
-                        .userName;
-                } else {
+                if (data.code === 0) {
                     alert(data.msg);
                 }
+                location.href = "/" + data.userName;
             }
         });
     });
