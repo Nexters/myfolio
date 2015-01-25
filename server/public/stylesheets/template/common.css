@@ -17,6 +17,14 @@ body {
     height: 50px;
     background: #000000;
 }
+
+.right-btn-container {
+    float: right;
+}
+
+.left-nav-container {
+    float: left;
+}
 /* template editor end */
 
 /* common nav */
