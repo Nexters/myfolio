@@ -18,6 +18,7 @@ MainController.prototype.run = function (req, res) {
         content = {};
 
     sessionService.makeUserSessionData(req, content);
+    console.log('main!');
 
     mainService.getMainData(params, function (err, result) {
         if (err) {
