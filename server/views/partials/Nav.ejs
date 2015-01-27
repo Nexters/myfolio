@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <div class="main-nav-container">
     <nav id="nav_menu">
         <div class="nav-logo">myFolio</div>
@@ -20,7 +21,30 @@
             <% } else { %>
             <a href="#login_modal" class="btn btn-lg btn-primary" data-toggle="modal">Login</a>
             <% } %>
+=======
+<script>
+    var IS_LOGIN = <%= isLogin %>;
+</script>
+<nav id="nav_menu">
+    <img id="nav_logo_image" src="/images/myfolio_logo.png" class="nav-logo" />
+    <div class="nav-profile">
+        <a id="nav_start_btn" class="start-portfolio nav-profile-item">Start</a>
+        <% if (isLogin) { %>
+        <div class="nav-profile-item nav-user dropdown">
+            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
+                <%= userName %>
+                <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                <li id="nav_mypage_btn" role="presentation"><a href="<%= userName %>" role="menuitem" tabindex="-1">My Portfolio</a></li>
+                <li class="divider"></li>
+                <li id="nav_logout_btn" role="presentation"><a role="menuitem" tabindex="-1">Logout</a></li>
+            </ul>
+>>>>>>> origin/dev_gd
         </div>
-    </nav>
-</div>
+        <% } else { %>
+        <a href="#login_modal" id="nav_login_btn" data-toggle="modal">Login</a>
+        <% } %>
+    </div>
+</nav>
 

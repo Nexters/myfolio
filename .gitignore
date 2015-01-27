@@ -31,4 +31,18 @@ node_modules
 .idea
 
 # Config file
+<<<<<<< HEAD
 server/config/
+=======
+server/config
+
+# Uploaded files
+server/upload
+
+# User portfolio files
+!server/views/portfolio/toolbar.ejs
+server/views/portfolio
+
+# Build files
+server/build
+>>>>>>> origin/dev_gd

@@ -1,0 +1,39 @@
+/* template nav */
+nav {
+    height: 60px;
+}
+
+.template-nav-menu {
+    display: block;
+    width: 360px;
+    height: 60px;
+    float: right;
+}
+
+.template-nav-menu > .template-nav-title {
+    text-align: center;
+    line-height: 60px;
+}
+
+.template-nav-menu > .template-nav-title > .nav-title-item {
+    margin: 0px 10px;
+}
+/* template nav end */
+
+.home-content-container {
+    height: 800px;
+}
+
+.home-content-container > .home-content-box {
+    width: 460px;
+    height: 330px;
+    float: right;
+    margin-top: 150px;
+}
+
+.home-image-container {
+    text-align:center;
+    display: block;
+    width: 1080px;
+    margin: 10px auto;
+}
