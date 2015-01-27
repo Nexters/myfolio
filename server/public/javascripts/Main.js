@@ -98,8 +98,8 @@ function addJoinEvent() {
             },
             success: function successHandler(data, status, xhr) {
                 if (data.code === 0) {
-                    alert(data.msg);
-                    $(self).focus();
+                    //alert(data.msg);
+                    //$(self).focus();
                     return;
                 }
             }
@@ -121,8 +121,8 @@ function addJoinEvent() {
             },
             success: function successHandler(data, status, xhr) {
                 if (data.code === 0) {
-                    alert(data.msg);
-                    $(self).focus();
+                    //alert(data.msg);
+                    //$(self).focus();
                     return;
                 }
             }
@@ -167,6 +167,10 @@ function addJoinEvent() {
                 alert("Signup fail! (Server error)");
             },
             success: function successHandler(data, status, xhr) {
+                if (data.code === 0) {
+                    alert(data.msg);
+                    return;
+                }
                 alert("Signup success!");
                 $('#join_modal').modal('hide');
                 location.reload(true);
