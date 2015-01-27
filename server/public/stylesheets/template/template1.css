@@ -9,7 +9,7 @@
 .page1{
     width: 100%;
     margin-top: -45px;
-    height: 854px;
+    height: 802px;
     padding-top:45px;
 }
 
@@ -63,11 +63,12 @@
 
  .home-image{
      min-width: 1100px;
-     min-height: 1000px;
+     min-height: 802px;
      display: block;
      position: absolute;
-     z-index: -1;
+     z-index:-1;
      width:100%;
+     height:100%;
 }
 .common-nav-title > .nav-title-item {
     font-family: Roboto;
@@ -179,6 +180,120 @@ nav {
     margin: 0px 30px;
 }
 /* common nav end */
+
+.page2{
+    width: 100%;
+    margin-top: 0px;
+    height: 856px;
+    padding-top:82px;
+    background:#FFFFFF;
+}
+
+
+.page2-menu-box{
+    margin-left:auto;
+    margin-right:auto;
+    margin-top:0px;
+    width:1100px;
+    height:82px;
+}
+
+.small-left{
+    margin-left:34px;
+    margin-top:26px;
+    width:30px;
+    height:30px;
+    display: block;
+    position: absolute;
+}
+
+.small-right{
+    margin-left:1024px;
+    margin-top:26px;
+    width:30px;
+    height:30px;
+    display: block;
+    position: absolute;
+}
+
+
+.page2-top-image1{
+    margin-left: 83px;
+    margin-top: 0;
+    width:110px;
+    height: 82px;
+    display: block;
+    position: absolute;
+
+}
+
+.page2-top-image2{
+    margin-left: 199px;
+    margin-top: auto;
+    width:110px;
+    height: 82px;
+    display: block;
+    position: absolute;
+    z-index: 1;
+}
+
+.page2-top-image3{
+    margin-left: 315px;
+    margin-top: auto;
+    width:110px;
+    height: 82px;
+    display: block;
+    position: absolute;
+    z-index: 1;
+}
+.page2-top-image4{
+    margin-left: 431px;
+    margin-top: auto;
+    width:110px;
+    height: 82px;
+    display: block;
+    position: absolute;
+    z-index: 1;
+}
+.page2-top-image5{
+    margin-left: 547px;
+    margin-top: auto;
+    width:110px;
+    height: 82px;
+    display: block;
+    position: absolute;
+    z-index: 1;
+}
+.page2-top-image6{
+    margin-left: 663px;
+    margin-top: auto;
+    width:110px;
+    height: 82px;
+    display: block;
+    position: absolute;
+    z-index: 1;
+}
+.page2-top-image7{
+    margin-left: 779px;
+    margin-top: auto;
+    width:110px;
+    height: 82px;
+    display: block;
+    position: absolute;
+    z-index: 1;
+}
+.page2-top-image8{
+    margin-left: 895px;
+    margin-top: auto;
+    width:110px;
+    height: 82px;
+    display: block;
+    position: absolute;
+    z-index: 1;
+}
+
+
+
 
 /* common footer */
 footer {
