@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href="/stylesheets/template/common.css"/>
     <link rel="stylesheet" href="/stylesheets/template/template1.css"/>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
     <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
@@ -13,6 +12,7 @@
 
 <body>
     <% include toolbar.ejs %>
+    <img class="home-image" src="/images/template1/temp_01_bg.png" />
     <nav>
         <div class="common-nav-menu">
             <div class="common-nav-title is-view-mode">
@@ -28,11 +28,16 @@
             <div class="home-title is-view-mode">
                 Hello :)
             </div>
-        </div>
-
-        <div class="home-image-container is-view-mode">
-            <div class="home-image-box">
-
+            <div class="home-subtitle is-view-mode">
+                I'm Nicolas Lowe. Web & Graphic Designer
+            </div>
+            <div class="home-image-container is-view-mode">
+                <div class="home-image-box">
+                    <img class="main-image" src="/images/template1/main_folio_img_01.png"/>
+                    <img class="main-image" src="/images/template1/main_folio_img_02.png"/>
+                    <img class="main-image" src="/images/template1/main_folio_img_03.png"/>
+                    <img class="main-image" src="/images/template1/main_folio_img_04.png"/>
+                </div>
             </div>
         </div>
     </div>
@@ -40,7 +45,7 @@
     <footer>
         <div class="common-footer-menu">
             <div class="common-footer-title is-view-mode">
-                <div>Footer Contents</div>
+                <div>MADE IN ASHLEE, WITH MYFOLIO.COM</div>
             </div>
         </div>
     </footer>
