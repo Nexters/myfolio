@@ -142,7 +142,6 @@ UserService.prototype.loginUser = function (params, callback) {
                     msg: "login success",
                     data: user[0]
                 };
-                result.userName = user[0].USER_NAME;//이름 추가해서 NAV에 나올수 있게.
             }
             callback(null, result);
         }
@@ -150,9 +149,6 @@ UserService.prototype.loginUser = function (params, callback) {
         callback(err, result);
     });
 };
-
-
-
 
 module.exports = UserService;
 

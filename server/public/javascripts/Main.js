@@ -16,7 +16,7 @@ function init() {
 
 function addLogoClickEvent() {
     $('#nav_logo_image').click(function() {
-        location.href = "/";
+       location.href = "/";
     });
 }
 
@@ -27,18 +27,18 @@ function addStartEvent() {
 }
 
 /*
- function addUploadButtonEvent() {
- $('#file-upload').fileupload({
- dataType: 'json',
- progressall: function (e, data) {
- console.log("progress");
- },
- done: function (e, data) {
- console.log("upload image url: ",data.url+"/"+data.result);
- }
- });
- }
- */
+function addUploadButtonEvent() {
+    $('#file-upload').fileupload({
+        dataType: 'json',
+        progressall: function (e, data) {
+            console.log("progress");
+        },
+        done: function (e, data) {
+            console.log("upload image url: ",data.url+"/"+data.result);
+        }
+    });
+}
+*/
 
 function addLoginEvent() {
     $('#login_modal_login_btn').click(function() {

@@ -29,3 +29,4 @@ router.route('/logout')
     .post(userController.logout);
 
 module.exports = router;
+
