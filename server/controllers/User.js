@@ -67,8 +67,6 @@ UserController.prototype.join = function (req, res) {
             res.status(404).send(err);
             return;
         }
-        sessionService.registerSession(req, params.id, params.name);//session을 등록
-
         if (err && err.code === 0) {
             res.status(200).send(err);
             return;
@@ -89,42 +87,28 @@ UserController.prototype.login = function (req, res) {
             res.status(404).send(err);
             return;
         }
-        console.log('controller result : ',result);
-        if(result.code==1){
-            sessionService.registerSession(req,params.id,result.userName);//session을 등록
         if (result.code === 1) {
             sessionService.registerSession(req, result.data.USER_ID, result.data.USER_NAME, result.data.USER_PORTFOLIO_ID);
         }
         res.status(200).send(result);
-    }
-})
-}
-UserController.prototype.logout = function(req,res,next) {
+    });
+};
 
-
-    sessionService.outSession(req);
-
-    res.status(200).send('');
-
-
-    UserController.prototype.logout = function (req, res) {
-        if (!sessionService.hasSession(req)) {
-            res.status(400).send({
-                code: 0,
-                msg: "not login"
-            });
-            return;
-        }
-        sessionService.removeSession(req);
-        res.status(200).send({
-            code: 1,
-            msg: "logout success"
+UserController.prototype.logout = function (req, res) {
+    if (!sessionService.hasSession(req)) {
+        res.status(400).send({
+            code: 0,
+            msg: "not login"
         });
-    };
+        return;
+    }
+    sessionService.removeSession(req);
+    res.status(200).send({
+        code: 1,
+        msg: "logout success"
+    });
+};
 
-    module.exports = UserController;
-
-}
-
+module.exports = UserController;
 
 
