@@ -67,11 +67,8 @@ UserController.prototype.join = function (req, res) {
             res.status(404).send(err);
             return;
         }
-<<<<<<< HEAD
         sessionService.registerSession(req, params.id, params.name);//session을 등록
-=======
         sessionService.registerSession(req, params.id, params.name, null);
->>>>>>> origin/dev_gd
         res.status(200).send(result);
     });
 };
@@ -87,21 +84,17 @@ UserController.prototype.login = function (req, res) {
             res.status(404).send(err);
             return;
         }
-<<<<<<< HEAD
         console.log('controller result : ',result);
         if(result.code==1){
             sessionService.registerSession(req,params.id,result.userName);//session을 등록
-=======
         if (result.code === 1) {
             sessionService.registerSession(req, result.data.USER_ID, result.data.USER_NAME, result.data.USER_PORTFOLIO_ID);
->>>>>>> origin/dev_gd
         }
         res.status(200).send(result);
-    });
-};
-
-<<<<<<< HEAD
-UserController.prototype.logout = function(req,res,next){
+    }
+})
+}
+UserController.prototype.logout = function(req,res,next) {
 
 
     sessionService.outSession(req);
@@ -109,23 +102,24 @@ UserController.prototype.logout = function(req,res,next){
     res.status(200).send('');
 
 
-=======
-UserController.prototype.logout = function (req, res) {
-    if (!sessionService.hasSession(req)) {
-        res.status(400).send({
-            code: 0,
-            msg: "not login"
+    UserController.prototype.logout = function (req, res) {
+        if (!sessionService.hasSession(req)) {
+            res.status(400).send({
+                code: 0,
+                msg: "not login"
+            });
+            return;
+        }
+        sessionService.removeSession(req);
+        res.status(200).send({
+            code: 1,
+            msg: "logout success"
         });
-        return;
-    }
-    sessionService.removeSession(req);
-    res.status(200).send({
-        code: 1,
-        msg: "logout success"
-    });
->>>>>>> origin/dev_gd
-};
+    };
 
-module.exports = UserController;
+    module.exports = UserController;
+
+}
+
 
 

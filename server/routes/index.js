@@ -9,14 +9,13 @@ var portfolioController = new (require('../controllers/Portfolio'))();
 router
     .get('/', mainController.run);
 
-<<<<<<< HEAD
 /* GET main page. */
 router.get('/', mainController.run);
 router.get('/test',mainController.testRun);
-=======
+
 /* GET user portfolio page */
 router
     .get('/:name', portfolioController.getUserPortfolio);
->>>>>>> origin/dev_gd
+
 
 module.exports = router;

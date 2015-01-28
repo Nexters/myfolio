@@ -23,12 +23,12 @@ SessionService.prototype.registerSession = function (req, id, name, portfolio) {
     req.session.userName = name;
 };
 
-<<<<<<< HEAD
+
 SessionService.prototype.outSession = function(req,id,name ){
     req.session.destroy();
 
 }
-=======
+
 SessionService.prototype.removeSession = function (req) {
     req.session.destroy();
 };
@@ -64,7 +64,7 @@ SessionService.prototype.makeUserSessionData = function (req, content) {
 SessionService.prototype.hasUserAuthorityByName = function (req, userName) {
     return (req.session.userName === userName);
 };
->>>>>>> origin/dev_gd
+
 
 module.exports = SessionService;
 

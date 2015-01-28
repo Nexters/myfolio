@@ -7,9 +7,6 @@ function init() {
     addStartEvent();
     addLoginEvent();
     addJoinEvent();
-<<<<<<< HEAD
-    outEvent();
-=======
     addLogoutEvent();
     addTemplateSelectEvent();
 
@@ -19,7 +16,7 @@ function init() {
 
 function addLogoClickEvent() {
     $('#nav_logo_image').click(function() {
-       location.href = "/";
+        location.href = "/";
     });
 }
 
@@ -30,34 +27,21 @@ function addStartEvent() {
 }
 
 /*
-function addUploadButtonEvent() {
-    $('#file-upload').fileupload({
-        dataType: 'json',
-        progressall: function (e, data) {
-            console.log("progress");
-        },
-        done: function (e, data) {
-            console.log("upload image url: ",data.url+"/"+data.result);
-        }
-    });
->>>>>>> origin/dev_gd
-}
-*/
+ function addUploadButtonEvent() {
+ $('#file-upload').fileupload({
+ dataType: 'json',
+ progressall: function (e, data) {
+ console.log("progress");
+ },
+ done: function (e, data) {
+ console.log("upload image url: ",data.url+"/"+data.result);
+ }
+ });
+ }
+ */
 
 function addLoginEvent() {
     $('#login_modal_login_btn').click(function() {
-<<<<<<< HEAD
-        console.log("여기에 로그인 코드 구현!");
-        var loginId = $('#login_modal_input_id').val();
-        var loginPwd = $('#login_modal_input_pw').val();
-
-        if(!loginId){
-            alert("아이디를 입력해주세요.");
-            return;
-        }
-        if(!loginPwd){
-            alert("비밀번호를 입력해주세요.");
-=======
         var inputId = $('#login_modal_input_id').val();
         var inputPw = $('#login_modal_input_pw').val();
         var params;
@@ -68,40 +52,10 @@ function addLoginEvent() {
         }
         if (!inputPw) {
             alert("Input your Password!");
->>>>>>> origin/dev_gd
             return;
         }
 
         params = {
-<<<<<<< HEAD
-            id: loginId,
-            pw: loginPwd
-        };
-
-        $.ajax({
-            url: '/user/login',
-            type: 'POST',
-            data: params,
-            error: function errorHandler(jqXHR, textStatus, errorThrown) {
-                alert(textStatus);
-            },
-            success: function successHandler(data, status, xhr) {
-                //이 로그들은 브라우져 콘솔에서 확인할수 있음
-                console.log('login Main.js data : ',data);
-                console.log('login Main.js status : ',status);
-
-                if(data.code==1){
-                    alert("로그인 성공");
-                    $('#login_modal').modal('hide');
-                    location.reload(true);
-                }else{
-                    alert("아이디 또는 비밀번호를 정확히 입력해주세요.");
-                    return;
-                }
-
-            }
-        });
-=======
             id: inputId,
             pw: inputPw
         };
@@ -123,7 +77,6 @@ function addLoginEvent() {
             }
         });
 
->>>>>>> origin/dev_gd
     });
 }
 
@@ -131,50 +84,50 @@ function addJoinEvent() {
     var regTest = /^[A-Za-z0-9+]*$/;
     var resEmailTest = /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i;
 
-    $('#join_modal_input_id').blur(function() {
-        var self = this;
-        var inputId = $('#join_modal_input_id').val();
-        if (!inputId) {
-            return;
-        }
-        $.ajax({
-            url: '/ajax/user/check/id/'+inputId,
-            type: 'POST',
-            error: function errorHandler(jqXHR, textStatus, errorThrown) {
-                alert("CheckId fail! (Server error)");
-            },
-            success: function successHandler(data, status, xhr) {
-                if (data.code === 0) {
-                    alert(data.msg);
-                    $(self).focus();
-                    return;
-                }
-            }
-        });
-    });
-
-    $('#join_modal_input_name').blur(function() {
-        var self = this;
-        var inputName = $('#join_modal_input_name').val();
-
-        if (!inputName) {
-            return;
-        }
-        $.ajax({
-            url: '/ajax/user/check/name/'+inputName,
-            type: 'POST',
-            error: function errorHandler(jqXHR, textStatus, errorThrown) {
-                alert("CheckName fail! (Server error)");
-            },
-            success: function successHandler(data, status, xhr) {
-                if (data.code === 0) {
-                    alert(data.msg);
-                    $(self).focus();
-                    return;
-                }
-            }
-        });
-    });
+    //$('#join_modal_input_id').blur(function() {
+    //    var self = this;
+    //    var inputId = $('#join_modal_input_id').val();
+    //    if (!inputId) {
+    //        return;
+    //    }
+    //    $.ajax({
+    //        url: '/ajax/user/check/id/'+inputId,
+    //        type: 'POST',
+    //        error: function errorHandler(jqXHR, textStatus, errorThrown) {
+    //            alert("CheckId fail! (Server error)");
+    //        },
+    //        success: function successHandler(data, status, xhr) {
+    //            if (data.code === 0) {
+    //                //alert(data.msg);
+    //                //$(self).focus();
+    //                return;
+    //            }
+    //        }
+    //    });
+    //});
+    //
+    //$('#join_modal_input_name').blur(function() {
+    //    var self = this;
+    //    var inputName = $('#join_modal_input_name').val();
+    //
+    //    if (!inputName) {
+    //        return;
+    //    }
+    //    $.ajax({
+    //        url: '/ajax/user/check/name/'+inputName,
+    //        type: 'POST',
+    //        error: function errorHandler(jqXHR, textStatus, errorThrown) {
+    //            alert("CheckName fail! (Server error)");
+    //        },
+    //        success: function successHandler(data, status, xhr) {
+    //            if (data.code === 0) {
+    //                //alert(data.msg);
+    //                //$(self).focus();
+    //                return;
+    //            }
+    //        }
+    //    });
+    //});
 
     $('#join_modal_join_btn').click(function() {
         var inputId = $('#join_modal_input_id').val();
@@ -214,35 +167,18 @@ function addJoinEvent() {
                 alert("Signup fail! (Server error)");
             },
             success: function successHandler(data, status, xhr) {
+                if (data.code === 0) {
+                    alert(data.msg);
+                    return;
+                }
                 alert("Signup success!");
                 $('#join_modal').modal('hide');
                 location.reload(true);
             }
         });
-
-
-
     });
 }
 
-<<<<<<< HEAD
-
-function outEvent(){
-    $('#btn_logout').click(function(){
-
-        $.ajax({
-            url:'/user/logout',
-            type:'POST',
-            success: function successHandeler(data, status, xhr){
-                alert("로그아웃");
-                location.reload(true);
-            }
-        })
-
-    })
-
-
-=======
 function addLogoutEvent() {
     $('#nav_logout_btn').click(function() {
         $.ajax({
@@ -280,5 +216,4 @@ function addTemplateSelectEvent() {
             }
         });
     });
->>>>>>> origin/dev_gd
 }

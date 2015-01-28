@@ -5,7 +5,7 @@ var router = express.Router();
 var userController = new (require('../controllers/User'))();
 
 /* GET user listing. */
-<<<<<<< HEAD
+
 
 router.route('/').get(userController.getUsers);
 
@@ -14,7 +14,7 @@ router.route('/join').post(userController.join);
 router.route('/login').post(userController.login);
 
 router.route('/logout').post(userController.logout);
-=======
+
 router.route('/')
     .get(userController.getUsers);
 
@@ -33,7 +33,7 @@ router.route('/join')
 /* POST user login */
 router.route('/login')
     .post(userController.login);
->>>>>>> origin/dev_gd
+
 
 /* POST user logout */
 router.route('/logout')
