@@ -63,11 +63,16 @@ UserController.prototype.join = function (req, res) {
     };
 
     userService.joinUser(params, function (err, result) {
-        if (err) {
+        if (err && (typeof err.code === "undefined")) {
             res.status(404).send(err);
             return;
         }
         sessionService.registerSession(req, params.id, params.name);//session을 등록
+
+        if (err && err.code === 0) {
+            res.status(200).send(err);
+            return;
+        }
         sessionService.registerSession(req, params.id, params.name, null);
         res.status(200).send(result);
     });
