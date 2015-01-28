@@ -8,8 +8,12 @@ var session = require('express-session');
 
 var routes = require('./routes/index');
 var user = require('./routes/user');
+var template = require('./routes/template');
+var portfolio = require('./routes/portfolio');
+var upload = require('./routes/upload');
 
 var config = require('./config/index');
+var MongoStore;
 
 var app = express();
 
@@ -25,18 +29,33 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+
 // Session
-app.use(session({
-    secret: 'myfolio sessions',
-    resave: false,
-    saveUninitialized: true
-}));
+if (app.get('env') === 'production') {
+    MongoStore = require('connect-mongo')(session);
+    app.use(session({
+        secret: 'myfolio-session',
+        store: new MongoStore({ url: 'mongodb://localhost:27017/myfolio' }),
+        resave: false,
+        saveUninitialized: true
+    }));
+} else {
+    app.use(session({
+        secret: 'myfolio-session',
+        resave: false,
+        saveUninitialized: true
+    }));
+}
+
 
 app.use('/', routes);
-app.use('/user', user);
+app.use('/template', template);
+app.use('/ajax/portfolio', portfolio);
+app.use('/ajax/user', user);
+app.use('/ajax/upload', upload);
 
 // catch 404 and forward to error handler
-app.use(function(req, res, next) {
+app.use(function (req, res, next) {
     var err = new Error('Not Found');
     err.status = 404;
     next(err);
@@ -46,8 +65,8 @@ app.use(function(req, res, next) {
 
 // development error handler
 // will print stacktrace
-if (app.get('env') === 'development') {
-    app.use(function(err, req, res, next) {
+if (app.get('env') === 'local') {
+    app.use(function (err, req, res, next) {
         res.status(err.status || 500);
         res.render('error', {
             message: err.message,
@@ -58,7 +77,7 @@ if (app.get('env') === 'development') {
 
 // production error handler
 // no stacktraces leaked to user
-app.use(function(err, req, res, next) {
+app.use(function (err, req, res, next) {
     res.status(err.status || 500);
     res.render('error', {
         message: err.message,
