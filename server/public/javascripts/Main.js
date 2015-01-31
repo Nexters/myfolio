@@ -56,27 +56,34 @@ function addLoginEvent() {
         }
 
         params = {
-            id: inputId,
-            pw: inputPw
+
+            id: loginId,
+            pw: loginPwd
         };
 
         $.ajax({
-            url: '/ajax/user/login',
+            url: '/user/login',
             type: 'POST',
             data: params,
             error: function errorHandler(jqXHR, textStatus, errorThrown) {
-                alert("Login fail! (Server error)");
+                alert(textStatus);
             },
             success: function successHandler(data, status, xhr) {
-                if (data.code === 1 && data.msg === "login success") {
+                //이 로그들은 브라우져 콘솔에서 확인할수 있음
+                console.log('login Main.js data : ',data);
+                console.log('login Main.js status : ',status);
+
+                if(data.code==1){
+                    alert("로그인 성공");
                     $('#login_modal').modal('hide');
                     location.reload(true);
-                } else {
-                    alert("Check your ID and Password!");
+                }else{
+                    alert("아이디 또는 비밀번호를 정확히 입력해주세요.");
+                    return;
                 }
+
             }
         });
-
     });
 }
 
@@ -178,17 +185,16 @@ function addJoinEvent() {
         });
     });
 }
-
-function addLogoutEvent() {
-    $('#nav_logout_btn').click(function() {
+function addLogoutEvent(){
+    $('#nav_logout_btn').click(function(){
         $.ajax({
-            url: '/ajax/user/logout',
+            url: '/user/logout',
             type: 'POST',
             error: function errorHandler(jqXHR, textStatus, errorThrown) {
-                alert("Logout fail! (Server error)");
+                alert(textStatus);
             },
             success: function successHandler(data, status, xhr) {
-                alert("Logout success!");
+                alert("로그아웃");
                 location.reload(true);
             }
         });

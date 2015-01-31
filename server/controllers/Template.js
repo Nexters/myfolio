@@ -4,7 +4,9 @@ var BaseController = require('./Base'),
     mainService = new (require('../service/MainService'))(),
     portfolioService = new (require('../service/PortfolioService'))(),
     sessionService = new (require('../service/SessionService'))(),
+
     fs = require('fs'),
+
     _ = require('underscore');
 
 function TemplateController() {
@@ -19,7 +21,11 @@ TemplateController.prototype.run = function (req, res) {
     var templateName = req.params.name;
     var templatePath = 'template/' + templateName + '.ejs';
 
+
     // TODO: Toolbar test 위해 표시. 삭제해야됨
+
+    // Toolbar test 위해 표시
+
     var content = {
         isOwner: true
     };

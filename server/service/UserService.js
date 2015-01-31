@@ -68,6 +68,54 @@ UserService.prototype.checkName = function (params, callback) {
     });
 };
 
+UserService.prototype.checkId = function (params, callback) {
+    var criteria = {
+        ID: params.id
+    };
+    var options = {};
+    var result;
+
+    userModel.selectById(criteria, options, function (err, user) {
+        if (user && user.length > 0) {
+            result = {
+                code: 0,
+                msg: "Not available id."
+            };
+            callback(err, result);
+            return;
+        }
+        result = {
+            code: 1,
+            msg: "Available"
+        };
+        callback(err, result);
+    });
+};
+
+UserService.prototype.checkName = function (params, callback) {
+    var criteria = {
+        NAME: params.name
+    };
+    var options = {};
+    var result;
+
+    userModel.selectByName(criteria, options, function (err, user) {
+        if (user && user.length > 0) {
+            result = {
+                code: 0,
+                msg: "Not available name."
+            };
+            callback(err, result);
+            return;
+        }
+        result = {
+            code: 1,
+            msg: "Available"
+        };
+        callback(err, result);
+    });
+};
+
 UserService.prototype.joinUser = function (params, callback) {
     var criteria = {
         ID: params.id,
@@ -112,9 +160,14 @@ UserService.prototype.joinUser = function (params, callback) {
             });
         }
     ], function (err, result) {
+    // TODO: userId, userName 체크 후 저장 필요
+
+    userModel.insert(criteria, options, function (err, state) {
+        result = state;
         callback(err, result);
     });
-};
+});
+
 
 UserService.prototype.loginUser = function (params, callback) {
     var criteria = {
@@ -151,5 +204,5 @@ UserService.prototype.loginUser = function (params, callback) {
 };
 
 module.exports = UserService;
-
+}
 

@@ -31,9 +31,7 @@ node_modules
 .idea
 
 # Config file
-<<<<<<< HEAD
 server/config/
-=======
 server/config
 
 # Uploaded files
@@ -45,4 +43,3 @@ server/views/portfolio
 
 # Build files
 server/build
->>>>>>> origin/dev_gd
