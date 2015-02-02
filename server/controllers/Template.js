@@ -2,7 +2,6 @@
 
 var BaseController = require('./Base'),
     mainService = new (require('../service/MainService'))(),
-    portfolioService = new (require('../service/PortfolioService'))(),
     sessionService = new (require('../service/SessionService'))(),
 
     fs = require('fs'),
@@ -22,10 +21,7 @@ TemplateController.prototype.run = function (req, res) {
     var templatePath = 'template/' + templateName + '.ejs';
 
 
-    // TODO: Toolbar test 위해 표시. 삭제해야됨
-
     // Toolbar test 위해 표시
-
     var content = {
         isOwner: true
     };
@@ -34,7 +30,6 @@ TemplateController.prototype.run = function (req, res) {
 };
 
 TemplateController.prototype.start = function (req, res) {
-    var params = {};
     var content = {};
 
     if (!sessionService.hasSession(req)) {
@@ -44,21 +39,11 @@ TemplateController.prototype.start = function (req, res) {
 
     sessionService.makeUserSessionData(req, content);
 
-    params.userName = content.userName;
-
-    portfolioService.getUserPortfolioData(params, function (err, result) {
-        if (err) {
-            res.render('404.ejs', err);
-            return;
-        }
-        // 유저 포트폴리오가 없을 때 템플릿 선택 페이지 보여줌
-        if (!result || result.length === 0) {
-            res.redirect('/template/select');
-            return;
-        }
-        // 유저 포트폴리오 있을 때 유저의 포트폴리오 페이지로 이동
-        res.redirect('/' + content.userName);
-    });
+    if (content.portfolioId) {
+        res.redirect('/' + content.userId);
+        return;
+    }
+    res.redirect('/template/select');
 };
 
 TemplateController.prototype.select = function (req, res) {

@@ -17,14 +17,6 @@ body {
     height: 50px;
     background: #000000;
 }
-
-.right-btn-container {
-    float: right;
-}
-
-.left-nav-container {
-    float: left;
-}
 /* template editor end */
 
 /* common nav */
@@ -33,7 +25,7 @@ nav {
 }
 
 .common-nav-menu {
-    width: 500px;
+    width: 360px;
     height: 60px;
     margin: 0px auto;
 }
@@ -44,7 +36,7 @@ nav {
 }
 
 .common-nav-menu > .common-nav-title > .nav-title-item {
-    margin: 0px 30px;
+    margin: 0px 10px;
 }
 /* common nav end */
 

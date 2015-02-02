@@ -124,50 +124,14 @@ UserService.prototype.joinUser = function (params, callback) {
     };
     var options = {};
     var result = {};
-    var self = this;
 
-    async.waterfall([
-        function (callback) {
-            self.checkId(params, function (err, result) {
-                if (err) {
-                    callback(err, null);
-                    return;
-                }
-                if (result.code === 0) {
-                    callback(result, result);
-                    return;
-                }
-                callback();
-            });
-        },
-        function (callback) {
-            self.checkName(params, function (err, result) {
-                if (err) {
-                    callback(err, null);
-                    return;
-                }
-                if (result.code === 0) {
-                    callback(result, result);
-                    return;
-                }
-                callback();
-            });
-        },
-        function (callback) {
-            userModel.insert(criteria, options, function (err, state) {
-                result = state;
-                callback(err, result);
-            });
-        }
-    ], function (err, result) {
     // TODO: userId, userName 체크 후 저장 필요
 
     userModel.insert(criteria, options, function (err, state) {
         result = state;
         callback(err, result);
     });
-});
-
+};
 
 UserService.prototype.loginUser = function (params, callback) {
     var criteria = {
@@ -195,6 +159,7 @@ UserService.prototype.loginUser = function (params, callback) {
                     msg: "login success",
                     data: user[0]
                 };
+                result.userName = user[0].USER_NAME;//이름 추가해서 NAV에 나올수 있게.
             }
             callback(null, result);
         }
@@ -204,5 +169,5 @@ UserService.prototype.loginUser = function (params, callback) {
 };
 
 module.exports = UserService;
-}
+
 

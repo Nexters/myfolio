@@ -53,11 +53,10 @@ SessionService.prototype.makeUserSessionData = function (req, content) {
  * hasUserAuthority
  * - 다른 사람 포트폴리오 수정하지 못하도록 권한 검사
  * @param req
- * @param userName
  * @returns {boolean}
  */
-SessionService.prototype.hasUserAuthorityByName = function (req, userName) {
-    return (req.session.userName === userName);
+SessionService.prototype.hasUserAuthority = function (req) {
+    return (req.params.id && (req.params.id === req.session.userId));
 };
 
 module.exports = SessionService;

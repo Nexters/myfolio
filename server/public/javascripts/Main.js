@@ -56,7 +56,6 @@ function addLoginEvent() {
         }
 
         params = {
-
             id: loginId,
             pw: loginPwd
         };
@@ -91,50 +90,50 @@ function addJoinEvent() {
     var regTest = /^[A-Za-z0-9+]*$/;
     var resEmailTest = /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i;
 
-    //$('#join_modal_input_id').blur(function() {
-    //    var self = this;
-    //    var inputId = $('#join_modal_input_id').val();
-    //    if (!inputId) {
-    //        return;
-    //    }
-    //    $.ajax({
-    //        url: '/ajax/user/check/id/'+inputId,
-    //        type: 'POST',
-    //        error: function errorHandler(jqXHR, textStatus, errorThrown) {
-    //            alert("CheckId fail! (Server error)");
-    //        },
-    //        success: function successHandler(data, status, xhr) {
-    //            if (data.code === 0) {
-    //                //alert(data.msg);
-    //                //$(self).focus();
-    //                return;
-    //            }
-    //        }
-    //    });
-    //});
-    //
-    //$('#join_modal_input_name').blur(function() {
-    //    var self = this;
-    //    var inputName = $('#join_modal_input_name').val();
-    //
-    //    if (!inputName) {
-    //        return;
-    //    }
-    //    $.ajax({
-    //        url: '/ajax/user/check/name/'+inputName,
-    //        type: 'POST',
-    //        error: function errorHandler(jqXHR, textStatus, errorThrown) {
-    //            alert("CheckName fail! (Server error)");
-    //        },
-    //        success: function successHandler(data, status, xhr) {
-    //            if (data.code === 0) {
-    //                //alert(data.msg);
-    //                //$(self).focus();
-    //                return;
-    //            }
-    //        }
-    //    });
-    //});
+    $('#join_modal_input_id').blur(function() {
+        var self = this;
+        var inputId = $('#join_modal_input_id').val();
+        if (!inputId) {
+            return;
+        }
+        $.ajax({
+            url: '/ajax/user/check/id/'+inputId,
+            type: 'POST',
+            error: function errorHandler(jqXHR, textStatus, errorThrown) {
+                alert("CheckId fail! (Server error)");
+            },
+            success: function successHandler(data, status, xhr) {
+                if (data.code === 0) {
+                    alert(data.msg);
+                    $(self).focus();
+                    return;
+                }
+            }
+        });
+    });
+
+    $('#join_modal_input_name').blur(function() {
+        var self = this;
+        var inputName = $('#join_modal_input_name').val();
+
+        if (!inputName) {
+            return;
+        }
+        $.ajax({
+            url: '/ajax/user/check/name/'+inputName,
+            type: 'POST',
+            error: function errorHandler(jqXHR, textStatus, errorThrown) {
+                alert("CheckName fail! (Server error)");
+            },
+            success: function successHandler(data, status, xhr) {
+                if (data.code === 0) {
+                    alert(data.msg);
+                    $(self).focus();
+                    return;
+                }
+            }
+        });
+    });
 
     $('#join_modal_join_btn').click(function() {
         var inputId = $('#join_modal_input_id').val();
@@ -144,7 +143,7 @@ function addJoinEvent() {
         var params;
 
         if (!inputId || !resEmailTest.test(inputId)) {
-            alert("Check your id.(id must be email)");
+            alert("Check your id.");
             return;
         }
         if (!inputPw || !regTest.test(inputPw)) {
@@ -174,10 +173,6 @@ function addJoinEvent() {
                 alert("Signup fail! (Server error)");
             },
             success: function successHandler(data, status, xhr) {
-                if (data.code === 0) {
-                    alert(data.msg);
-                    return;
-                }
                 alert("Signup success!");
                 $('#join_modal').modal('hide');
                 location.reload(true);
@@ -215,10 +210,11 @@ function addTemplateSelectEvent() {
                 alert("Portfolio make fail! (Server error)");
             },
             success: function successHandler(data, status, xhr) {
-                if (data.code === 0) {
+                if (data.code === 1) {
+                    location.href = "/" + data.result.userName;
+                } else {
                     alert(data.msg);
                 }
-                location.href = "/" + data.userName;
             }
         });
     });
