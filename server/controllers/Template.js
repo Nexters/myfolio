@@ -18,12 +18,11 @@ TemplateController.prototype = new BaseController('TemplateController');
 TemplateController.prototype.run = function (req, res) {
     var templateName = req.params.name;
     var templatePath = 'template/' + templateName + '.ejs';
-    var content = {};
 
     // TODO: Toolbar test 위해 표시. 삭제해야됨
-    //var content = {
-    //    isOwner: true
-    //};
+    var content = {
+        isOwner: true
+    };
 
     res.render(templatePath, content);
 };
