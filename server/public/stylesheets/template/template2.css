@@ -12,9 +12,16 @@
     font-style: normal;
 }
 
+body {
+    width: 100%;
+    background: url('/images/template2/temp2_background.png') no-repeat;
+    background-size: cover;
+}
+
 /* template nav */
 nav {
     height: 143px;
+    border-bottom: 7px solid;
 }
 
 .template-nav-left-title {
@@ -22,42 +29,89 @@ nav {
     float: left;
     height: 143px;
     padding-left: 47px;
-    padding-top: 79px;
+    padding-top: 70px;
     font-family: BigJohn;
     font-size: 36px;
 }
 
 .template-nav-menu {
     display: block;
-    width: 360px;
-    height: 60px;
+    width: 400px;
+    height: 143px;
+    padding-top: 90px;
     float: right;
 }
 
 .template-nav-menu > .template-nav-title {
     text-align: center;
-    line-height: 60px;
+    line-height: 20px;
 }
 
 .template-nav-menu > .template-nav-title > .nav-title-item {
-    margin: 0px 10px;
+    cursor: pointer;
+    text-decoration: none;
+    width: 120px;
+    margin: 0px 20px;
+    font-family: SlimJoe;
+    font-size: 20px;
+    color: #000000;
 }
 /* template nav end */
 
+/* template footer start */
+
+footer {
+    min-width: 1100px;
+    background: #000000;
+}
+
+footer > .common-footer-menu > .common-footer-title {
+    font-family: SlimJoe;
+    font-size: 10px;
+    color: #ffffff;
+}
+
+/* template footer end */
+
 .home-content-container {
-    height: 800px;
+    height: 700px;
 }
 
 .home-content-container > .home-content-box {
     width: 460px;
-    height: 330px;
+    height: 300px;
     float: right;
     margin-top: 150px;
+    padding: 35px;
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.home-content-box > p {
+    font-family: BigJohn;
+    font-size: 27px;
+    line-height: 40px;
+    margin: 15px 0px;
 }
 
 .home-image-container {
     text-align:center;
     display: block;
     width: 1080px;
-    margin: 10px auto;
+    margin: 25px auto;
+}
+
+.home-image-container > .home-image-box {
+    display: inline-block;
+    width: 326px;
+    height: 176px;
+    margin: 0px 10px;
+    overflow: hidden;
+}
+
+.home-image-box > img {
+    width: 326px;
+    height: auto;
+}
+
+.home-image-box > img {
 }
