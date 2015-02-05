@@ -19,6 +19,10 @@ body {
     margin-right: 4px;
 }
 
+.right-btn-container > img {
+    cursor: pointer;
+}
+
 .left-btn-container {
     float: left;
     width: 34px;
@@ -27,6 +31,11 @@ body {
     margin-bottom: 3px;
     margin-left: 4px;
 }
+
+.left-btn-container > img {
+    cursor: pointer;
+}
+
 /* template editor end */
 
 /* common nav */
