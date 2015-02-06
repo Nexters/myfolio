@@ -10,19 +10,6 @@ body {
     background: #333333;
 }
 
-.right-btn-container {
-    float: right;
-    width: 34px;
-    height: 34px;
-    margin-top: 3px;
-    margin-bottom: 3px;
-    margin-right: 4px;
-}
-
-.right-btn-container > img {
-    cursor: pointer;
-}
-
 .left-btn-container {
     float: left;
     width: 34px;
@@ -34,6 +21,36 @@ body {
 
 .left-btn-container > img {
     cursor: pointer;
+}
+
+.right-btn-container {
+    position: absolute;
+    right: 4px;
+    width: 34px;
+    height: 34px;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    margin-right: 4px;
+}
+
+.right-btn-container > img {
+    cursor: pointer;
+}
+
+
+#toolbar_nav_title_container {
+    width: 600px;
+    color: #ffffff;
+    line-height: 40px;
+    margin-right: 80px;
+    text-align: right;
+    float: right;
+}
+
+#toolbar_nav_title_container > a {
+    cursor: pointer;
+    color: #ffffff;
+    margin: 0 15px;
 }
 
 /* template editor end */

@@ -6,6 +6,7 @@
         $('#template_editor_modify_btn').click(function() {
             $('.is-view-mode').addClass('hide');
             $('.is-edit-mode').removeClass('hide');
+            addTemplateNavTitleEvent();
         });
 
         $('#template_editor_save_btn').click(function() {
@@ -17,6 +18,18 @@
         $('#template_editor_cancel_btn').click(function() {
             $('.is-view-mode').removeClass('hide');
             $('.is-edit-mode').addClass('hide');
+        });
+    }
+
+    function addTemplateNavTitleEvent() {
+        var $item;
+        // 밑에 제목 내용 변경되면 위에 에디터 툴 제목 내용도 변경되도록 이벤트 바인딩!
+        $('.template-nav-menu > .is-edit-mode').children().each(function(idx, item) {
+            $item = $(item);
+            $('#toolbar_nav_title_container a:eq('+idx+')').text($item.val());
+            $item.blur(function() {
+                $('#toolbar_nav_title_container a:eq('+idx+')').text($(this).val());
+            });
         });
     }
 

@@ -36,14 +36,15 @@ nav {
 
 .template-nav-menu {
     display: block;
-    width: 400px;
+    width: 600px;
     height: 143px;
     padding-top: 90px;
     float: right;
 }
 
 .template-nav-menu > .template-nav-title {
-    text-align: center;
+    text-align: right;
+    margin-right: 47px;
     line-height: 20px;
 }
 
