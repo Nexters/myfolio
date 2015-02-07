@@ -33,10 +33,17 @@
         });
     }
 
+    function addTemplateSaveEvent() {
+        $('#template_editor_save_btn').on('TEMPLATE_SAVE_EVENT', function(e) {
+            console.log("SAVE");
+        });
+    }
+
     function initTemplate2() {
         initBackgroundImage();
         addNavTitleClickEvent();
         addBackgroundChangeEvent();
+        addTemplateSaveEvent();
     }
 
     initTemplate2();

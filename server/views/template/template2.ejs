@@ -11,16 +11,16 @@
     <% include toolbar.ejs %>
     <nav>
         <div class="template-nav-left-title">
-            <p class="is-view-mode">MY FOLIO</p>
-            <input type="text" class="is-edit-mode hide" value="MY FOLIO">
+            <p class="is-view-mode view-item">MY FOLIO</p>
+            <input type="text" class="is-edit-mode hide edit-item" value="MY FOLIO">
         </div>
         <div class="template-nav-menu">
-            <div class="template-nav-title is-view-mode">
+            <div class="template-nav-title is-view-mode view-item-parent">
                 <a class="nav-title-item">ABOUT</a>
                 <a class="nav-title-item">PICTURE</a>
                 <a class="nav-title-item">CONTACT</a>
             </div>
-            <div class="template-nav-title is-edit-mode hide">
+            <div class="template-nav-title is-edit-mode edit-item-parent hide">
                 <input type="text" class="nav-title-item" value="ABOUT" />
                 <input type="text" class="nav-title-item" value="PICTURE" />
                 <input type="text" class="nav-title-item" value="CONTACT" />
@@ -35,13 +35,13 @@
             <input id="background-file-upload-btn" type="file" name="files[]" data-url="/ajax/upload">
         </div>
         <div class="content-page1 home-content-container">
-            <div class="home-content-box is-view-mode">
+            <div class="home-content-box is-view-mode view-item">
                 <p>LET NO ONE</p>
                 <p>EVER COME TO YOU</p>
                 <p>WITHOUT LEAVING</p>
                 <p>BETTER AND HAPPIER</p>
             </div>
-            <textarea class="home-content-box is-edit-mode hide">
+            <textarea class="home-content-box is-edit-mode edit-item hide">
                 LET NO ONE
                 EVER COME TO YOU
                 WITHOUT LEAVING
@@ -146,6 +146,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/blueimp-file-upload/9.5.7/jquery.fileupload.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/blueimp-file-upload/9.5.7/jquery.iframe-transport.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/js/lightbox.min.js"></script>
+<script src="/javascripts/Util.js"></script>
 <script src="/javascripts/template/common.js"></script>
 <script src="/javascripts/template/template2.js"></script>
 

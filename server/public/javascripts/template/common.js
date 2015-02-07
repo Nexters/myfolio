@@ -10,9 +10,34 @@
         });
 
         $('#template_editor_save_btn').click(function() {
+            var $editItemParent, $viewItemParent, $editItem, $viewItem;
+            // TODO: is-edit-mode에 있는 내용들 is-view-mode로 복사!
+            $('.edit-item-parent').each(function(pidx, pitem) {
+                $editItemParent = $(pitem);
+                $viewItemParent = $editItemParent.parent().children('.view-item-parent');
+                $editItemParent.children().each(function(cidx, citem) {
+                    $editItem = $(citem);
+                    $viewItem = $viewItemParent.children().eq(cidx);
+                    $viewItem.text($editItem.val());
+                });
+            });
+            $('.edit-item').each(function(idx, item) {
+                $editItem = $(item);
+                $viewItem = $editItem.parent().children('.view-item');
+                if ($editItem[0].tagName === "INPUT") {
+                    $viewItem.text($editItem.val());
+                }
+                if ($editItem[0].tagName === "TEXTAREA") {
+                    $viewItem.text(Util.makeTextareaValueToHtmlTag($editItem.val()));
+                }
+                if ($editItem[0].tagName === "IMG") {
+                    // TODO: 이미지일 때 예외 처리
+                }
+            });
+            $('#template_editor_save_btn').trigger('TEMPLATE_SAVE_EVENT');
             $('.is-view-mode').removeClass('hide');
             $('.is-edit-mode').addClass('hide');
-            //TODO: is-edit-mode에 있는 내용들 is-view-mode로 복사!
+            // TODO: 서버로 변경된 HTML 전송!
         });
 
         $('#template_editor_cancel_btn').click(function() {
