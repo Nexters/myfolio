@@ -7,7 +7,7 @@ var BaseController = require('./Base'),
     Busboy = require('busboy');
 
 function UploadController() {
-    if(!(this instanceof UploadController)) {
+    if (!(this instanceof UploadController)) {
         return new UploadController();
     }
 }
