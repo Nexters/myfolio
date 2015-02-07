@@ -8,23 +8,78 @@
     <script src="https://code.jquery.com/ui/1.11.2/jquery-ui.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/blueimp-file-upload/9.5.7/jquery.fileupload.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/blueimp-file-upload/9.5.7/jquery.iframe-transport.min.js"></script>
-    <script src="/javascripts/template/template1.js"></script>
+    <script src="/javascripts/template/template3.js"></script>
+    <style>
+        header{
+            width:100%;
+            margin: 0 auto;
+            position:fixed;
+            z-index: 2;
+        }
+        header nav{
+            background-color: #11171C;
+            padding-top: 0px;
+        }
+        nav ul{
+            list-style-type:none;
+            text-align: center;
+            width: 100%;
+            height: 60px;
+            display: block;
+        }
+
+        nav ul li{
+            display: inline-block;
+            margin-left: 30px;
+            margin-right:30px;
+        }
+
+        .nav_btn{
+            padding-top: 20px;
+            border-color: #11171C;
+            border-style: solid;
+            width: 110px;
+            height: 60px;
+            text-decoration: none;
+        }
+
+        .nav_btn:active {
+            border-top-color: #CC4d4d;
+            border-style: solid;
+            border-top-width: 3px;
+        }
+
+        nav ul li a{
+            color:#ffffff;
+            text-decoration:none;
+            text-transform: uppercase;
+        }
+
+        article{
+            align-items: center;
+        }
+    </style>
 </head>
 
 <body>
+<header id="template3_header">
     <% include toolbar.ejs %>
     <nav>
-        <div class="common-nav-menu">
-            <div class="common-nav-title is-view-mode">
-                <a class="nav-title-item">Home</a>
-                <a class="nav-title-item">Portfolio</a>
-                <a class="nav-title-item">Contact</a>
-            </div>
-        </div>
+        <ul>
+            <li><a href="#first"><div class="nav_btn" onclick="navFunction(1)">Home</div></a></li>
+            <li><a href="#second"><div class="nav_btn" onclick="navFunction(2)">Portfolio</div></a></li>
+            <li><a href="#third"><div class="nav_btn" onclick="navFunction(3)">contact</div></a></li>
+        </ul>
     </nav>
-    <div class="first">
-
-    </div>
+</header>
+<div class="first">
+    <section>
+        <article>
+            <p>I'M FUCKING COOL SIC</p>
+            <p>SICK GEEK NOTORIOUS</p>
+        </article>
+    </section>
+</div>
     <div class="second">
         <div class="sec_comment is-view-mode">
             <br/><br/>
