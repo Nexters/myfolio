@@ -9,19 +9,41 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/blueimp-file-upload/9.5.7/jquery.fileupload.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/blueimp-file-upload/9.5.7/jquery.iframe-transport.min.js"></script>
     <script src="/javascripts/template/template1.js"></script>
+    <style>
+        nav{
+            background-color: #11171C;
+        }
+
+        nav ul{
+            list-style-type:none;
+            align: center;
+        }
+
+        nav ul li{
+            display: inline;
+            margin: 15px;
+        }
+
+
+        nav ul li a{
+            color:#ffffff;
+            text-decoration:none;
+            text-transform: uppercase;
+        }
+    </style>
 </head>
 
 <body>
-    <% include toolbar.ejs %>
-    <nav>
-        <div class="common-nav-menu">
-            <div class="common-nav-title is-view-mode">
-                <a class="nav-title-item">Home</a>
-                <a class="nav-title-item">Portfolio</a>
-                <a class="nav-title-item">Contact</a>
-            </div>
-        </div>
-    </nav>
+    <header>
+        <% include toolbar.ejs %>
+        <nav>
+            <ul>
+                <li><a href="#first">Home</a></li>
+                <li><a href="#second">Portfolio</a></li>
+                <li><a href="#third">contact</a></li>
+            </ul>
+        </nav>
+    </header>
     <div class="first">
 
     </div>
