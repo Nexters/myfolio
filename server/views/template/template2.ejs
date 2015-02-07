@@ -11,7 +11,8 @@
     <% include toolbar.ejs %>
     <nav>
         <div class="template-nav-left-title">
-            MY FOLIO
+            <p class="is-view-mode">MY FOLIO</p>
+            <input type="text" class="is-edit-mode hide" value="MY FOLIO">
         </div>
         <div class="template-nav-menu">
             <div class="template-nav-title is-view-mode">
@@ -29,6 +30,10 @@
 
     <!-- content page1 start -->
     <div class="content-page1 common-page-container">
+        <div class="background-image-change-btn is-edit-mode hide">
+            <img src="/images/template2/temp2_edit_icon01.png" />
+            EDIT IMAGE
+        </div>
         <div class="content-page1 home-content-container">
             <div class="home-content-box is-view-mode">
                 <p>LET NO ONE</p>
@@ -36,19 +41,28 @@
                 <p>WITHOUT LEAVING</p>
                 <p>BETTER AND HAPPIER</p>
             </div>
+            <textarea class="home-content-box is-edit-mode hide">
+                LET NO ONE
+                EVER COME TO YOU
+                WITHOUT LEAVING
+                BETTER AND HAPPIER
+            </textarea>
         </div>
-        <div class="home-image-container is-view-mode">
+        <div class="home-image-container">
             <div class="home-image-box">
+                <i class="image-change-btn is-edit-mode hide"></i>
                 <a href="/images/template2/temp2_box01.png" data-lightbox="roadtrip">
                     <img src="/images/template2/temp2_box01.png" />
                 </a>
             </div>
             <div class="home-image-box">
+                <i class="image-change-btn is-edit-mode hide"></i>
                 <a href="/images/template2/temp2_box02.png" data-lightbox="roadtrip">
                     <img src="/images/template2/temp2_box02.png" />
                 </a>
             </div>
             <div class="home-image-box">
+                <i class="image-change-btn is-edit-mode hide"></i>
                 <a href="/images/template2/temp2_box03.png" data-lightbox="roadtrip">
                     <img src="/images/template2/temp2_box03.png" />
                 </a>
@@ -89,8 +103,9 @@
 
     <footer>
         <div class="common-footer-menu">
-            <div class="common-footer-title is-view-mode">
-                <div>MY FOLIO | BY NNNNA</div>
+            <div class="common-footer-title">
+                <div class="is-view-mode">MY FOLIO | BY NNNNA</div>
+                <input type="text" class="is-edit-mode hide" value="MY FOLIO | BY NNNNA" />
             </div>
         </div>
     </footer>

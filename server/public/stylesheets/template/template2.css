@@ -74,6 +74,20 @@ footer > .common-footer-menu > .common-footer-title {
 
 /* template footer end */
 
+.background-image-change-btn {
+
+}
+
+i.image-change-btn {
+    background-image: url("/images/template2/temp2_edit_icon02.png");
+    background-size: 30px;
+    position: absolute;
+    margin-top: 4px;
+    margin-left: 4px;
+    width: 30px;
+    height: 30px;
+}
+
 .home-content-container {
     height: 700px;
 }
