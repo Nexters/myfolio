@@ -9,47 +9,18 @@ body {
     margin: 0px;
     width: 100%;
     background-color: #ffffff;
+    font-size: 12px;
 }
+
 @media all and (min-width:768px) {
     /* 768px 이상 해상도에서 실행할 CSS 코드를 여기에 작성 */
     body {
         margin: 0px;
         width: 100%;
         background-color: #ffffff;
+        font-size: 16px;
     }
 }
-@media all and (min-width:768px) and (max-width:1024px) {
-    /* 768px 이상 1024px 이하 해상도에서 실행할 CSS 코드를 여기에 작성 */
-    body {
-        margin: 0px;
-        width: 100%;
-        background-color: #ffffff;
-    }
-}
-@media all and (min-width:1025px) {
-    /* 1025px 이상 해상도에서 실행할 CSS 코드를 여기에 작성 */
-    body {
-        margin: 0px;
-        width: 100%;
-        background-color: #ffffff;
-    }
-}
-
-@media (max-width:360px){html{font-size:10px;}}
-@media (min-width:361px) and (max-width:399px){html{font-size:11px;}}
-@media (min-width:400px) and (max-width:439px){html{font-size:12px;}}
-@media (min-width:440px) and (max-width:479px){html{font-size:13px;}}
-@media (min-width:480px) and (max-width:519px){html{font-size:14px;}}
-@media (min-width:520px) and (max-width:559px){html{font-size:15px;}}
-@media (min-width:560px) and (max-width:599px){html{font-size:16px;}}
-@media (min-width:600px) and (max-width:639px){html{font-size:17px;}}
-@media (min-width:640px) and (max-width:679px){html{font-size:18px;}}
-@media (min-width:680px) and (max-width:719px){html{font-size:19px;}}
-@media (min-width:720px) and (max-width:759px){html{font-size:20px;}}
-@media (min-width:760px) and (max-width:799px){html{font-size:21px;}}
-@media (min-width:800px) and (max-width:839px){html{font-size:22px;}}
-@media (min-width:840px) and (max-width:879px){html{font-size:23px;}}
-@media (min-width:880px){body{font-size:24px;}}
 
 /* template editor */
 #template_editor {
@@ -85,12 +56,22 @@ nav {
 
 /*page1 common page */
 
-.page1 {
+#page1 {
     width: 100%;
     height: 100%;
     max-height: 789px;
     margin-top: -1%;
     padding-top: 1%;
+}
+@media all and (min-width:768px) {
+    /* 768px 이상 해상도에서 실행할 CSS 코드를 여기에 작성 */
+    #page1 {
+        width: 100%;
+        height: 100%;
+        max-height: 789px;
+        margin-top: -1%;
+        padding-top: 1%;
+    }
 }
 
 div.common-page-container {
@@ -106,7 +87,16 @@ div.common-page-container {
 .home-content-container {
     height: auto;
     max-height: 700px;
-    padding-top: 150px;
+    padding-top: 120px;
+}
+
+@media all and (min-width:768px) {
+    /* 768px 이상 해상도에서 실행할 CSS 코드를 여기에 작성 */
+    .home-content-container {
+        height: auto;
+        max-height: 700px;
+        padding-top: 120px;
+    }
 }
 
 .home-title {
@@ -186,16 +176,31 @@ div.common-page-container {
 /* page1 common page end */
 
 /* page2 common page */
-.page2 {
+#page2 {
     text-align: center;
     width: 100%;
     height: 100%;
-    max-height: 856px;
+    max-height: 1600px;
     margin-top: 0px;
     padding-top: 9.58%; /* 82/856px */
-    padding-bottom: 5%;
+    padding-bottom: 35%;
     background:#FFFFFF;
 }
+
+@media all and (min-width:768px) {
+    /* 768px 이상 해상도에서 실행할 CSS 코드를 여기에 작성 */
+    #page2 {
+        text-align: center;
+        width: 100%;
+        height: 100%;
+        max-height: 856px;
+        margin-top: 0px;
+        padding-top: 2%; /* 82/856px */
+        padding-bottom: 3%;
+        background:#FFFFFF;
+    }
+}
+
 .page2-top-box {
     text-align: center;
     margin-left: 9.7%; /* 83/934px -3.64*/
@@ -242,8 +247,8 @@ div.common-page-container {
 div.page2-common-page-container {
     text-align: center;
     width: 100%;
-    height: 80%;
-    max-height: 700px;
+    height: 100%;
+    max-height: 1100px;
     padding-bottom: 5%;
     position: relative;
 }
@@ -255,6 +260,46 @@ div.page2-common-page-container {
     height:auto;
     max-height: 580px;
     margin: 0 auto;
+}
+
+@media all and (min-width:768px) and (max-width:1024px) {
+    /* 768px 이상 1024px 이하 해상도에서 실행할 CSS 코드를 여기에 작성 */
+    div.page2-common-page-container {
+        text-align: center;
+        width: 100%;
+        height: 80%;
+        max-height: 700px;
+        padding-bottom: 5%;
+        position: relative;
+    }
+
+    .page2-common-image-container {
+        text-align: left;
+        width: 80%;
+        max-width: 934px;
+        height:500px;
+        margin: 0 auto;
+    }
+}
+
+@media all and (min-width:1025px) {
+    /* 768px 이상 1024px 이하 해상도에서 실행할 CSS 코드를 여기에 작성 */
+    div.page2-common-page-container {
+        text-align: center;
+        width: 100%;
+        height: 80%;
+        max-height: 700px;
+        padding-bottom: 5%;
+        position: relative;
+    }
+
+    .page2-common-image-container {
+        text-align: left;
+        width: 80%;
+        max-width: 934px;
+        height:580px;
+        margin: 0 auto;
+    }
 }
 
 .page2-mid-big-button-left {
@@ -279,20 +324,17 @@ div.page2-common-page-container {
 
 .page2-bot-text-box{
     display: block;
-    min-width: 50px;
-    width: 100%;
+    width: 80%;
     height: inherit;
-    max-height: 161px;
+    max-height: 200px;
     background:rgba(255, 255, 255, .5);
-    margin-top: 31.1%;
-    margin-left: 15.4%;
     position: absolute;
     z-index:1;
+    margin-top: 55%;
 }
 
 .page2-bot-big-title {
-    margin-top: 1%;
-    margin-left: 5%;
+    margin-top: -7%;
     font-family: 'Roboto';
     font-size: 150%;/*24px/16*/
     width: inherit;
@@ -303,34 +345,207 @@ div.page2-common-page-container {
     color:#333333;
     position:absolute;
     word-break: normal;
+    margin-left: 20.4%;
 }
 
 .page2-bot-small-title {
-    margin-top: 5%;
-    margin-left:5%;
+    margin-top: 10%;
     font-family: 'Roboto';
     font-size: 0.875em; /*14/16*/
     width: inherit;
-    max-width: 50%;
+    max-width: 500px;
     height: auto;
     line-height: 1.625em;
     text-align: left;
     color:#333333;
     position:absolute;
     word-break: normal;
+    margin-left: 20.4%;
 }
+
+@media all and (min-width:768px) and (max-width:1024px) {
+    /* 768px 이상 1024px 이하 해상도에서 실행할 CSS 코드를 여기에 작성 */
+    .page2-bot-text-box{
+        display: block;
+        width: 100%;
+        height: inherit;
+        max-height: 161px;
+        background:rgba(255, 255, 255, .5);
+        margin-top: 45%;
+        position: absolute;
+        z-index:1;
+    }
+
+    .page2-bot-big-title {
+        margin-top: 0%;
+        font-family: 'Roboto';
+        font-size: 150%;/*24px/16*/
+        width: inherit;
+        max-width: 70%;
+        height: auto;
+        line-height: 2.63em;
+        text-align: left;
+        color:#333333;
+        position:absolute;
+        word-break: normal;
+        margin-left: 20.4%;
+    }
+
+    .page2-bot-small-title {
+        margin-top: 5%;
+        font-family: 'Roboto';
+        font-size: 0.875em; /*14/16*/
+        width: inherit;
+        max-width: 500px;
+        height: auto;
+        line-height: 1.625em;
+        text-align: left;
+        color:#333333;
+        position:absolute;
+        word-break: normal;
+        margin-left: 20.4%;
+    }
+}
+
+@media all and (min-width:1025px) and (max-width:1365px) {
+    /* 1025px 이상 1365px 이하 해상도에서 실행할 CSS 코드를 여기에 작성 */
+    .page2-bot-text-box{
+        display: block;
+        width: 100%;
+        height: inherit;
+        max-height: 161px;
+        background:rgba(255, 255, 255, .5);
+        margin-top: 34%;
+        position: absolute;
+        z-index:1;
+    }
+
+    .page2-bot-big-title {
+        margin-top: 1%;
+        font-family: 'Roboto';
+        font-size: 150%;/*24px/16*/
+        width: inherit;
+        max-width: 70%;
+        height: auto;
+        line-height: 2.63em;
+        text-align: left;
+        color:#333333;
+        position:absolute;
+        word-break: normal;
+        margin-left: 20.4%;
+    }
+
+    .page2-bot-small-title {
+        margin-top: 5%;
+        font-family: 'Roboto';
+        font-size: 0.875em; /*14/16*/
+        width: inherit;
+        max-width: 500px;
+        height: auto;
+        line-height: 1.625em;
+        text-align: left;
+        color:#333333;
+        position:absolute;
+        word-break: normal;
+        margin-left: 20.4%;
+    }
+}
+
+@media all and (min-width:1365px) {
+    /* 768px 이상 1024px 이하 해상도에서 실행할 CSS 코드를 여기에 작성 */
+    .page2-bot-text-box{
+        display: block;
+        width: 100%;
+        height: inherit;
+        max-height: 161px;
+        background:rgba(255, 255, 255, .5);
+        margin-top: 31.5%;
+        position: absolute;
+        z-index:1;
+    }
+
+    .page2-bot-big-title {
+        margin-top: 1%;
+        font-family: 'Roboto';
+        font-size: 150%;/*24px/16*/
+        width: inherit;
+        max-width: 70%;
+        height: auto;
+        line-height: 2.63em;
+        text-align: left;
+        color:#333333;
+        position:absolute;
+        word-break: normal;
+        margin-left: 20.4%;
+    }
+
+    .page2-bot-small-title {
+        margin-top: 5%;
+        font-family: 'Roboto';
+        font-size: 0.875em; /*14/16*/
+        width: inherit;
+        max-width: 500px;
+        height: auto;
+        line-height: 1.625em;
+        text-align: left;
+        color:#333333;
+        position:absolute;
+        word-break: normal;
+        margin-left: 20.4%;
+    }
+}
+
 /* page2 common page end */
 
 /* page3 common page*/
-.page3 {
+#page3 {
     text-align: center;
     width: 100%;
     height: 100%;
     max-height: 740px;
-    margin-top: 0px;
-    padding-top: 5%; /* 82/856px */
+    margin-top: 200px;
+    padding-top: 2%; /* 82/856px */
     background: #cccccc;
 }
+@media all and (min-width:768px) {
+    /* 768px 이상 해상도에서 실행할 CSS 코드를 여기에 작성 */
+    #page3 {
+        text-align: center;
+        width: 100%;
+        height: 100%;
+        max-height: 740px;
+        margin-top: 200px;
+        padding-top: 1%; /* 82/856px */
+        background: #cccccc;
+    }
+}
+
+@media all and (min-width:768px) and (max-width:1024px) {
+    /* 768px 이상 1024px 이하 해상도에서 실행할 CSS 코드를 여기에 작성 */
+    #page3 {
+        text-align: center;
+        width: 100%;
+        height: 100%;
+        max-height: 740px;
+        margin-top: 0px;
+        padding-top: 3%; /* 82/856px */
+        background: #cccccc;
+    }
+}
+
+@media all and (min-width:1025px) {
+    /* 768px 이상 해상도에서 실행할 CSS 코드를 여기에 작성 */
+    #page3 {
+        text-align: center;
+        width: 100%;
+        height: 100%;
+        max-height: 740px;
+        margin-top: 0px;
+        padding-top: 5%; /* 82/856px */
+        background: #cccccc;
+    }
+}
+
 
 .page3-top-title {
     text-align: center;
@@ -366,7 +581,7 @@ div.page2-common-page-container {
     max-width: 600px;
     height: auto;
     margin: 0 auto;
-    margin-bottom: 9%;
+    margin-bottom: 4%;
 }
 
 .page3-contact-name-box {
@@ -430,7 +645,7 @@ div.page2-common-page-container {
 }
 
 .page3-contact-sns-image-container {
-    margin-bottom: 5%;
+    margin-bottom: 3%;
 }
 
 .page3-contact-sns-image {
