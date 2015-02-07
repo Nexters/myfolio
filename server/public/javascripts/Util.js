@@ -3,16 +3,14 @@
 var Util = {
     makeTextareaValueToHtmlTag: function(textareaValue) {
         var strArray = textareaValue.split('\n');
-        var resultStr = "";
+        var resultHtml = "";
         var str, i;
 
         for (i=0; i<strArray.length; i++) {
-            str = strArray[i];
-            str = str.trim();
-            str = "<p>"+str+"</p>";
-            resultStr += str;
+            str = "<p>" + strArray[i].trim() + "</p>";
+            resultHtml += str;
         }
 
-        return resultStr;
+        return resultHtml;
     }
 };
