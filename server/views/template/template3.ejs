@@ -10,10 +10,15 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/blueimp-file-upload/9.5.7/jquery.iframe-transport.min.js"></script>
     <script src="/javascripts/template/template1.js"></script>
     <style>
-        nav{
-            background-color: #11171C;
-        }
+        header{
+            width:100%;
+            margin: 0 auto;
 
+        }
+        header nav{
+            background-color: #11171C;
+            padding-top: 20px;
+        }
         nav ul{
             list-style-type:none;
             align: center;
@@ -24,17 +29,24 @@
             margin: 15px;
         }
 
+        nav li a:hover { color: #CC4d4d; text-decoration: none; }
 
         nav ul li a{
             color:#ffffff;
             text-decoration:none;
             text-transform: uppercase;
+            text-decoration:none;
+
+        }
+
+        article{
+            align-items: center;
         }
     </style>
 </head>
 
 <body>
-    <header>
+    <header id="template3_header">
         <% include toolbar.ejs %>
         <nav>
             <ul>
@@ -45,7 +57,12 @@
         </nav>
     </header>
     <div class="first">
-
+        <section>
+            <article>
+                <p>I'M FUCKING COOL SIC</p>
+                <p>SICK GEEK NOTORIOUS</p>
+            </article>
+        </section>
     </div>
     <div class="second">
         <div class="sec_comment is-view-mode">
