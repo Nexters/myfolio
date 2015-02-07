@@ -34,6 +34,10 @@ nav {
     font-size: 36px;
 }
 
+.template-nav-left-title > input {
+    width: 400px;
+}
+
 .template-nav-menu {
     display: block;
     width: 600px;
@@ -75,10 +79,21 @@ footer > .common-footer-menu > .common-footer-title {
 /* template footer end */
 
 .background-image-change-btn {
+    position: absolute;
+    font-family: BigJohn;
+    font-size: 20px;
+    margin-top: 10px;
+    margin-left: 10px;
+}
 
+.background-image-change-btn > img {
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
 }
 
 i.image-change-btn {
+    cursor: pointer;
     background-image: url("/images/template2/temp2_edit_icon02.png");
     background-size: 30px;
     position: absolute;
@@ -126,7 +141,4 @@ i.image-change-btn {
 .home-image-box > img {
     width: 326px;
     height: auto;
-}
-
-.home-image-box > img {
 }
