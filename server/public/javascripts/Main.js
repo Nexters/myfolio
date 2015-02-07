@@ -25,7 +25,7 @@
      }
      });
      }
-     */
+    */
 
     function addLoginEvent() {
         $('#login_modal_login_btn').click(function() {

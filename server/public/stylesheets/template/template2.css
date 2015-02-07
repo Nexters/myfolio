@@ -14,8 +14,8 @@
 
 body {
     width: 100%;
-    background: url('/images/template2/temp2_background.png') no-repeat;
-    background-size: cover;
+    /*background: url('/images/template2/temp2_background.png') no-repeat;*/
+    /*background-size: cover;*/
 }
 
 /* template nav */
@@ -82,14 +82,27 @@ footer > .common-footer-menu > .common-footer-title {
     position: absolute;
     font-family: BigJohn;
     font-size: 20px;
+    width: 30px;
+    height: 30px;
     margin-top: 10px;
     margin-left: 10px;
 }
 
 .background-image-change-btn > img {
     cursor: pointer;
+    position: absolute;
     width: 30px;
     height: 30px;
+}
+
+/* 파일 업로드 버튼 안보이도록 작업 */
+#background-file-upload-btn {
+    cursor: pointer;
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    font-size: 45px;
+    opacity: 0;
 }
 
 i.image-change-btn {

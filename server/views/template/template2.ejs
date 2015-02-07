@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/css/lightbox.css">
 </head>
 
-<body>
+<body data-background="/images/template2/temp2_background.png">
     <% include toolbar.ejs %>
     <nav>
         <div class="template-nav-left-title">
@@ -32,7 +32,7 @@
     <div class="content-page1 common-page-container">
         <div class="background-image-change-btn is-edit-mode hide">
             <img src="/images/template2/temp2_edit_icon02.png" />
-            EDIT IMAGE
+            <input id="background-file-upload-btn" type="file" name="files[]" data-url="/ajax/upload">
         </div>
         <div class="content-page1 home-content-container">
             <div class="home-content-box is-view-mode">
@@ -100,6 +100,36 @@
         </div>
     </div>
     <!-- content page2 end -->
+
+    <!-- content page3 start -->
+    <div class="content-page3 common-page-container hide">
+        <div class="home-content-container">
+            <div class="home-content-box is-view-mode">
+                <p>LET NO ONE</p>
+                <p>EVER COME TO YOU</p>
+                <p>WITHOUT LEAVING</p>
+                <p>BETTER AND HAPPIER</p>
+            </div>
+        </div>
+        <div class="home-image-container is-view-mode">
+            <div class="home-image-box">
+                <a href="/images/template2/temp2_box01.png" data-lightbox="page2">
+                    <img src="/images/template2/temp2_box01.png" />
+                </a>
+            </div>
+            <div class="home-image-box">
+                <a href="/images/template2/temp2_box02.png" data-lightbox="page2">
+                    <img src="/images/template2/temp2_box02.png" />
+                </a>
+            </div>
+            <div class="home-image-box">
+                <a href="/images/template2/temp2_box03.png" data-lightbox="page2">
+                    <img src="/images/template2/temp2_box03.png" />
+                </a>
+            </div>
+        </div>
+    </div>
+    <!-- content page3 end -->
 
     <footer>
         <div class="common-footer-menu">

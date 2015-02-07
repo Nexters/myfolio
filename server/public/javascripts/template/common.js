@@ -18,6 +18,7 @@
         $('#template_editor_cancel_btn').click(function() {
             $('.is-view-mode').removeClass('hide');
             $('.is-edit-mode').addClass('hide');
+            //TODO: 배경 이미지 바꿨으면 다시 원래대로 돌려야함!
         });
     }
 
@@ -33,9 +34,9 @@
         });
     }
 
-    function init() {
+    function initCommon() {
         addEditorEvent();
     }
 
-    init();
+    initCommon();
 }());
