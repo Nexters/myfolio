@@ -28,7 +28,7 @@
                     $viewItem.text($editItem.val());
                 }
                 if ($editItem[0].tagName === "TEXTAREA") {
-                    $viewItem.text(Util.makeTextareaValueToHtmlTag($editItem.val()));
+                    $viewItem.html(Util.makeTextareaValueToHtmlTag($editItem.val()));
                 }
                 if ($editItem[0].tagName === "IMG") {
                     // TODO: 이미지일 때 예외 처리

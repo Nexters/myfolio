@@ -8,7 +8,7 @@
 </head>
 
 <body data-background="/images/template2/temp2_background.png">
-    <% include toolbar.ejs %>
+    <% include ../Toolbar.ejs %>
     <nav>
         <div class="template-nav-left-title">
             <p class="is-view-mode view-item">MY FOLIO</p>
@@ -141,13 +141,7 @@
     </footer>
 </body>
 
-<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
-<script src="https://code.jquery.com/ui/1.11.2/jquery-ui.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/blueimp-file-upload/9.5.7/jquery.fileupload.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/blueimp-file-upload/9.5.7/jquery.iframe-transport.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/js/lightbox.min.js"></script>
-<script src="/javascripts/Util.js"></script>
-<script src="/javascripts/template/common.js"></script>
+<% include ../CommonLib.ejs %>
 <script src="/javascripts/template/template2.js"></script>
 
 </html>
