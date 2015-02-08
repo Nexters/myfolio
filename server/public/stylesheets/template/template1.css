@@ -24,6 +24,7 @@ body {
 
 /* common nav */
 nav {
+    min-width: 1100px;
     height: 60px;
 }
 
