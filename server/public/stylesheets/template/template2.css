@@ -100,16 +100,7 @@ footer > .common-footer-menu > .common-footer-title {
 }
 
 /* 파일 업로드 버튼 안보이도록 작업 */
-.background-file-upload-btn {
-    cursor: pointer;
-    position: absolute;
-    width: 30px;
-    height: 30px;
-    font-size: 45px;
-    opacity: 0;
-}
-
-.image-file-upload-btn {
+.hided-input-file-btn {
     cursor: pointer;
     position: absolute;
     width: 30px;

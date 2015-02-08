@@ -23,6 +23,19 @@
         });
     }
 
+    function _makeHomeImageBoxHtml(imageUrl, lightBoxData) {
+        var html = "";
+        html += '<div class="home-image-box">';
+        html += '<i class="image-change-btn is-edit-mode hide"></i>';
+        html += '<input class="image-file-upload-btn hided-input-file-btn is-edit-mode hide" type="file" name="files[]" data-url="/ajax/upload">';
+        html += '<a class="view-image-item" href="' + imageUrl + '" data-image="' + imageUrl + '" data-lightbox="' + lightBoxData + '">';
+        html += '<img class="edit-image-item" src="' + imageUrl + '"/>';
+        html += '</a>';
+        html += '</div>';
+
+        return html;
+    }
+
     function initBackgroundImage() {
         var backgroundImage = $('body').data('background');
         $('body').css('background', 'url("' + backgroundImage + '") no-repeat');
@@ -76,6 +89,22 @@
         });
     }
 
+    function addImageAddEvent() {
+        $('.new-image-file-upload-btn').fileupload({
+            dataType: 'json',
+            progressall: function (e, data) {
+                console.log("progress");
+            },
+            done: function (e, data) {
+                var uploadedImageUrl = "/image/" + data.result;
+                var $tmpImageBox = $(this).parents('.home-image-box');
+                var insertedHtml = _makeHomeImageBoxHtml(uploadedImageUrl, 'page2_lightbox');
+
+                $tmpImageBox.before(insertedHtml);
+            }
+        });
+    }
+
     function addTemplateSaveEvent() {
         $('#template_editor_save_btn').on('TEMPLATE_SAVE_EVENT', function(e) {
             console.log("SAVE");
@@ -89,6 +118,7 @@
         addEditorTilteClickEvent();
         addBackgroundChangeEvent();
         addImageChangeEvent();
+        addImageAddEvent();
         addTemplateSaveEvent();
     }
 

@@ -32,7 +32,7 @@
     <div class="content-page1 common-page-container">
         <div class="background-image-change-btn is-edit-mode hide">
             <img src="/images/template2/temp2_edit_icon01.png" />
-            <input class="background-file-upload-btn" type="file" name="files[]" data-url="/ajax/upload">
+            <input class="background-file-upload-btn hided-input-file-btn" type="file" name="files[]" data-url="/ajax/upload">
         </div>
         <div class="content-page1 home-content-container">
             <div class="home-content-box is-view-mode view-item">
@@ -51,23 +51,23 @@
         <div class="home-image-container">
             <div class="home-image-box">
                 <i class="image-change-btn is-edit-mode hide"></i>
-                <input class="image-file-upload-btn is-edit-mode hide" type="file" name="files[]" data-url="/ajax/upload">
+                <input class="image-file-upload-btn hided-input-file-btn is-edit-mode hide" type="file" name="files[]" data-url="/ajax/upload">
                 <a class="view-image-item" data-image="/images/template2/temp2_box01.png" data-lightbox="page1_lightbox">
-                    <img />
+                    <img class="edit-image-item"/>
                 </a>
             </div>
             <div class="home-image-box">
                 <i class="image-change-btn is-edit-mode hide"></i>
-                <input class="image-file-upload-btn is-edit-mode hide" type="file" name="files[]" data-url="/ajax/upload">
+                <input class="image-file-upload-btn hided-input-file-btn is-edit-mode hide" type="file" name="files[]" data-url="/ajax/upload">
                 <a class="view-image-item" data-image="/images/template2/temp2_box02.png" data-lightbox="page1_lightbox">
-                    <img />
+                    <img class="edit-image-item"/>
                 </a>
             </div>
             <div class="home-image-box">
                 <i class="image-change-btn is-edit-mode hide"></i>
-                <input class="image-file-upload-btn is-edit-mode hide" type="file" name="files[]" data-url="/ajax/upload">
+                <input class="image-file-upload-btn hided-input-file-btn is-edit-mode hide" type="file" name="files[]" data-url="/ajax/upload">
                 <a class="view-image-item" data-image="/images/template2/temp2_box03.png" data-lightbox="page1_lightbox">
-                    <img />
+                    <img class="edit-image-item"/>
                 </a>
             </div>
         </div>
@@ -78,12 +78,14 @@
     <div class="content-page2 common-page-container hide">
         <div class="background-image-change-btn is-edit-mode hide">
             <img src="/images/template2/temp2_edit_icon01.png" />
-            <input class="background-file-upload-btn" type="file" name="files[]" data-url="/ajax/upload">
+            <input class="background-file-upload-btn hided-input-file-btn" type="file" name="files[]" data-url="/ajax/upload">
         </div>
-        <div class="home-image-container is-view-mode">
+        <div class="home-image-container">
             <div class="home-image-box">
-                <a class="view-image-item is-edit-mode hide" data-image="/images/template2/temp2_box01.png" data-lightbox="page2_lightbox">
-                    <img />
+                <i class="image-change-btn is-edit-mode hide"></i>
+                <input class="new-image-file-upload-btn hided-input-file-btn is-edit-mode hide" type="file" name="files[]" data-url="/ajax/upload">
+                <a class="view-image-item is-edit-mode hide" onclick="return false;" data-image="/images/template2/temp2_box01.png">
+                    <img class="edit-image-item"/>
                 </a>
             </div>
         </div>

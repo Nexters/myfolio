@@ -30,10 +30,13 @@
                 if ($editItem[0].tagName === "TEXTAREA") {
                     $viewItem.html(Util.makeTextareaValueToHtmlTag($editItem.val()));
                 }
-                if ($editItem[0].tagName === "IMG") {
-                    // TODO: 이미지일 때 예외 처리
-                }
             });
+            $('.edit-image-item').each(function(idx, item) {
+                $editItem = $(item);
+                $viewItem = $editItem.parent();
+                $viewItem.attr('data-image',$editItem.attr('src'));
+            });
+
             $('#template_editor_save_btn').trigger('TEMPLATE_SAVE_EVENT');
             $('.is-view-mode').removeClass('hide');
             $('.is-edit-mode').addClass('hide');
