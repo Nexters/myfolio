@@ -23,6 +23,13 @@
         });
     }
 
+    /**
+     * 이미지 박스를 위한 HTML 만들어주는 내부 함수
+     * @param imageUrl
+     * @param lightBoxData
+     * @returns {string} html
+     * @private
+     */
     function _makeHomeImageBoxHtml(imageUrl, lightBoxData) {
         var html = "";
         html += '<div class="home-image-box">';
