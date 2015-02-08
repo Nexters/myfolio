@@ -164,7 +164,7 @@ i.image-change-btn {
     overflow: hidden;
 }
 
-.home-image-box > img {
+.home-image-box > .view-image-item > img {
     width: 326px;
     height: auto;
 }

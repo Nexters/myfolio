@@ -62,6 +62,20 @@
         });
     }
 
+    function addImageChangeEvent() {
+        $('.image-file-upload-btn').fileupload({
+            dataType: 'json',
+            progressall: function (e, data) {
+                console.log("progress");
+            },
+            done: function (e, data) {
+                var uploadedImageUrl = "/image/" + data.result;
+                $(this).parent().children('.view-image-item').attr('href',uploadedImageUrl);
+                $(this).parent().children('.view-image-item').children('img').attr('src',uploadedImageUrl);
+            }
+        });
+    }
+
     function addTemplateSaveEvent() {
         $('#template_editor_save_btn').on('TEMPLATE_SAVE_EVENT', function(e) {
             console.log("SAVE");
@@ -74,6 +88,7 @@
         addNavTitleClickEvent();
         addEditorTilteClickEvent();
         addBackgroundChangeEvent();
+        addImageChangeEvent();
         addTemplateSaveEvent();
     }
 
