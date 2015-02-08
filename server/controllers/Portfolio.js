@@ -37,8 +37,9 @@ PortfolioController.prototype.getUserPortfolio = function (req, res, next) {
         }
 
         content.isOwner = isOwner;  // isOwner: 유저 자신의 페이지인지 확인
-        portfolioFile = 'portfolio/' + result[0].PORTFOLIO_ID + '.ejs';
+        content.portfolioId = result[0].PORTFOLIO_ID;   // portfolioId: 포트폴리오 ID 설정
 
+        portfolioFile = 'portfolio/' + result[0].PORTFOLIO_ID + '.ejs';
         res.render(portfolioFile, content);
     });
 };

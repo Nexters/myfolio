@@ -21,6 +21,7 @@ TemplateController.prototype.run = function (req, res) {
 
     // TODO: Toolbar test 위해 표시. 삭제해야됨
     var content = {
+        portfolioId: 1,
         isOwner: true
     };
 

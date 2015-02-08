@@ -109,13 +109,30 @@ footer > .common-footer-menu > .common-footer-title {
     opacity: 0;
 }
 
+.new-image-file-upload-btn {
+    width: 326px!important;
+    height: 176px!important;
+}
+
 i.image-change-btn {
     cursor: pointer;
-    background-image: url("/images/template2/temp2_edit_icon01.png");
+    background-image: url("/images/template2/temp2_change_icon.png");
     background-size: 30px;
     position: absolute;
     margin-top: 4px;
     margin-left: 4px;
+    width: 30px;
+    height: 30px;
+}
+
+i.image-delete-btn {
+    cursor: pointer;
+    background-image: url("/images/template2/temp2_delete_icon.png");
+    background-size: 30px;
+    position: absolute;
+    float: right;
+    margin-top: 4px;
+    margin-left: 292px;
     width: 30px;
     height: 30px;
 }

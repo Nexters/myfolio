@@ -33,8 +33,9 @@
     function _makeHomeImageBoxHtml(imageUrl, lightBoxData) {
         var html = "";
         html += '<div class="home-image-box">';
-        html += '<i class="image-change-btn is-edit-mode hide"></i>';
-        html += '<input class="image-file-upload-btn hided-input-file-btn is-edit-mode hide" type="file" name="files[]" data-url="/ajax/upload">';
+        html += '<i class="image-change-btn is-edit-mode"></i>';
+        html += '<i class="image-delete-btn is-edit-mode"></i>';
+        html += '<input class="image-file-upload-btn hided-input-file-btn is-edit-mode" type="file" name="files[]" data-url="/ajax/upload">';
         html += '<a class="view-image-item" href="' + imageUrl + '" data-image="' + imageUrl + '" data-lightbox="' + lightBoxData + '">';
         html += '<img class="edit-image-item" src="' + imageUrl + '"/>';
         html += '</a>';
@@ -69,7 +70,7 @@
     }
 
     function addBackgroundChangeEvent() {
-        $('.background-file-upload-btn').fileupload({
+        $('.background-file-upload-btn').unbind('fileupload').fileupload({
             dataType: 'json',
             progressall: function (e, data) {
                 console.log("progress");
@@ -83,7 +84,7 @@
     }
 
     function addImageChangeEvent() {
-        $('.image-file-upload-btn').fileupload({
+        $('.image-file-upload-btn').unbind('fileupload').fileupload({
             dataType: 'json',
             progressall: function (e, data) {
                 console.log("progress");
@@ -96,8 +97,15 @@
         });
     }
 
+    function addImageDeleteEvent() {
+        $('.image-delete-btn').unbind('click').click(function() {
+            $(this).parent().remove();
+        });
+    }
+
+
     function addImageAddEvent() {
-        $('.new-image-file-upload-btn').fileupload({
+        $('.new-image-file-upload-btn').unbind('fileupload').fileupload({
             dataType: 'json',
             progressall: function (e, data) {
                 console.log("progress");
@@ -108,6 +116,8 @@
                 var insertedHtml = _makeHomeImageBoxHtml(uploadedImageUrl, 'page2_lightbox');
 
                 $tmpImageBox.before(insertedHtml);
+                addImageChangeEvent();
+                addImageDeleteEvent();
             }
         });
     }

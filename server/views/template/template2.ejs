@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="/bower_components/lightbox2/css/lightbox.css">
 </head>
 
-<body data-background="/images/template2/temp2_background.png" data-portfolio="">
+<body data-background="/images/template2/temp2_background.png" data-portfolio="<% if (typeof portfolioId !== "undefined") { %><%= portfolioId %><% } %>">
     <% include ../Toolbar.ejs %>
     <nav>
         <div class="template-nav-left-title">
@@ -31,7 +31,7 @@
     <!-- content page1 start -->
     <div class="content-page1 common-page-container">
         <div class="background-image-change-btn is-edit-mode hide">
-            <img src="/images/template2/temp2_edit_icon01.png" />
+            <img src="/images/template2/temp2_change_icon.png" />
             <input class="background-file-upload-btn hided-input-file-btn" type="file" name="files[]" data-url="/ajax/upload">
         </div>
         <div class="content-page1 home-content-container">
@@ -77,14 +77,13 @@
     <!-- content page2 start -->
     <div class="content-page2 common-page-container hide">
         <div class="background-image-change-btn is-edit-mode hide">
-            <img src="/images/template2/temp2_edit_icon01.png" />
+            <img src="/images/template2/temp2_change_icon.png" />
             <input class="background-file-upload-btn hided-input-file-btn" type="file" name="files[]" data-url="/ajax/upload">
         </div>
         <div class="home-image-container">
             <div class="home-image-box">
-                <i class="image-change-btn is-edit-mode hide"></i>
                 <input class="new-image-file-upload-btn hided-input-file-btn is-edit-mode hide" type="file" name="files[]" data-url="/ajax/upload">
-                <a class="view-image-item is-edit-mode hide" onclick="return false;" data-image="/images/template2/temp2_box01.png">
+                <a class="view-image-item image-change-btn is-edit-mode hide" onclick="return false;" data-image="/images/template2/temp2_edit_no_image.png">
                     <img class="edit-image-item"/>
                 </a>
             </div>
@@ -95,7 +94,7 @@
     <!-- content page3 start -->
     <div class="content-page3 common-page-container hide">
         <div class="background-image-change-btn is-edit-mode hide">
-            <img src="/images/template2/temp2_edit_icon01.png" />
+            <img src="/images/template2/temp2_change_icon.png" />
             <input class="background-file-upload-btn" type="file" name="files[]" data-url="/ajax/upload">
         </div>
         <div class="home-content-container">

@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="/bower_components/lightbox2/css/lightbox.css">
 </head>
 
-<body>
+<body data-portfolio="<% if (typeof portfolioId !== "undefined") { %><%= portfolioId %><% } %>">
 <% include ../Toolbar.ejs %>
 
 <div id="page1">
