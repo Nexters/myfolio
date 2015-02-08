@@ -30,9 +30,9 @@
      * @returns {string} html
      * @private
      */
-    function _makeHomeImageBoxHtml(imageUrl, lightBoxData) {
+    function _makePhotoImageBoxHtml(imageUrl, lightBoxData) {
         var html = "";
-        html += '<div class="home-image-box">';
+        html += '<div class="photo-image-box">';
         html += '<i class="image-change-btn is-edit-mode"></i>';
         html += '<i class="image-delete-btn is-edit-mode"></i>';
         html += '<input class="image-file-upload-btn hided-input-file-btn is-edit-mode" type="file" name="files[]" data-url="/ajax/upload">';
@@ -112,8 +112,8 @@
             },
             done: function (e, data) {
                 var uploadedImageUrl = "/image/" + data.result;
-                var $tmpImageBox = $(this).parents('.home-image-box');
-                var insertedHtml = _makeHomeImageBoxHtml(uploadedImageUrl, 'page2_lightbox');
+                var $tmpImageBox = $(this).parents('.add-photo-image-box');
+                var insertedHtml = _makePhotoImageBoxHtml(uploadedImageUrl, 'page2_lightbox');
 
                 $tmpImageBox.before(insertedHtml);
                 addImageChangeEvent();

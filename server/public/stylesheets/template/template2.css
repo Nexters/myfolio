@@ -110,8 +110,8 @@ footer > .common-footer-menu > .common-footer-title {
 }
 
 .new-image-file-upload-btn {
-    width: 326px!important;
-    height: 176px!important;
+    width: 1000px!important;
+    height: 600px!important;
 }
 
 i.image-change-btn {
@@ -132,7 +132,7 @@ i.image-delete-btn {
     position: absolute;
     float: right;
     margin-top: 4px;
-    margin-left: 292px;
+    margin-left: 966px;
     width: 30px;
     height: 30px;
 }
@@ -176,3 +176,37 @@ i.image-delete-btn {
     width: 326px;
     height: auto;
 }
+
+.photo-image-container {
+    text-align:center;
+    display: block;
+    width: 1080px;
+    margin: 25px auto;
+}
+
+.photo-image-container > .add-photo-image-box {
+    display: inline-block;
+    width: 1000px;
+    height: 600px;
+    margin: 0px 10px;
+    overflow: hidden;
+}
+
+.photo-image-container > .photo-image-box {
+    display: inline-block;
+    width: 1000px;
+    height: 600px;
+    margin: 0px 10px;
+    overflow: hidden;
+}
+
+.add-photo-image-box > .view-image-item > img {
+    width: 1000px;
+    height: auto;
+}
+
+.photo-image-box > .view-image-item > img {
+    width: 1000px;
+    height: auto;
+}
+
