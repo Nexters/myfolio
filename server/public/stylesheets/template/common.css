@@ -53,6 +53,10 @@ body {
     margin: 0 15px;
 }
 
+#toolbar_nav_title_container > .selected {
+    border-bottom: solid 1px;
+}
+
 /* template editor end */
 
 /* common nav */

@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/css/lightbox.css">
 </head>
 
-<body data-background="/images/template2/temp2_background.png">
+<body data-background="/images/template2/temp2_background.png" data-portfolio="">
     <% include ../Toolbar.ejs %>
     <nav>
         <div class="template-nav-left-title">
@@ -16,7 +16,7 @@
         </div>
         <div class="template-nav-menu">
             <div class="template-nav-title is-view-mode view-item-parent">
-                <a class="nav-title-item">ABOUT</a>
+                <a class="nav-title-item selected">ABOUT</a>
                 <a class="nav-title-item">PICTURE</a>
                 <a class="nav-title-item">CONTACT</a>
             </div>
@@ -32,7 +32,7 @@
     <div class="content-page1 common-page-container">
         <div class="background-image-change-btn is-edit-mode hide">
             <img src="/images/template2/temp2_edit_icon01.png" />
-            <input id="background-file-upload-btn" type="file" name="files[]" data-url="/ajax/upload">
+            <input class="background-file-upload-btn" type="file" name="files[]" data-url="/ajax/upload">
         </div>
         <div class="content-page1 home-content-container">
             <div class="home-content-box is-view-mode view-item">
@@ -51,20 +51,23 @@
         <div class="home-image-container">
             <div class="home-image-box">
                 <i class="image-change-btn is-edit-mode hide"></i>
-                <a href="/images/template2/temp2_box01.png" data-lightbox="page1">
-                    <img src="/images/template2/temp2_box01.png" />
+                <input class="image-file-upload-btn" type="file" name="files[]" data-url="/ajax/upload">
+                <a class="view-image-item" data-image="/images/template2/temp2_box01.png" data-lightbox="page1_lightbox">
+                    <img />
                 </a>
             </div>
             <div class="home-image-box">
                 <i class="image-change-btn is-edit-mode hide"></i>
-                <a href="/images/template2/temp2_box02.png" data-lightbox="page1">
-                    <img src="/images/template2/temp2_box02.png" />
+                <input class="image-file-upload-btn" type="file" name="files[]" data-url="/ajax/upload">
+                <a class="view-image-item" data-image="/images/template2/temp2_box02.png" data-lightbox="page1_lightbox">
+                    <img />
                 </a>
             </div>
             <div class="home-image-box">
                 <i class="image-change-btn is-edit-mode hide"></i>
-                <a href="/images/template2/temp2_box03.png" data-lightbox="page1">
-                    <img src="/images/template2/temp2_box03.png" />
+                <input class="image-file-upload-btn" type="file" name="files[]" data-url="/ajax/upload">
+                <a class="view-image-item" data-image="/images/template2/temp2_box03.png" data-lightbox="page1_lightbox">
+                    <img />
                 </a>
             </div>
         </div>
@@ -73,28 +76,14 @@
 
     <!-- content page2 start -->
     <div class="content-page2 common-page-container hide">
-        <div class="home-content-container">
-            <div class="home-content-box is-view-mode">
-                <p>LET NO ONE</p>
-                <p>EVER COME TO YOU</p>
-                <p>WITHOUT LEAVING</p>
-                <p>BETTER AND HAPPIER</p>
-            </div>
+        <div class="background-image-change-btn is-edit-mode hide">
+            <img src="/images/template2/temp2_edit_icon01.png" />
+            <input class="background-file-upload-btn" type="file" name="files[]" data-url="/ajax/upload">
         </div>
         <div class="home-image-container is-view-mode">
             <div class="home-image-box">
-                <a href="/images/template2/temp2_box01.png" data-lightbox="page2">
-                    <img src="/images/template2/temp2_box01.png" />
-                </a>
-            </div>
-            <div class="home-image-box">
-                <a href="/images/template2/temp2_box02.png" data-lightbox="page2">
-                    <img src="/images/template2/temp2_box02.png" />
-                </a>
-            </div>
-            <div class="home-image-box">
-                <a href="/images/template2/temp2_box03.png" data-lightbox="page2">
-                    <img src="/images/template2/temp2_box03.png" />
+                <a class="view-image-item" data-image="/images/template2/temp2_box01.png" data-lightbox="page2_lightbox">
+                    <img />
                 </a>
             </div>
         </div>
@@ -103,30 +92,19 @@
 
     <!-- content page3 start -->
     <div class="content-page3 common-page-container hide">
-        <div class="home-content-container">
-            <div class="home-content-box is-view-mode">
-                <p>LET NO ONE</p>
-                <p>EVER COME TO YOU</p>
-                <p>WITHOUT LEAVING</p>
-                <p>BETTER AND HAPPIER</p>
-            </div>
+        <div class="background-image-change-btn is-edit-mode hide">
+            <img src="/images/template2/temp2_edit_icon01.png" />
+            <input class="background-file-upload-btn" type="file" name="files[]" data-url="/ajax/upload">
         </div>
-        <div class="home-image-container is-view-mode">
-            <div class="home-image-box">
-                <a href="/images/template2/temp2_box01.png" data-lightbox="page2">
-                    <img src="/images/template2/temp2_box01.png" />
-                </a>
+        <div class="home-content-container">
+            <div class="home-content-box is-view-mode view-item">
+                <p>Contact Me</p>
+                <p>Email: </p>
             </div>
-            <div class="home-image-box">
-                <a href="/images/template2/temp2_box02.png" data-lightbox="page2">
-                    <img src="/images/template2/temp2_box02.png" />
-                </a>
-            </div>
-            <div class="home-image-box">
-                <a href="/images/template2/temp2_box03.png" data-lightbox="page2">
-                    <img src="/images/template2/temp2_box03.png" />
-                </a>
-            </div>
+            <textarea class="home-content-box is-edit-mode edit-item hide">
+                Contact Me
+                Email:
+            </textarea>
         </div>
     </div>
     <!-- content page3 end -->

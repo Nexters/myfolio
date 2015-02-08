@@ -61,6 +61,10 @@ nav {
     font-size: 20px;
     color: #000000;
 }
+
+.template-nav-menu > .template-nav-title > .selected {
+    border-bottom: solid 1px;
+}
 /* template nav end */
 
 /* template footer start */
@@ -96,7 +100,16 @@ footer > .common-footer-menu > .common-footer-title {
 }
 
 /* 파일 업로드 버튼 안보이도록 작업 */
-#background-file-upload-btn {
+.background-file-upload-btn {
+    cursor: pointer;
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    font-size: 45px;
+    opacity: 0;
+}
+
+.image-file-upload-btn {
     cursor: pointer;
     position: absolute;
     width: 30px;
