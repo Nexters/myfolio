@@ -66,10 +66,21 @@ PortfolioController.prototype.makeUserPortfolio = function (req, res) {
 };
 
 PortfolioController.prototype.saveUserPortfolio = function (req, res) {
-    var params = {},
-        content = {};
+    var params = {};
 
-    // TODO: 유저 포트폴리오 저장하는 코드 필요
+    params.portfolioId = req.params.id;
+    params.html = req.body.html;
+
+    portfolioService.saveUserPortfolioData(params, function (err, result) {
+        if (err) {
+            res.render('404.ejs', err);
+            return;
+        }
+        res.status(200).send({
+            code: 1,
+            msg: "save success"
+        });
+    });
 
 };
 

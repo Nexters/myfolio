@@ -10,6 +10,6 @@ router
 
 /* POST save portfolio */
 router
-    .post('/save', portfolioController.saveUserPortfolio);
+    .post('/save/:id', portfolioController.saveUserPortfolio);
 
 module.exports = router;
