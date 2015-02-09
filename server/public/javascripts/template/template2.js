@@ -40,6 +40,10 @@
         html += '<img class="edit-image-item" src="' + imageUrl + '"/>';
         html += '</a>';
         html += '</div>';
+        // TODO: 입력하는 HTML 추가!!
+        html += '<div>';
+        html += 'aaaaa';
+        html += '</div>';
 
         return html;
     }
