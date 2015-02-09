@@ -34,7 +34,7 @@
             $('.edit-image-item').each(function(idx, item) {
                 $editItem = $(item);
                 $viewItem = $editItem.parent();
-                $viewItem.attr('data-image',$editItem.attr('src'));
+                $viewItem.attr('data-image', $editItem.attr('src'));
             });
 
             $('#template_editor_save_btn').trigger('TEMPLATE_SAVE_EVENT');
@@ -44,9 +44,7 @@
         });
 
         $('#template_editor_cancel_btn').click(function() {
-            $('.is-view-mode').removeClass('hide');
-            $('.is-edit-mode').addClass('hide');
-            //TODO: 배경 이미지 바꾸고 취소했으면 다시 원래대로 돌려야함!
+            location.reload(true);  // 취소 버튼 클릭시 페이지 다시 로딩
         });
     }
 
