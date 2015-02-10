@@ -208,3 +208,31 @@ i.image-delete-btn {
     height: auto;
 }
 
+.photo-image-box-text {
+    width: 800px;
+    min-height: 100px;
+    padding: 12px;
+    margin: 0px auto;
+    margin-top: 20px;
+    margin-bottom: 60px;
+    background-color: #0070a3;
+}
+
+.photo-image-box-title {
+    text-align: center;
+    width: 400px;
+    min-height: 24px;
+    margin: 0px auto;
+    margin-bottom: 15px;
+}
+
+.photo-image-box-content {
+    text-align: center;
+    width: 760px;
+    min-height: 30px;
+    margin: 0px auto;
+}
+
+.photo-image-box-content > p {
+    margin: 0px auto;
+}
