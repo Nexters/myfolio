@@ -11,6 +11,18 @@
     font-weight: normal;
     font-style: normal;
 }
+@font-face {
+    font-family:'KoPubDotumBold';
+    src: url('/fonts/KoPubDotumBold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family:'KoPubDotumLight';
+    src: url('/fonts/KoPubDotumLight.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
 
 body {
     width: 100%;
@@ -215,7 +227,6 @@ i.image-delete-btn {
     margin: 0px auto;
     margin-top: 20px;
     margin-bottom: 60px;
-    background-color: #0070a3;
 }
 
 .photo-image-box-title {
@@ -224,6 +235,8 @@ i.image-delete-btn {
     min-height: 24px;
     margin: 0px auto;
     margin-bottom: 15px;
+    font-family: KoPubDotumBold;
+    font-size: 24px;
 }
 
 .photo-image-box-content {
@@ -231,6 +244,8 @@ i.image-delete-btn {
     width: 760px;
     min-height: 30px;
     margin: 0px auto;
+    font-family: KoPubDotumLight;
+    font-size: 20px;
 }
 
 .photo-image-box-content > p {

@@ -42,14 +42,12 @@
         html += '</div>';
         // TODO: 입력하는 HTML 추가!!
         html += '<div class="photo-image-box-text">';
-        html += '<p class="photo-image-box-title is-view-mode view-item hide">Title</p>';
-        html += '<input type="text" class="photo-image-box-title is-edit-mode edit-item" value="Title">';
+        html += '<p class="photo-image-box-title is-view-mode view-item hide"></p>';
+        html += '<input type="text" class="photo-image-box-title is-edit-mode edit-item" placeHolder="Title">';
         html += '<div class="photo-image-box-content-container">';
         html += '<div class="photo-image-box-content is-view-mode view-item hide">';
-        html += '<p>Contents</p>';
         html += '</div>';
-        html += '<textarea class="photo-image-box-content is-edit-mode edit-item">';
-        html += 'Contents';
+        html += '<textarea class="photo-image-box-content is-edit-mode edit-item" placeholder="Contents">';
         html += '</textarea>';
         html += '</div>';
         html += '</div>';
