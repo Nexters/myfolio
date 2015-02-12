@@ -3,23 +3,27 @@
 <head>
     <link rel="stylesheet" href="/stylesheets/template/common.css"/>
     <link rel="stylesheet" href="/stylesheets/template/template1.css"/>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
-    <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
-    <script src="https://code.jquery.com/ui/1.11.2/jquery-ui.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/blueimp-file-upload/9.5.7/jquery.fileupload.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/blueimp-file-upload/9.5.7/jquery.iframe-transport.min.js"></script>
-    <script src="/javascripts/template/template1.js"></script>
+    <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/bower_components/lightbox2/css/lightbox.css">
 </head>
 
-<body>
 
-    <% include toolbar.ejs %>
+<body data-portfolio="<% if (typeof portfolioId !== "undefined") { %><%= portfolioId %><% } %>">
+<% include ../Toolbar.ejs %>
+
+<div id="page1">
+    <img class="home-image" src="/images/template1/temp_01_bg.png" />
     <nav>
         <div class="common-nav-menu">
             <div class="common-nav-title is-view-mode">
-                <a class="nav-title-item">Home</a>
-                <a class="nav-title-item">Portfolio</a>
-                <a class="nav-title-item">Contact</a>
+                <a class="nav-title-item" href="#page1">Home</a>
+                <a class="nav-title-item" href="#page2">Portfolio</a>
+                <a class="nav-title-item" href="#page3">Contact</a>
+            </div>
+            <div class="common-nav-title is-edit-mode hide">
+                <input type="text" value="Home">
+                <input type="text" value="Portfolio">
+                <input type="text" value="Contact">
             </div>
         </div>
     </nav>
@@ -27,24 +31,101 @@
     <div class="common-page-container">
         <div class="home-content-container">
             <div class="home-title is-view-mode">
-                Hello :)
+                <p>Hello :)</p>
             </div>
-        </div>
-
-        <div class="home-image-container is-view-mode">
-            <div class="home-image-box">
-
+            <div class="sub-title is-view-mode">
+                <p>I'm Nicolas Lowe. Web & Graphic Designer</p>
+            </div>
+            <div class="home-image-container is-view-mode">
+                <div class="home-image-box">
+                    <a href="/images/template1/main_folio_img_01.png" data-lightbox="page1">
+                        <img class="main-image" src="/images/template1/main_folio_img_01.png"/>
+                    </a>
+                    <a href="/images/template1/main_folio_img_02.png" data-lightbox="page1">
+                        <img class="main-image" src="/images/template1/main_folio_img_02.png"/>
+                    </a>
+                    <a href="/images/template1/main_folio_img_03.png" data-lightbox="page1">
+                        <img class="main-image" src="/images/template1/main_folio_img_03.png"/>
+                    </a>
+                    <a href="/images/template1/main_folio_img_04.png" data-lightbox="page1">
+                        <img class="main-image" src="/images/template1/main_folio_img_04.png"/>
+                    </a>
+                </div>
             </div>
         </div>
     </div>
+</div>
 
-    <footer>
-        <div class="common-footer-menu">
-            <div class="common-footer-title is-view-mode">
-                <div>Footer Contents</div>
+<div id="page2">
+    <div class="page2-top-box">
+        <img class="page2-top-small-button-left" src="/images/template1/temp_middle_arrow_l.png" />
+        <img class="page2-top-small-button-right" src="/images/template1/temp_middle_arrow_r.png" />
+        <img class="page2-top-image" src="/images/template1/main_folio_img_01.png" />
+        <img class="page2-top-image" src="/images/template1/main_folio_img_02.png" />
+        <img class="page2-top-image" src="/images/template1/main_folio_img_03.png" />
+        <img class="page2-top-image" src="/images/template1/main_folio_img_04.png" />
+        <img class="page2-top-image" src="/images/template1/main_folio_img_01.png" />
+        <img class="page2-top-image" src="/images/template1/main_folio_img_02.png" />
+        <img class="page2-top-image" src="/images/template1/main_folio_img_03.png" />
+        <img class="page2-top-image" src="/images/template1/main_folio_img_04.png" />
+    </div>
+
+    <div class="page2-common-page-container">
+        <div class="page2-bot-text-box">
+            <p class="page2-bot-big-title is-view-mode">Project Page 3</p>
+            <p class="page2-bot-small-title is-view-mode">
+                I'm a paragraph. Click here to add your own text and edit me. It's easy. Just click 'Edit Text' or
+                double click me to add your own content and make changes to the font. I'm a great place for you to
+                tell a story and let your users know a little more about you.
+            </p>
+        </div>
+        <img class="page2-mid-big-button-left" src="/images/template1/temp_middle_view_arrow_l.png" />
+        <img class="page2-mid-big-button-right" src="/images/template1/temp_middle_view_arrow_r.png" />
+
+        <img class="page2-common-image-container" src="/images/template1/second_page_main.png" />
+    </div>
+
+</div>
+
+<div id="page3">
+    <p class="page3-top-title is-view-mode">Let's work together.</p>
+    <p class="page3-top-subtitle is-view-mode">
+        I'm a paragraph. Click here to add your own text and edit me. It's easy. Just click 'Edit Text' or
+        double click me to add your own content and make changes to the font. I'm a great place for you to
+        tell a story and let your users know a little more about you.
+    </p>
+
+    <div class="page3-contact-container">
+        <div class="page3-contact-name-box">
+            <p class="page3-contact-name">NAME</p>
+        </div>
+        <div class="page3-contact-email-box">
+            <p class="page3-contact-email">EMAIL</p>
+        </div>
+        <div class="page3-contact-messages-box">
+            <p class="page3-contact-messages">MESSAGES</p>
+        </div>
+    </div>
+
+    <div class="page3-contact-sns-image-container">
+        <image class="page3-contact-sns-image" src="/images/template1/bottom_contact_fb.png"/>
+        <image class="page3-contact-sns-image" src="/images/template1/bottom_contact_tw.png"/>
+        <image class="page3-contact-sns-image" src="/images/template1/bottom_contact_gp.png"/>
+    </div>
+</div>
+
+<footer>
+    <div class="common-footer-menu">
+        <div class="common-footer-title is-view-mode">
+            <div>
+                <p>MADE IN ASHLEE, WITH MYFOLIO.COM</p>
             </div>
         </div>
-    </footer>
+    </div>
+</footer>
 </body>
+
+<% include ../CommonLib.ejs %>
+<script src="/javascripts/template/template1.js"></script>
 
 </html>

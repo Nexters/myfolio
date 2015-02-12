@@ -9,18 +9,8 @@ function PortfolioModel() {
     }
 }
 
-PortfolioModel.prototype.insert = function (criteria, options, callback) {
-    var sql = "INSERT INTO PORTFOLIO_TB (TEMPLATE_ID, USER_ID) VALUES (?,?);";
-    var inserts = [ criteria.TEMPLATE_ID, criteria.USER_ID ];
-    sql = mysql.format(sql, inserts);
 
-    pool.query(sql, function (err, rows, fields) {
-        callback(err, rows);
-    });
-};
-
-PortfolioModel.prototype.selectOne = function (criteria, options, callback) {
-
+PortfolioModel.prototype.selectById = function (criteria, options, callback) {
     var sql = "SELECT PORTFOLIO_ID, PORTFOLIO_TITLE, PORTFOLIO_CONTENT_TAG, TEMPLATE_ID, USER_ID FROM PORTFOLIO_TB WHERE USER_ID=?";
     var inserts = [ criteria.USER_ID ];
     sql = mysql.format(sql, inserts);
@@ -30,9 +20,19 @@ PortfolioModel.prototype.selectOne = function (criteria, options, callback) {
     });
 };
 
+PortfolioModel.prototype.selectByName = function (criteria, options, callback) {
+    var sql = "SELECT PORTFOLIO_ID, PORTFOLIO_TITLE, PORTFOLIO_CONTENT_TAG, TEMPLATE_ID, USER_ID FROM PORTFOLIO_TB WHERE USER_NAME=?";
+    var inserts = [ criteria.USER_NAME ];
+    sql = mysql.format(sql, inserts);
+
+    pool.query(sql, function (err, result) {
+        callback(err, result);
+    });
+};
+
 PortfolioModel.prototype.insert = function (criteria, options, callback) {
-    var sql = "INSERT INTO PORTFOLIO_TB (TEMPLATE_ID, USER_ID) VALUES (?,?);";
-    var inserts = [ criteria.TEMPLATE_ID, criteria.USER_ID ];
+    var sql = "INSERT INTO PORTFOLIO_TB (TEMPLATE_ID, USER_ID, USER_NAME) VALUES (?,?,?);";
+    var inserts = [ criteria.TEMPLATE_ID, criteria.USER_ID, criteria.USER_NAME ];
     sql = mysql.format(sql, inserts);
 
     pool.query(sql, function (err, result) {

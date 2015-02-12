@@ -1,39 +1,253 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto);
+@font-face {
+    font-family:'BigJohn';
+    src: url('/fonts/BigJohn.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family:'SlimJoe';
+    src: url('/fonts/SlimJoe.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family:'KoPubDotumBold';
+    src: url('/fonts/KoPubDotumBold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family:'KoPubDotumLight';
+    src: url('/fonts/KoPubDotumLight.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    width: 100%;
+}
+
 /* template nav */
 nav {
-    height: 60px;
+    height: 143px;
+    border-bottom: 7px solid;
+}
+
+.template-nav-left-title {
+    display: block;
+    float: left;
+    height: 143px;
+    padding-left: 47px;
+    padding-top: 70px;
+    font-family: BigJohn;
+    font-size: 36px;
+}
+
+.template-nav-left-title > input {
+    width: 400px;
 }
 
 .template-nav-menu {
     display: block;
-    width: 360px;
-    height: 60px;
+    width: 600px;
+    height: 143px;
+    padding-top: 90px;
     float: right;
 }
 
 .template-nav-menu > .template-nav-title {
-    text-align: center;
-    line-height: 60px;
+    text-align: right;
+    margin-right: 47px;
+    line-height: 20px;
 }
 
 .template-nav-menu > .template-nav-title > .nav-title-item {
-    margin: 0px 10px;
+    cursor: pointer;
+    text-decoration: none;
+    width: 120px;
+    margin: 0px 20px;
+    font-family: SlimJoe;
+    font-size: 20px;
+    color: #000000;
+}
+
+.template-nav-menu > .template-nav-title > .selected {
+    border-bottom: solid 1px;
 }
 /* template nav end */
 
+/* template footer start */
+
+footer {
+    min-width: 1100px;
+    background: #000000;
+}
+
+footer > .common-footer-menu > .common-footer-title {
+    font-family: SlimJoe;
+    font-size: 10px;
+    color: #ffffff;
+}
+
+/* template footer end */
+
+.background-image-change-btn {
+    position: absolute;
+    font-family: BigJohn;
+    font-size: 20px;
+    width: 30px;
+    height: 30px;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.background-image-change-btn > img {
+    cursor: pointer;
+    position: absolute;
+    width: 30px;
+    height: 30px;
+}
+
+/* 파일 업로드 버튼 안보이도록 작업 */
+.hided-input-file-btn {
+    cursor: pointer;
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    font-size: 45px;
+    opacity: 0;
+}
+
+.new-image-file-upload-btn {
+    width: 1000px!important;
+    height: 600px!important;
+}
+
+i.image-change-btn {
+    cursor: pointer;
+    background-image: url("/images/template2/temp2_change_icon.png");
+    background-size: 30px;
+    position: absolute;
+    margin-top: 4px;
+    margin-left: 4px;
+    width: 30px;
+    height: 30px;
+}
+
+i.image-delete-btn {
+    cursor: pointer;
+    background-image: url("/images/template2/temp2_delete_icon.png");
+    background-size: 30px;
+    position: absolute;
+    float: right;
+    margin-top: 4px;
+    margin-left: 966px;
+    width: 30px;
+    height: 30px;
+}
+
 .home-content-container {
-    height: 800px;
+    height: 700px;
 }
 
 .home-content-container > .home-content-box {
     width: 460px;
-    height: 330px;
+    height: 300px;
     float: right;
     margin-top: 150px;
+    padding: 35px;
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.home-content-box > p {
+    font-family: BigJohn;
+    font-size: 27px;
+    line-height: 40px;
+    margin: 15px 0px;
 }
 
 .home-image-container {
     text-align:center;
     display: block;
     width: 1080px;
-    margin: 10px auto;
+    margin: 25px auto;
+}
+
+.home-image-container > .home-image-box {
+    display: inline-block;
+    width: 326px;
+    height: 176px;
+    margin: 0px 10px;
+    overflow: hidden;
+}
+
+.home-image-box > .view-image-item > img {
+    width: 326px;
+    height: auto;
+}
+
+.photo-image-container {
+    text-align:center;
+    display: block;
+    width: 1080px;
+    margin: 25px auto;
+}
+
+.photo-image-container > .add-photo-image-box {
+    display: inline-block;
+    width: 1000px;
+    height: 600px;
+    margin: 0px 10px;
+    overflow: hidden;
+}
+
+.photo-image-container > .photo-image-box {
+    display: inline-block;
+    width: 1000px;
+    height: 600px;
+    margin: 0px 10px;
+    overflow: hidden;
+}
+
+.add-photo-image-box > .view-image-item > img {
+    width: 1000px;
+    height: auto;
+}
+
+.photo-image-box > .view-image-item > img {
+    width: 1000px;
+    height: auto;
+}
+
+.photo-image-box-text {
+    width: 800px;
+    min-height: 100px;
+    padding: 12px;
+    margin: 0px auto;
+    margin-top: 20px;
+    margin-bottom: 60px;
+}
+
+.photo-image-box-title {
+    text-align: center;
+    width: 400px;
+    min-height: 24px;
+    margin: 0px auto;
+    margin-bottom: 15px;
+    font-family: KoPubDotumBold;
+    font-size: 24px;
+}
+
+.photo-image-box-content {
+    text-align: center;
+    width: 760px;
+    min-height: 30px;
+    margin: 0px auto;
+    font-family: KoPubDotumLight;
+    font-size: 20px;
+}
+
+.photo-image-box-content > p {
+    margin: 0px auto;
 }
