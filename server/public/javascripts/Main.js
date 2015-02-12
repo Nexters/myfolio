@@ -189,6 +189,9 @@
                 $('#login_modal').modal('show');
                 return;
             }
+            if (!confirm("Do you want to use this template?")) {
+                return;
+            }
             $.ajax({
                 url: '/ajax/portfolio/template/' + templateId,
                 type: 'POST',
@@ -198,6 +201,7 @@
                 success: function successHandler(data, status, xhr) {
                     if (data.code === 0) {
                         alert(data.msg);
+                        return;
                     }
                     location.href = "/" + data.userName;
                 }

@@ -1,7 +1,13 @@
 (function common() {
     'use strict';
 
-    function addTemplateNavTitleEvent() {
+    function _sanitizeHtml() {
+        // lightbox DOM에 남아있는 문제때문에 지워줌
+        $('html').find('.lightboxOverlay').remove();
+        $('html').find('.lightbox').remove();
+    }
+
+    function _addTemplateNavTitleEvent() {
         var $item;
         // 밑에 제목 내용 변경되면 위에 에디터 툴 제목 내용도 변경되도록 이벤트 바인딩!
         $('.template-nav-menu > .is-edit-mode').children().each(function(idx, item) {
@@ -18,14 +24,14 @@
         $('#template_editor_modify_btn').click(function() {
             $('.is-view-mode').addClass('hide');
             $('.is-edit-mode').removeClass('hide');
-            addTemplateNavTitleEvent();
+            _addTemplateNavTitleEvent();
         });
 
         $('#template_editor_save_btn').click(function() {
             var portfolioId = $('body').data('portfolio');
             var $editItemParent, $viewItemParent, $editItem, $viewItem;
             var savedHtml, params;
-            // TODO: is-edit-mode에 있는 내용들 is-view-mode로 복사!
+            // is-edit-mode에 있는 내용들 is-view-mode로 복사!
             $('.edit-item-parent').each(function(pidx, pitem) {
                 $editItemParent = $(pitem);
                 $viewItemParent = $editItemParent.parent().children('.view-item-parent');
@@ -55,6 +61,7 @@
             $('.is-view-mode').removeClass('hide');
             $('.is-edit-mode').addClass('hide');
 
+            _sanitizeHtml();    // 저장되면 안되는 html 삭제
             savedHtml = $('html').prop('outerHTML');
             params = {
                 html: savedHtml
