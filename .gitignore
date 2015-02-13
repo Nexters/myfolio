@@ -40,8 +40,7 @@ server/upload
 !server/views/portfolio/toolbar.ejs
 server/views/portfolio
 
-# Build files
-server/dist
+# Build tmp files
 server/.tmp
 
 # Bower files
