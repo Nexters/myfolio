@@ -4,11 +4,16 @@ var uglify = require('gulp-uglify');
 var imagemin = require('gulp-imagemin');
 var sourcemaps = require('gulp-sourcemaps');
 var del = require('del');
+var fs = require('fs');
+var path = require('path');
+var merge = require('merge-stream');
+var rename = require('gulp-rename');
 
 var paths = {
     scripts: ['public/javascripts/**/*.js'],
     images: 'public/images/**/*'
 };
+
 
 // Not all tasks need to use streams
 // A gulpfile is just another node program and you can use all packages available on npm
