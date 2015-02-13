@@ -274,6 +274,138 @@ second classes
 third classes
 */
 
+#tem3_third_text{
+    font-family: Roboto-thin;
+    font-size: 26px;
+    color: #ffffff;
+    text-align: center;
+    margin-top: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    text-shadow: 0px 0px 3px rgba(0,0,0, 0.3);
+    text-transform: uppercase;
+}
+
+#tem3_item3{
+    width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 87px;
+
+
+}
+
+#tem3_item3 ul{
+    list-style-type: none;
+    padding-right: 0px;
+    padding-left: 0px;
+    margin: auto;
+}
+
+#tem3_item3 li{
+    display: inline-block;
+}
+
+
+.tem3_img{
+    width: 152px;
+    height: 152px;
+    padding-right: 0px;
+    padding-left: 0px;
+    margin: auto;
+}
+
+.tem3_txt{
+    color: #ffffff;
+    text-align: center;
+}
+
+
+.tem3_header{
+    width: 300px;
+    margin-top: 21px;
+    margin-bottom: 12px;
+    font-family: Roboto-M;
+    font-size: 18px;
+    text-transform: uppercase;
+}
+
+.tem3_article{
+    width: 300px;
+    font-family: Roboto-T;
+    margin-bottom: 4px;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+#tem3_fr{
+    margin-left: 150px;
+}
+
+#tem3_fuck{
+    width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+
+#tem3_fuck #tem3_ul{
+    list-style-type: none;
+    padding-right: 0px;
+    padding-left: 0px;
+    margin: auto;
+}
+
+#tem3_fuck #tem3_li{
+    display: inline-block;
+}
+
+#tem3_fucking1{
+    margin-top: 110px;
+    margin-left: 20px;
+    width: 500px;
+    height: 304px;
+}
+
+#tem3_fuckingimg{
+    width: 500px;
+    height: 136px;
+    margin-left:20px;
+    margin-bottom: 12px;
+}
+
+.tem3_fuckingtxt{
+    font-family: Roboto-thin;
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: #ffffff;
+    text-align: right;
+}
+
+#tem3_fucking2{
+    width: 500px;
+}
+
+
+#tem3_fucking2 ul{
+    list-style-type: none;
+    margin: auto;
+}
+
+input#submitbutton {
+    border:1px solid #ffffff; /*border color dark blue */
+    background:#ffffff; /*the color of the button is blue */
+    border-radius: 5px;
+    width: 55px;
+    height: 160px;
+    color:#000000; /* text color is white */
+    font-size: 14px; /* font size is 1em */
+    cursor:pointer; /* change cursor when hover */
+}
+
+
+
 /*
 footer classes
 */
