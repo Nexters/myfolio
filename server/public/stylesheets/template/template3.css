@@ -80,13 +80,13 @@
 first classes
 */
 .fir_comment{
-    width:600px;
+    width:100%;
     height: 165px;
     text-align: center;
     display: inline-block;
     margin-top:195px;
-    margin-left: auto;
     padding:15px;
+    position: relative;
 }
 .fir_comment > p{
     font-family: Roboto-thin;
@@ -95,6 +95,39 @@ first classes
     font-size: 26px;
     line-height: 15px;
     margin:15px 0px;
+}
+.fir_img_div{
+    width: 100%;
+    height: 468px;
+    text-align: center;
+    margin-top: 29px;
+}
+.img_base{
+    width:800px;
+    height: 468px;
+    text-align: center;
+    margin: auto;
+    padding-top: 32px;
+    background-image: url("/images/template3/top_imac.png");
+}
+.imgs{
+    width: 610px;
+    height: 385px;
+    margin-bottom: 53px;
+    margin-left: 97px;
+    background-image: url("/images/template3/top_mac_foilo_pic_01.png");
+    background-repeat: no-repeat;
+    background-size: 610px 385px;
+}
+.img_base  #left_btn{
+    margin-top: 163px;
+    margin-left: 5px;
+    float: left;
+}
+.img_base  #right_btn{
+    margin-top: 163px;
+    margin-right: 5px;
+    float: right;
 }
 
 /*

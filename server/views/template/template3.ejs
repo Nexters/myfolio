@@ -6,12 +6,6 @@
 
     <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="/bower_components/lightbox2/css/lightbox.css">
-
-    <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
-    <script src="https://code.jquery.com/ui/1.11.2/jquery-ui.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/blueimp-file-upload/9.5.7/jquery.fileupload.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/blueimp-file-upload/9.5.7/jquery.iframe-transport.min.js"></script>
-    <script src="/javascripts/template/template3.js"></script>
     <style>
         #template3_header{
             width:100%;
@@ -69,17 +63,26 @@
     <% include ../Toolbar.ejs %>
     <nav>
         <ul>
-            <li><a href="#first"><div class="nav_btn" onclick="navFunction(1)">Home</div></a></li>
-            <li><a href="#second"><div class="nav_btn" onclick="navFunction(2)">Portfolio</div></a></li>
-            <li><a href="#third"><div class="nav_btn" onclick="navFunction(3)">contact</div></a></li>
+            <li><a href="#first"><div class="nav_btn" >Home</div></a></li>
+            <li><a href="#second"><div class="nav_btn" >Portfolio</div></a></li>
+            <li><a href="#third"><div class="nav_btn" >contact</div></a></li>
         </ul>
     </nav>
 </div>
 <div class="first">
     <div class="fir_comment">
+        <p></p>
         <p>I'M FUCKING COOL SIC</p>
         <p>SICK GEEK NOTORIOUS</p>
         <p></p>
+    </div>
+    <div class="fir_img_div">
+        <div class="img_base">
+            <div id="imgs" class="imgs">
+                <img id="left_btn" src="/images/template3/top_mac_arrow_l.png"/>
+                <img id="right_btn" src="/images/template3/top_mac_arrow_r.png"/>
+            </div>
+        </div>
     </div>
 </div>
 <div class="second">
@@ -115,5 +118,7 @@
     <span>Made in Jenninfer, With Myfolio.com</span>
 </div>
 </body>
+<% include ../CommonLib.ejs %>
+<script src="/javascripts/template/template3.js"></script>
 
 </html>
