@@ -41,7 +41,8 @@ server/upload
 server/views/portfolio
 
 # Build files
-server/build
+server/dist
+server/.tmp
 
 # Bower files
 server/public/javascripts/bower_components

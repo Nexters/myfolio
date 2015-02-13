@@ -28,11 +28,10 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
-
 
 // Session
 if (app.get('env') === 'production') {
+    app.use(express.static(path.join(__dirname, 'dist')));
     MongoStore = require('connect-mongo')(session);
     app.use(session({
         secret: 'myfolio-session',
@@ -41,6 +40,7 @@ if (app.get('env') === 'production') {
         saveUninitialized: true
     }));
 } else {
+    app.use(express.static(path.join(__dirname, 'public')));
     app.use(session({
         secret: 'myfolio-session',
         resave: false,
