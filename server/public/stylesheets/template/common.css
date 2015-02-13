@@ -101,8 +101,6 @@ footer {
     color: #000000;
     line-height: 30px;
 }
-
-
 /* common footer end */
 
 /* common page */
@@ -113,3 +111,13 @@ div.common-page-container {
     margin: 0px;
 }
 /* common page end */
+
+/* 파일 업로드 버튼 안보이도록 작업 */
+.hided-input-file-btn {
+    cursor: pointer;
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    font-size: 45px;
+    opacity: 0;
+}
