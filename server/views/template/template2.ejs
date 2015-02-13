@@ -1,47 +1,126 @@
 <!DOCTYPE html>
 <html>
 <head>
-
     <link rel="stylesheet" href="/stylesheets/template/common.css"/>
     <link rel="stylesheet" href="/stylesheets/template/template2.css"/>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
-    <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
-    <script src="https://code.jquery.com/ui/1.11.2/jquery-ui.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/blueimp-file-upload/9.5.7/jquery.fileupload.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/blueimp-file-upload/9.5.7/jquery.iframe-transport.min.js"></script>
-
-    <script src="/javascripts/template/template2.js"></script>
+    <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/bower_components/lightbox2/css/lightbox.css">
 </head>
-<body>
-    <% include toolbar.ejs %>
-    <nav>
-        <div class="template-nav-menu">
-            <div class="template-nav-title is-view-mode">
-                <a class="nav-title-item">Home</a>
-                <a class="nav-title-item">Portfolio</a>
-                <a class="nav-title-item">Contact</a>
-            </div>
-        </div>
-    </nav>
 
-    <div class="common-page-container">
-        <div class="home-content-container">
-            <div class="home-content-box is-view-mode">
-                LET NO ONE
-            </div>
+<body data-background="/images/template2/temp2_background.png" data-portfolio="<% if (typeof portfolioId !== "undefined") { %><%= portfolioId %><% } %>">
+<% include ../Toolbar.ejs %>
+<nav>
+    <div class="template-nav-left-title">
+        <p class="is-view-mode view-item">MY FOLIO</p>
+        <input type="text" class="is-edit-mode hide edit-item" value="MY FOLIO">
+    </div>
+    <div class="template-nav-menu">
+        <div class="template-nav-title is-view-mode view-item-parent">
+            <a class="nav-title-item selected">ABOUT</a>
+            <a class="nav-title-item">PICTURE</a>
+            <a class="nav-title-item">CONTACT</a>
         </div>
-        <div class="home-image-container is-view-mode">
-            <div class="home-image-box">
-
-            </div>
+        <div class="template-nav-title is-edit-mode edit-item-parent hide">
+            <input type="text" class="nav-title-item" value="ABOUT" />
+            <input type="text" class="nav-title-item" value="PICTURE" />
+            <input type="text" class="nav-title-item" value="CONTACT" />
         </div>
     </div>
+</nav>
 
-    <footer class="common-footer-menu">
-        <div class="common-footer-title is-view-mode">
-            <div>Footer Contents</div>
+<!-- content page1 start -->
+<div class="content-page1 common-page-container">
+    <div class="background-image-change-btn is-edit-mode hide">
+        <img src="/images/template2/temp2_change_icon.png" />
+        <input class="background-file-upload-btn hided-input-file-btn" type="file" name="files[]" data-url="/ajax/upload">
+    </div>
+    <div class="content-page1 home-content-container">
+        <div class="home-content-box is-view-mode view-item">
+            <p>LET NO ONE</p>
+            <p>EVER COME TO YOU</p>
+            <p>WITHOUT LEAVING</p>
+            <p>BETTER AND HAPPIER</p>
         </div>
-    </footer>
+            <textarea class="home-content-box is-edit-mode edit-item hide">
+                LET NO ONE
+                EVER COME TO YOU
+                WITHOUT LEAVING
+                BETTER AND HAPPIER
+            </textarea>
+    </div>
+    <div class="home-image-container">
+        <div class="home-image-box">
+            <i class="image-change-btn is-edit-mode hide"></i>
+            <input class="image-file-upload-btn hided-input-file-btn is-edit-mode hide" type="file" name="files[]" data-url="/ajax/upload">
+            <a class="view-image-item" data-image="/images/template2/temp2_box01.png" data-lightbox="page1_lightbox">
+                <img class="edit-image-item"/>
+            </a>
+        </div>
+        <div class="home-image-box">
+            <i class="image-change-btn is-edit-mode hide"></i>
+            <input class="image-file-upload-btn hided-input-file-btn is-edit-mode hide" type="file" name="files[]" data-url="/ajax/upload">
+            <a class="view-image-item" data-image="/images/template2/temp2_box02.png" data-lightbox="page1_lightbox">
+                <img class="edit-image-item"/>
+            </a>
+        </div>
+        <div class="home-image-box">
+            <i class="image-change-btn is-edit-mode hide"></i>
+            <input class="image-file-upload-btn hided-input-file-btn is-edit-mode hide" type="file" name="files[]" data-url="/ajax/upload">
+            <a class="view-image-item" data-image="/images/template2/temp2_box03.png" data-lightbox="page1_lightbox">
+                <img class="edit-image-item"/>
+            </a>
+        </div>
+    </div>
+</div>
+<!-- content page1 end -->
+
+<!-- content page2 start -->
+<div class="content-page2 common-page-container hide">
+    <div class="background-image-change-btn is-edit-mode hide">
+        <img src="/images/template2/temp2_change_icon.png" />
+        <input class="background-file-upload-btn hided-input-file-btn" type="file" name="files[]" data-url="/ajax/upload">
+    </div>
+    <div class="photo-image-container">
+        <div class="add-photo-image-box is-edit-mode hide">
+            <input class="new-image-file-upload-btn hided-input-file-btn is-edit-mode hide" type="file" name="files[]" data-url="/ajax/upload">
+            <a class="view-image-item image-change-btn is-edit-mode hide" onclick="return false;" data-image="/images/template2/temp2_edit_no_big_image.png">
+                <img class="edit-image-item"/>
+            </a>
+        </div>
+    </div>
+</div>
+<!-- content page2 end -->
+
+<!-- content page3 start -->
+<div class="content-page3 common-page-container hide">
+    <div class="background-image-change-btn is-edit-mode hide">
+        <img src="/images/template2/temp2_change_icon.png" />
+        <input class="background-file-upload-btn hided-input-file-btn" type="file" name="files[]" data-url="/ajax/upload">
+    </div>
+    <div class="home-content-container">
+        <div class="home-content-box is-view-mode view-item">
+            <p>Contact Me</p>
+            <p>Email: </p>
+        </div>
+            <textarea class="home-content-box is-edit-mode edit-item hide">
+                Contact Me
+                Email:
+            </textarea>
+    </div>
+</div>
+<!-- content page3 end -->
+
+<footer>
+    <div class="common-footer-menu">
+        <div class="common-footer-title">
+            <div class="is-view-mode">MY FOLIO | BY NNNNA</div>
+            <input type="text" class="is-edit-mode hide" value="MY FOLIO | BY NNNNA" />
+        </div>
+    </div>
+</footer>
 </body>
+
+<% include ../CommonLib.ejs %>
+<script src="/javascripts/template/template2.js"></script>
 
 </html>

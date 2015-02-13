@@ -77,4 +77,18 @@ PortfoiloService.prototype.makeUserPortfolioData = function (params, callback) {
     });
 };
 
+PortfoiloService.prototype.saveUserPortfolioData = function (params, callback) {
+    var portfolioFileName = params.portfolioId + '.ejs';
+    var savPath = path.join(__dirname, '../views/portfolio/', portfolioFileName);
+    var data = params.html;
+    fs.writeFile (savPath, data, function(err) {
+        callback(err, {
+            code: 1,
+            msg: "success"
+        });
+    });
+};
+
+
+
 module.exports = PortfoiloService;

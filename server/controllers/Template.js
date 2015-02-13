@@ -23,6 +23,7 @@ TemplateController.prototype.run = function (req, res) {
 
     // Toolbar test 위해 표시
     var content = {
+        portfolioId: 1,
         isOwner: true
     };
 
