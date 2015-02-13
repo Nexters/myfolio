@@ -56,3 +56,20 @@ VALUES
         'admin',
         'Vertical, Various, Circle'
     );
+
+
+INSERT INTO
+    TEMPLATE_TB
+    (
+        TEMPLATE_ID,
+        TEMPLATE_TITLE,
+        TEMPLATE_OWNER_USER_ID,
+        TEMPLATE_DESCRIPTION
+    )
+VALUES
+    (
+        4,
+        'template4',
+        'admin',
+        'Simple, One Page, Proflie'
+    );

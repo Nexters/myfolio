@@ -218,9 +218,6 @@
         addJoinEvent();
         addLogoutEvent();
         addTemplateSelectEvent();
-
-        //upload test code
-        //addUploadButtonEvent();
     }
 
     init();
