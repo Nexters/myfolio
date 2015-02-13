@@ -125,10 +125,41 @@ UserService.prototype.joinUser = function (params, callback) {
     var options = {};
     var result = {};
 
-    // TODO: userId, userName 체크 후 저장 필요
 
-    userModel.insert(criteria, options, function (err, state) {
-        result = state;
+    async.waterfall([
+        function (callback) {
+            self.checkId(params, function (err, result) {
+                if (err) {
+                    callback(err, null);
+                    return;
+                }
+                if (result.code === 0) {
+                    callback(result, result);
+                    return;
+                }
+                callback();
+            });
+        },
+        function (callback) {
+            self.checkName(params, function (err, result) {
+                if (err) {
+                    callback(err, null);
+                    return;
+                }
+                if (result.code === 0) {
+                    callback(result, result);
+                    return;
+                }
+                callback();
+            });
+        },
+        function (callback) {
+            userModel.insert(criteria, options, function (err, state) {
+                result = state;
+                callback(err, result);
+            });
+        }
+    ], function (err, result) {
         callback(err, result);
     });
 };

@@ -20,8 +20,7 @@ TemplateController.prototype.run = function (req, res) {
     var templateName = req.params.name;
     var templatePath = 'template/' + templateName + '.ejs';
 
-
-    // Toolbar test 위해 표시
+    // TODO: Toolbar test 위해 표시. 삭제해야됨
     var content = {
         portfolioId: 1,
         isOwner: true

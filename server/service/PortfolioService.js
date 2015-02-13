@@ -60,11 +60,26 @@ PortfoiloService.prototype.makeUserPortfolioData = function (params, callback) {
             });
         },
         function (portfolio, callback) {
-            // TODO: 여기에 템플릿 html 가져와서 content_tag에 저장하는 코드 추가
-            callback(null, {
-                code: 1,
 
-                msg: "success!"
+            // templateFileName: 템플릿 이름.ejs
+            // saveFileName: 포트폴리오 이름.ejs
+            // srcPath: 템플릿 경로
+            // savPath: 포트폴리어 저장되는 경로
+            var templateFileName = 'template' + params.templateId + '.ejs';
+            var saveFileName = portfolio[0].PORTFOLIO_ID + '.ejs';
+            var srcPath = path.join(__dirname, '../views/template/', templateFileName);
+            var savPath = path.join(__dirname, '../views/portfolio/', saveFileName);
+            fs.readFile(srcPath, 'utf8', function (err, data) {
+                if (err) {
+                    callback(err, null);
+                    return;
+                }
+                fs.writeFile (savPath, data, function(err) {
+                    callback(err, {
+                        code: 1,
+                        msg: "success"
+                    });
+                });
             });
         }
     ], function (err, state) {
