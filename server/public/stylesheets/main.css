@@ -378,3 +378,7 @@ footer .footer-copyright {
     margin-top: 6px;
     margin-bottom: 6px;
 }
+
+#join-error-msg {
+    color: #a94442;
+}
