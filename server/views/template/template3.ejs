@@ -6,76 +6,32 @@
 
     <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="/bower_components/lightbox2/css/lightbox.css">
-    <style>
-        #template3_header{
-            width:100%;
-            margin: 0 auto;
-            position:fixed;
-            z-index: 2;
-        }
-        #template3_header nav{
-            background-color: #11171C;
-            padding-top: 0px;
-        }
-        nav ul{
-            list-style-type:none;
-            text-align: center;
-            width: 100%;
-            height: 60px;
-            display: block;
-        }
-
-        nav ul li{
-            display: inline-block;
-            margin-left: 30px;
-            margin-right:30px;
-        }
-
-        .nav_btn{
-            padding-top: 20px;
-            border-color: #11171C;
-            border-style: solid;
-            width: 110px;
-            height: 60px;
-            text-decoration: none;
-        }
-
-        .nav_btn:active {
-            border-top-color: #CC4d4d;
-            border-style: solid;
-            border-top-width: 3px;
-        }
-
-        nav ul li a{
-            color:#ffffff;
-            text-decoration:none;
-            text-transform: uppercase;
-        }
-
-        article{
-            align-items: center;
-        }
-    </style>
 </head>
 
 <body>
 <div id="template3_header">
     <% include ../Toolbar.ejs %>
     <nav>
-        <ul>
-            <li><a href="#first"><div class="nav_btn" >Home</div></a></li>
-            <li><a href="#second"><div class="nav_btn" >Portfolio</div></a></li>
-            <li><a href="#third"><div class="nav_btn" >contact</div></a></li>
+        <ul class="template-nav-title is-view-mode view-item-parent">
+            <li><a href="#first"><div class="nav_title_item" >Home</div></a></li>
+            <li><a href="#second"><div class="nav_title_item" >Portfolio</div></a></li>
+            <li><a href="#third"><div class="nav_title_item" >contact</div></a></li>
         </ul>
     </nav>
 </div>
 <div class="first">
-    <div class="fir_comment">
+    <div class="fir_comment is-view-mode view-item">
         <p></p>
         <p>I'M FUCKING COOL SIC</p>
         <p>SICK GEEK NOTORIOUS</p>
         <p></p>
     </div>
+    <textarea class="fir_comment is-edit-mode edit-item hide">
+
+        I'M FUCKING COOL SIC
+        SICK GEEK NOTORIOUS
+
+    </textarea>
     <div class="fir_img_div">
         <div class="img_base">
             <div id="imgs" class="imgs">
@@ -87,10 +43,10 @@
 </div>
 <div class="second">
     <div class="sec_comment is-view-mode">
-        <br/><br/>
-        IT'S MY FOLIO<br/><br/>
-        로맨틱, <strong>성공적</strong>, 환상적
-        <br/><br/>
+        <p> </p>
+        <p>IT'S MY FOLIO</p>
+        <p>로맨틱, <strong>성공적</strong>, 환상적</p>
+        <p> </p>
     </div>
 
     <div class="sec_picture_box">
@@ -120,5 +76,4 @@
 </body>
 <% include ../CommonLib.ejs %>
 <script src="/javascripts/template/template3.js"></script>
-
 </html>
