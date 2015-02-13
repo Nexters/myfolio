@@ -3,20 +3,23 @@
 <head>
     <link rel="stylesheet" href="/stylesheets/template/common.css"/>
     <link rel="stylesheet" href="/stylesheets/template/template3.css"/>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
-    <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+
+    <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/bower_components/lightbox2/css/lightbox.css">
+
+    <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
     <script src="https://code.jquery.com/ui/1.11.2/jquery-ui.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/blueimp-file-upload/9.5.7/jquery.fileupload.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/blueimp-file-upload/9.5.7/jquery.iframe-transport.min.js"></script>
     <script src="/javascripts/template/template3.js"></script>
     <style>
-        header{
+        #template3_header{
             width:100%;
             margin: 0 auto;
             position:fixed;
             z-index: 2;
         }
-        header nav{
+        #template3_header nav{
             background-color: #11171C;
             padding-top: 0px;
         }
@@ -62,8 +65,8 @@
 </head>
 
 <body>
-<header id="template3_header">
-    <% include toolbar.ejs %>
+<div id="template3_header">
+    <% include ../Toolbar.ejs %>
     <nav>
         <ul>
             <li><a href="#first"><div class="nav_btn" onclick="navFunction(1)">Home</div></a></li>
@@ -71,49 +74,46 @@
             <li><a href="#third"><div class="nav_btn" onclick="navFunction(3)">contact</div></a></li>
         </ul>
     </nav>
-</header>
-<div class="first">
-    <section>
-        <article>
-            <p>I'M FUCKING COOL SIC</p>
-            <p>SICK GEEK NOTORIOUS</p>
-        </article>
-    </section>
 </div>
-    <div class="second">
-        <div class="sec_comment is-view-mode">
-            <br/><br/>
-            IT'S MY FOLIO<br/><br/>
-            로맨틱, <strong>성공적</strong>, 환상적
-            <br/><br/>
+<div class="first">
+    <div class="fir_comment">
+        <p>I'M FUCKING COOL SIC</p>
+        <p>SICK GEEK NOTORIOUS</p>
+        <p></p>
+    </div>
+</div>
+<div class="second">
+    <div class="sec_comment is-view-mode">
+        <br/><br/>
+        IT'S MY FOLIO<br/><br/>
+        로맨틱, <strong>성공적</strong>, 환상적
+        <br/><br/>
+    </div>
+
+    <div class="sec_picture_box">
+        <div class="sec_firstPhoto">
+            <img class="sec_firstPhoto" src="/images/template3/middle_folio_pic_01.png"/>
+            <img class="sec_secondPhoto" src="/images/template3/middle_folio_pic_02.png"/>
+            <img class="sec_thirdPhoto" src="/images/template3/middle_folio_pic_03.png"/>
         </div>
-
-        <div class="sec_picture_box">
-            <div class="sec_firstPhoto">
-                <img class="sec_firstPhoto" src="/images/template3/middle_folio_pic_01.png"/>
-                <img class="sec_secondPhoto" src="/images/template3/middle_folio_pic_02.png"/>
-                <img class="sec_thirdPhoto" src="/images/template3/middle_folio_pic_03.png"/>
-            </div>
-            <div class="sec_fourthPhotos">
-                <ul>
-                    <li><img src="/images/template3/middle_folio_pic_04.png" style="width: 240px"/></li>
-                    <li><img src="/images/template3/middle_folio_pic_05.png" style="width: 240px"/></li>
-                    <li><img src="/images/template3/middle_folio_pic_06.png" style="width: 240px"/></li>
-                    <li><img src="/images/template3/middle_folio_pic_07.png" style="width: 240px"/></li>
-                </ul>
-            </div>
+        <div class="sec_fourthPhotos">
+            <ul>
+                <li><img src="/images/template3/middle_folio_pic_04.png" style="width: 240px"/></li>
+                <li><img src="/images/template3/middle_folio_pic_05.png" style="width: 240px"/></li>
+                <li><img src="/images/template3/middle_folio_pic_06.png" style="width: 240px"/></li>
+                <li><img src="/images/template3/middle_folio_pic_07.png" style="width: 240px"/></li>
+            </ul>
         </div>
-
-    </div>
-    <div class="third">
-
     </div>
 
-    <div class="footer">
-        <span>Made in Jenninfer, With Myfolio.com</span>
-    </div>
+</div>
+<div class="third">
 
+</div>
 
+<div class="footer">
+    <span>Made in Jenninfer, With Myfolio.com</span>
+</div>
 </body>
 
 </html>

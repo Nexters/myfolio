@@ -66,13 +66,7 @@ PortfoiloService.prototype.makeUserPortfolioData = function (params, callback) {
             });
         },
         function (portfolio, callback) {
-<<<<<<< HEAD
-            // TODO: 여기에 템플릿 html 가져와서 content_tag에 저장하는 코드 추가
-            callback(null, {
-                code: 1,
 
-                msg: "success!"
-=======
             // templateFileName: 템플릿 이름.ejs
             // saveFileName: 포트폴리오 이름.ejs
             // srcPath: 템플릿 경로
@@ -92,7 +86,6 @@ PortfoiloService.prototype.makeUserPortfolioData = function (params, callback) {
                         msg: "success"
                     });
                 });
->>>>>>> origin/dev
             });
         }
     ], function (err, state) {
