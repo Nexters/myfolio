@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
+
     <link rel="stylesheet" href="/stylesheets/template/common.css"/>
     <link rel="stylesheet" href="/stylesheets/template/template2.css"/>
+
     <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="/bower_components/lightbox2/css/lightbox.css">
 </head>
 
 <body data-background="/images/template2/temp2_background.png" data-portfolio="<% if (typeof portfolioId !== "undefined") { %><%= portfolioId %><% } %>">
 <% include ../Toolbar.ejs %>
+
 <nav>
     <div class="template-nav-left-title">
         <p class="is-view-mode view-item">MY FOLIO</p>
@@ -53,13 +56,6 @@
             <i class="image-change-btn is-edit-mode hide"></i>
             <input class="image-file-upload-btn hided-input-file-btn is-edit-mode hide" type="file" name="files[]" data-url="/ajax/upload">
             <a class="view-image-item" data-image="/images/template2/temp2_box01.png" data-lightbox="page1_lightbox">
-                <img class="edit-image-item"/>
-            </a>
-        </div>
-        <div class="home-image-box">
-            <i class="image-change-btn is-edit-mode hide"></i>
-            <input class="image-file-upload-btn hided-input-file-btn is-edit-mode hide" type="file" name="files[]" data-url="/ajax/upload">
-            <a class="view-image-item" data-image="/images/template2/temp2_box02.png" data-lightbox="page1_lightbox">
                 <img class="edit-image-item"/>
             </a>
         </div>

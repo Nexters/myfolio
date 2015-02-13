@@ -4,13 +4,11 @@ body {
     background-color: #ffffff;
 }
 
-
 /* template editor */
 #template_editor {
     height: 40px;
     background: #333333;
 }
-
 
 .left-btn-container {
     float: left;
@@ -21,11 +19,9 @@ body {
     margin-left: 4px;
 }
 
-
 .left-btn-container > img {
     cursor: pointer;
 }
-
 
 .right-btn-container {
     position: absolute;
@@ -37,12 +33,9 @@ body {
     margin-right: 4px;
 }
 
-
 .right-btn-container > img {
     cursor: pointer;
 }
-
-
 
 
 #toolbar_nav_title_container {
@@ -54,27 +47,22 @@ body {
     float: right;
 }
 
-
 #toolbar_nav_title_container > a {
     cursor: pointer;
     color: #ffffff;
     margin: 0 15px;
 }
 
-
 #toolbar_nav_title_container > .selected {
     border-bottom: solid 1px;
 }
 
-
 /* template editor end */
-
 
 /* common nav */
 nav {
     height: 60px;
 }
-
 
 .common-nav-menu {
     width: 500px;
@@ -82,24 +70,20 @@ nav {
     margin: 0px auto;
 }
 
-
 .common-nav-menu > .common-nav-title {
     text-align: center;
     line-height: 60px;
 }
-
 
 .common-nav-menu > .common-nav-title > .nav-title-item {
     margin: 0px 30px;
 }
 /* common nav end */
 
-
 /* common footer */
 footer {
     height: 60px;
 }
-
 
 .common-footer-menu {
     width: 400px;
@@ -107,12 +91,10 @@ footer {
     margin: 0px auto;
 }
 
-
 .common-footer-menu > .common-footer-title {
     text-align: center;
     line-height: 60px;
 }
-
 
 .common-footer-menu > .common-footer-title > input {
     text-align: center;
@@ -121,10 +103,7 @@ footer {
 }
 
 
-
-
 /* common footer end */
-
 
 /* common page */
 div.common-page-container {

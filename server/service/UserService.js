@@ -124,6 +124,7 @@ UserService.prototype.joinUser = function (params, callback) {
     };
     var options = {};
     var result = {};
+    var self = this;
 
 
     async.waterfall([

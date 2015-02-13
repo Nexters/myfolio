@@ -31,7 +31,6 @@ node_modules
 .idea
 
 # Config file
-server/config/
 server/config
 
 # Uploaded files
@@ -46,4 +45,3 @@ server/build
 
 # Bower files
 server/public/bower_components
-
