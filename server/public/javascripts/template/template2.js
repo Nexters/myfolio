@@ -74,7 +74,7 @@
         });
     }
 
-    function addEditorTilteClickEvent() {
+    function addEditorTitleClickEvent() {
         $('#toolbar_nav_title_container').children().each(function(idx, item) {
             _showSelectedPage(idx, item);
         });
@@ -143,7 +143,7 @@
         initBackgroundImage();
         initViewImageItem();
         addNavTitleClickEvent();
-        addEditorTilteClickEvent();
+        addEditorTitleClickEvent();
         addBackgroundChangeEvent();
         addImageChangeEvent();
         addImageAddEvent();
