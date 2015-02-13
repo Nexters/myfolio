@@ -109,16 +109,6 @@ footer > .common-footer-menu > .common-footer-title {
     height: 30px;
 }
 
-/* 파일 업로드 버튼 안보이도록 작업 */
-.hided-input-file-btn {
-    cursor: pointer;
-    position: absolute;
-    width: 30px;
-    height: 30px;
-    font-size: 45px;
-    opacity: 0;
-}
-
 .new-image-file-upload-btn {
     width: 1000px!important;
     height: 600px!important;
@@ -165,6 +155,12 @@ i.image-delete-btn {
     font-size: 27px;
     line-height: 40px;
     margin: 15px 0px;
+}
+
+textarea.home-content-box {
+    font-family: BigJohn;
+    font-size: 27px;
+    line-height: 40px;
 }
 
 .home-image-container {
