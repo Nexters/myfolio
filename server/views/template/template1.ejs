@@ -24,9 +24,9 @@
                     <a class="nav-title-item">Contact</a>
                 </div>
                 <div class="common-nav-title is-edit-mode hide">
-                    <input type="text" value="Home">
-                    <input type="text" value="Portfolio">
-                    <input type="text" value="Contact">
+                    <input type="text" class="common-nav-title-input" value="Home">
+                    <input type="text" class="common-nav-title-input" value="Portfolio">
+                    <input type="text" class="common-nav-title-input" value="Contact">
                 </div>
             </div>
         </div>
@@ -44,8 +44,14 @@
             <div class="home-title is-view-mode">
                 Hello :)
             </div>
+            <div class="home-title is-edit-mode hide">
+                <input type="text" class="home-title" value="Hello :)">
+            </div>
             <div class="sub-title is-view-mode">
                 I'm Nicolas Lowe. Web & Graphic Designer.
+            </div>
+            <div class="sub-title is-edit-mode hide">
+                <input type="text" class="sub-title" value="I'm Nicolas Lowe. Web & Graphic Designer.">
             </div>
         </div>
 
@@ -76,10 +82,18 @@
             <img class="big-left" src="/images/template1/temp_middle_view_arrow_l.png" />
             <img class="big-right" src="/images/template1/temp_middle_view_arrow_r.png" />
                 <div class="text-box" >
-                    <a class="Big-title-item">Project Page 3</a>
-                    <a class="Small-title-item1">I'm a paragraph. Click here to add your own text and edit me. It's easy. Just click 'Edit Text' or</a>
-                    <a class="Small-title-item2">double click me to add your own content and make changes to the font. I'm a great place for you to </a>
-                    <a class="Small-title-item3">tell a story and let your users know a little more about you.</a>
+                    <a class="Big-title-item is-view-mode">Project Page 3</a>
+                    <div class="Big-title-item is-edit-mode hide">
+                        <input type="text" class="Big-title-item-input" value="Project Page 3">
+                    </div>
+                    <div class="Small-title-item is-view-mode">
+                        <a class="Small-title-item1">I'm a paragraph. Click here to add your own text and edit me. It's easy. Just click 'Edit Text' or</a>
+                        <a class="Small-title-item2">double click me to add your own content and make changes to the font. I'm a great place for you to </a>
+                        <a class="Small-title-item3">tell a story and let your users know a little more about you.</a>
+                    </div>
+                    <div class="Small-title-item is-edit-mode hide">
+                        <textarea name="text" class="Small-title-item-input" value=""></textarea>
+                    </div>
                 </div>
             <img class="page2-main-image" src="/images/template1/second_page_main.png" />
         </div>
