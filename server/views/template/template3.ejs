@@ -15,7 +15,12 @@
         <ul class="template-nav-title is-view-mode view-item-parent">
             <li><a href="#first"><div class="nav_title_item" >Home</div></a></li>
             <li><a href="#second"><div class="nav_title_item" >Portfolio</div></a></li>
-            <li><a href="#third"><div class="nav_title_item" >contact</div></a></li>
+            <li><a href="#third"><div class="nav_title_item" >Contact</div></a></li>
+        </ul>
+        <ul class="template-nav-title is-edit-mode edit-item-parent hide">
+            <li><input type="text" class="nav_title_item" value="Home"/></li>
+            <li><input type="text" class="nav_title_item" value="Portfolio"/></li>
+            <li><input type="text" class="nav_title_item" value="Contact"/></li>
         </ul>
     </nav>
 </div>
@@ -37,25 +42,53 @@
             <div id="imgs" class="imgs">
                 <img id="left_btn" src="/images/template3/top_mac_arrow_l.png"/>
                 <img id="right_btn" src="/images/template3/top_mac_arrow_r.png"/>
+                <div class="fir_img_upload_div">
+                    <div class="img_upload_box">
+                        <i class="image-change-btn is-edit-mode hide"></i>
+                        <input class="image-file-upload-btn hided-input-file-btn is-edit-mode hide" type="file" name="files[]" data-url="/ajax/upload">
+                        <a class="view-image-item" data-image="/images/template3/top_mac_foilo_pic_01.png" data-lightbox="page1_lightbox">
+                            <img class="edit-image-item"/>
+                        </a>
+                    </div>
+                    <div class="img_upload_box">
+                        <i class="image-change-btn is-edit-mode hide"></i>
+                        <input class="image-file-upload-btn hided-input-file-btn is-edit-mode hide" type="file" name="files[]" data-url="/ajax/upload">
+                        <a class="view-image-item" data-image="/images/template3/top_mac_foilo_pic_02.png" data-lightbox="page1_lightbox">
+                            <img class="edit-image-item"/>
+                        </a>
+                    </div>
+                    <div class="img_upload_box">
+                        <i class="image-change-btn is-edit-mode hide"></i>
+                        <input class="image-file-upload-btn hided-input-file-btn is-edit-mode hide" type="file" name="files[]" data-url="/ajax/upload">
+                        <a class="view-image-item" data-image="/images/template3/top_mac_foilo_pic_03.png" data-lightbox="page1_lightbox">
+                            <img class="edit-image-item"/>
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </div>
 <div class="second">
-    <div class="sec_comment is-view-mode">
+    <div class="sec_comment is-view-mode view-item" >
         <p> </p>
         <p>IT'S MY FOLIO</p>
         <p>로맨틱, <strong>성공적</strong>, 환상적</p>
         <p> </p>
     </div>
+    <textarea class="sec_comment is-edit-mode edit-item hide" style="height: 200px">
 
+        IT'S MY FOLIO
+        로맨틱, 성공적, 환상적
+
+    </textarea>
     <div class="sec_picture_box">
-        <div class="sec_firstPhoto">
-            <img class="sec_firstPhoto" src="/images/template3/middle_folio_pic_01.png"/>
-            <img class="sec_secondPhoto" src="/images/template3/middle_folio_pic_02.png"/>
-            <img class="sec_thirdPhoto" src="/images/template3/middle_folio_pic_03.png"/>
+        <div class="sec_firstPhoto is-view-mode">
+            <img class="sec_firstPhoto is-view-mode" src="/images/template3/middle_folio_pic_01.png"/>
+            <img class="sec_secondPhoto is-view-mode" src="/images/template3/middle_folio_pic_02.png"/>
+            <img class="sec_thirdPhoto is-view-mode" src="/images/template3/middle_folio_pic_03.png"/>
         </div>
-        <div class="sec_fourthPhotos">
+        <div class="sec_fourthPhotos is-view-mode">
             <ul>
                 <li><img src="/images/template3/middle_folio_pic_04.png" style="width: 240px"/></li>
                 <li><img src="/images/template3/middle_folio_pic_05.png" style="width: 240px"/></li>
