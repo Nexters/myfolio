@@ -27,6 +27,7 @@ PortfoiloService.prototype.getUserPortfolioData = function (params, callback) {
 PortfoiloService.prototype.makeUserPortfolioData = function (params, callback) {
     var criteria = {};
     var options = {};
+
     var result = {};
 
     async.waterfall([
@@ -65,6 +66,7 @@ PortfoiloService.prototype.makeUserPortfolioData = function (params, callback) {
             });
         },
         function (portfolio, callback) {
+
             // templateFileName: 템플릿 이름.ejs
             // saveFileName: 포트폴리오 이름.ejs
             // srcPath: 템플릿 경로

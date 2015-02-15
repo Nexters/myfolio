@@ -23,6 +23,7 @@ SessionService.prototype.registerSession = function (req, id, name, portfolio) {
     req.session.userName = name;
 };
 
+
 SessionService.prototype.removeSession = function (req) {
     req.session.destroy();
 };

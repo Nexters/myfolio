@@ -4,7 +4,9 @@ var BaseController = require('./Base'),
     mainService = new (require('../service/MainService'))(),
     portfolioService = new (require('../service/PortfolioService'))(),
     sessionService = new (require('../service/SessionService'))(),
+
     fs = require('fs'),
+
     _ = require('underscore');
 
 function TemplateController() {

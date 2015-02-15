@@ -16,7 +16,6 @@ MainController.prototype = new BaseController('MainController');
 MainController.prototype.run = function (req, res) {
     var params = {},
         content = {};
-
     sessionService.makeUserSessionData(req, content);
 
     mainService.getMainData(params, function (err, result) {
@@ -25,6 +24,7 @@ MainController.prototype.run = function (req, res) {
         }
         _.extend(content, result);
         res.render('Main.ejs', content);
+
     });
 };
 

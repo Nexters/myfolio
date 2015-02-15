@@ -67,11 +67,13 @@ UserController.prototype.join = function (req, res) {
             res.status(404).send(err);
             return;
         }
+
         if (err && err.code === 0) {
             res.status(200).send(err);
             return;
         }
         sessionService.registerSession(req, params.id, params.name, null);
+
         res.status(200).send(result);
     });
 };
@@ -87,12 +89,14 @@ UserController.prototype.login = function (req, res) {
             res.status(404).send(err);
             return;
         }
+
         if (result.code === 1) {
             sessionService.registerSession(req, result.data.USER_ID, result.data.USER_NAME, result.data.USER_PORTFOLIO_ID);
         }
         res.status(200).send(result);
     });
 };
+
 
 UserController.prototype.logout = function (req, res) {
     if (!sessionService.hasSession(req)) {

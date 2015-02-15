@@ -9,6 +9,7 @@ function PortfolioModel() {
     }
 }
 
+
 PortfolioModel.prototype.selectById = function (criteria, options, callback) {
     var sql = "SELECT PORTFOLIO_ID, PORTFOLIO_TITLE, PORTFOLIO_CONTENT_TAG, TEMPLATE_ID, USER_ID FROM PORTFOLIO_TB WHERE USER_ID=?";
     var inserts = [ criteria.USER_ID ];

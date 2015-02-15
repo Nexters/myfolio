@@ -44,4 +44,4 @@ server/views/portfolio
 server/.tmp
 
 # Bower files
-server/public/javascripts/bower_components
+server/public/bower_components

@@ -60,6 +60,7 @@ PortfolioController.prototype.makeUserPortfolio = function (req, res) {
             res.render('404.ejs', err);
             return;
         }
+
         result.userName = req.session.userName;
         res.status(200).send(result);
     });
