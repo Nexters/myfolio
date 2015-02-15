@@ -39,31 +39,39 @@
     </textarea>
     <div class="fir_img_div">
         <div class="img_base">
-            <div id="imgs" class="imgs">
+            <div class="imgs" class="imgs">
                 <img id="left_btn" src="/images/template3/top_mac_arrow_l.png"/>
                 <img id="right_btn" src="/images/template3/top_mac_arrow_r.png"/>
-                <div class="fir_img_upload_div">
-                    <div class="img_upload_box">
-                        <i class="image-change-btn is-edit-mode hide"></i>
-                        <input class="image-file-upload-btn hided-input-file-btn is-edit-mode hide" type="file" name="files[]" data-url="/ajax/upload">
-                        <a class="view-image-item" data-image="/images/template3/top_mac_foilo_pic_01.png" data-lightbox="page1_lightbox">
-                            <img class="edit-image-item"/>
-                        </a>
-                    </div>
-                    <div class="img_upload_box">
-                        <i class="image-change-btn is-edit-mode hide"></i>
-                        <input class="image-file-upload-btn hided-input-file-btn is-edit-mode hide" type="file" name="files[]" data-url="/ajax/upload">
-                        <a class="view-image-item" data-image="/images/template3/top_mac_foilo_pic_02.png" data-lightbox="page1_lightbox">
-                            <img class="edit-image-item"/>
-                        </a>
-                    </div>
-                    <div class="img_upload_box">
-                        <i class="image-change-btn is-edit-mode hide"></i>
-                        <input class="image-file-upload-btn hided-input-file-btn is-edit-mode hide" type="file" name="files[]" data-url="/ajax/upload">
-                        <a class="view-image-item" data-image="/images/template3/top_mac_foilo_pic_03.png" data-lightbox="page1_lightbox">
-                            <img class="edit-image-item"/>
-                        </a>
-                    </div>
+                <div class="fir_img_upload_div is-edit-mode hide">
+                    <ul>
+                        <li>
+                            <div class="img_upload_box">
+                                <i class="image-change-btn is-edit-mode hide"></i>
+                                <input class="image-file-upload-btn hided-input-file-btn is-edit-mode hide" type="file" name="files[]" data-url="/ajax/upload">
+                                <a class="view-image-item" data-image="/images/template3/top_mac_foilo_pic_01.png" data-lightbox="page1_lightbox">
+                                    <img id="img_item1" class="edit-image-item"/>
+                                </a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="img_upload_box">
+                                <i class="image-change-btn is-edit-mode hide"></i>
+                                <input class="image-file-upload-btn hided-input-file-btn is-edit-mode hide" type="file" name="files[]" data-url="/ajax/upload">
+                                <a class="view-image-item" data-image="/images/template3/top_mac_foilo_pic_02.png" data-lightbox="page1_lightbox">
+                                    <img id="img_item2" class="edit-image-item"/>
+                                </a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="img_upload_box">
+                                <i class="image-change-btn is-edit-mode hide"></i>
+                                <input class="image-file-upload-btn hided-input-file-btn is-edit-mode hide" type="file" name="files[]" data-url="/ajax/upload">
+                                <a class="view-image-item" data-image="/images/template3/top_mac_foilo_pic_03.png" data-lightbox="page1_lightbox">
+                                    <img id="img_item3" class="edit-image-item"/>
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -82,22 +90,61 @@
         로맨틱, 성공적, 환상적
 
     </textarea>
-    <div class="sec_picture_box">
-        <div class="sec_firstPhoto is-view-mode">
-            <img class="sec_firstPhoto is-view-mode" src="/images/template3/middle_folio_pic_01.png"/>
-            <img class="sec_secondPhoto is-view-mode" src="/images/template3/middle_folio_pic_02.png"/>
-            <img class="sec_thirdPhoto is-view-mode" src="/images/template3/middle_folio_pic_03.png"/>
+    <div class="sec_img_container">
+        <div class="sec_firstPhoto">
+            <i class="image-change-btn is-edit-mode hide"></i>
+            <input class="image-file-upload-btn hided-input-file-btn2 is-edit-mode hide" type="file" name="files[]" data-url="/ajax/upload">
+            <a class="view-image-item" data-image="/images/template3/middle_folio_pic_01.png" data-lightbox="page1_lightbox">
+                <img class="edit-image-item"/>
+            </a>
         </div>
-        <div class="sec_fourthPhotos is-view-mode">
+        <div class="sec_secondPhoto">
+            <i class="image-change-btn is-edit-mode hide"></i>
+            <input class="image-file-upload-btn hided-input-file-btn2 is-edit-mode hide" type="file" name="files[]" data-url="/ajax/upload">
+            <a class="view-image-item" data-image="/images/template3/middle_folio_pic_02.png" data-lightbox="page1_lightbox">
+                <img class="edit-image-item"/>
+            </a>
+        </div>
+        <div class="sec_thirdPhoto">
+            <i class="image-change-btn is-edit-mode hide"></i>
+            <input class="image-file-upload-btn hided-input-file-btn2 is-edit-mode hide" type="file" name="files[]" data-url="/ajax/upload">
+            <a class="view-image-item" data-image="/images/template3/middle_folio_pic_03.png" data-lightbox="page1_lightbox">
+                <img class="edit-image-item"/>
+            </a>
+        </div>
+        <div class="sec_fourthPhotos">
             <ul>
-                <li><img src="/images/template3/middle_folio_pic_04.png" style="width: 240px"/></li>
-                <li><img src="/images/template3/middle_folio_pic_05.png" style="width: 240px"/></li>
-                <li><img src="/images/template3/middle_folio_pic_06.png" style="width: 240px"/></li>
-                <li><img src="/images/template3/middle_folio_pic_07.png" style="width: 240px"/></li>
+                <li>
+                    <i class="image-change-btn is-edit-mode hide"></i>
+                    <input class="image-file-upload-btn hided-input-file-btn2 is-edit-mode hide" type="file" name="files[]" data-url="/ajax/upload">
+                    <a class="view-image-item" data-image="/images/template3/middle_folio_pic_04.png" data-lightbox="page1_lightbox">
+                        <img class="edit-image-item" style="width: 240px"/>
+                    </a>
+                </li>
+                <li>
+                    <i class="image-change-btn is-edit-mode hide"></i>
+                    <input class="image-file-upload-btn hided-input-file-btn2 is-edit-mode hide" type="file" name="files[]" data-url="/ajax/upload">
+                    <a class="view-image-item" data-image="/images/template3/middle_folio_pic_05.png" data-lightbox="page1_lightbox">
+                        <img class="edit-image-item" style="width: 240px"/>
+                    </a>
+                </li>
+                <li>
+                    <i class="image-change-btn is-edit-mode hide"></i>
+                    <input class="image-file-upload-btn hided-input-file-btn2 is-edit-mode hide" type="file" name="files[]" data-url="/ajax/upload">
+                    <a class="view-image-item" data-image="/images/template3/middle_folio_pic_06.png" data-lightbox="page1_lightbox">
+                        <img class="edit-image-item" style="width: 240px"/>
+                    </a>
+                </li>
+                <li>
+                    <i class="image-change-btn is-edit-mode hide"></i>
+                    <input class="image-file-upload-btn hided-input-file-btn2 is-edit-mode hide" type="file" name="files[]" data-url="/ajax/upload">
+                    <a class="view-image-item" data-image="/images/template3/middle_folio_pic_07.png" data-lightbox="page1_lightbox">
+                        <img class="edit-image-item" style="width: 240px"/>
+                    </a>
+                </li>
             </ul>
         </div>
     </div>
-
 </div>
 <div class="third">
     <div id="tem3_third_text">

@@ -129,7 +129,14 @@ nav ul li a{
     height: 30px;
     font-size: 45px;
     opacity: 0;
-    margin-left: 300px;
+}
+.hided-input-file-btn2 {
+    cursor: pointer;
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    font-size: 45px;
+    opacity: 0;
 }
 
 .hided-input-file-btn2 {
@@ -167,14 +174,30 @@ i.image-delete-btn {
 
 
 .fir_img_upload_div{
-    display: block;
+    width: 1200px;
+    height: 385px;
+    position: absolute;
+    float: right;
 }
+.fir_img_upload_div ul{
+    list-style-type:none;
+    display: block;
+    padding-left: 0px;
+}
+.fir_img_upload_div ul li{
+    display: inline-block;
+}
+
 .sec_img_upload_div{
     display: block;
 }
 .img_upload_box{
-    display: block;
-    margin-bottom:10px;
+    width: 200px;
+    height: 100px;
+}
+.img_upload_box .edit-image-item{
+    max-width: 100%;
+    max-height: 100%;
 }
 
 textarea{
@@ -204,12 +227,10 @@ first classes
 .fir_img_div{
     width: 100%;
     height: 468px;
-    text-align: center;
 }
 .img_base{
     width:800px;
     height: 468px;
-    text-align: center;
     margin: auto;
     padding-top: 32px;
     background-image: url("/images/template3/top_imac.png");
@@ -221,7 +242,7 @@ first classes
     margin-left: 97px;
     background-image: url("/images/template3/top_mac_foilo_pic_01.png");
     background-repeat: no-repeat;
-    background-size: 610px 385px;
+    background-size: cover;
 }
 .img_base  #left_btn{
     margin-top: 163px;
@@ -254,13 +275,12 @@ second classes
     line-height: 15px;
 }
 
-.sec_picture_box{
+.sec_img_container{
     width: 1020px;
     height: 680px;
     margin-top: 55px;
     margin-left: auto;
     margin-right: auto;
-    padding-top: 55px;
 }
 
 .sec_firstPhoto{
