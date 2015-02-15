@@ -326,14 +326,17 @@ second classes
 third classes
 */
 
-#tem3_third_text{
-    font-family: Roboto-thin;
-    font-size: 26px;
-    color: #ffffff;
+.tem3_third_text{
     text-align: center;
     margin-top: 40px;
     margin-left: auto;
     margin-right: auto;
+}
+
+.tem3_third_text div p{
+    font-family: Roboto-thin;
+    font-size: 26px;
+    color: #ffffff;
     text-shadow: 0px 0px 3px rgba(0,0,0, 0.3);
     text-transform: uppercase;
 }
@@ -343,8 +346,6 @@ third classes
     margin-left: auto;
     margin-right: auto;
     margin-top: 87px;
-
-
 }
 
 #tem3_item3 ul{
@@ -413,14 +414,14 @@ third classes
     display: inline-block;
 }
 
-#tem3_txt_item{
+.tem3_txt_item{
     margin-top: 110px;
     margin-left: 20px;
     width: 500px;
     height: 304px;
 }
 
-#tem3_img2{
+.tem3_img2{
     width: 500px;
     height: 136px;
     margin-left:20px;

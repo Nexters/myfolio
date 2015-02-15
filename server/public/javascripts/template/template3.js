@@ -67,14 +67,19 @@
             }
         });
     }
+    function addTemplateSaveEvent() {
+        $('#template_editor_save_btn').on('TEMPLATE_SAVE_EVENT', function(e) {
+            console.log("SAVE");
+        });
+    }
 
     function initTemplate3() {
-        //init datas
         initViewImageItem();
         addImageChangeEvent();
         addImageDeleteEvent();
         addImageNextEvent();
         addImageBeforeEvent();
+        addTemplateSaveEvent();
     }
     initTemplate3();
 }());
