@@ -231,7 +231,7 @@ third classes
     margin-left: 150px;
 }
 
-#tem3_fuck{
+#tem3_item2{
     width: 1200px;
     margin-left: auto;
     margin-right: auto;
@@ -239,32 +239,32 @@ third classes
 }
 
 
-#tem3_fuck #tem3_ul{
+#tem3_item2 #tem3_ul{
     list-style-type: none;
     padding-right: 0px;
     padding-left: 0px;
     margin: auto;
 }
 
-#tem3_fuck #tem3_li{
+#tem3_item2 #tem3_li{
     display: inline-block;
 }
 
-#tem3_fucking1{
+#tem3_txt_item{
     margin-top: 110px;
     margin-left: 20px;
     width: 500px;
     height: 304px;
 }
 
-#tem3_fuckingimg{
+#tem3_img2{
     width: 500px;
     height: 136px;
     margin-left:20px;
     margin-bottom: 12px;
 }
 
-.tem3_fuckingtxt{
+.tem3_txt2{
     font-family: Roboto-thin;
     font-size: 16px;
     margin-bottom: 10px;
@@ -272,12 +272,12 @@ third classes
     text-align: right;
 }
 
-#tem3_fucking2{
+#tem3_email_item{
     width: 500px;
 }
 
 
-#tem3_fucking2 ul{
+#tem3_email_item ul{
     list-style-type: none;
     margin: auto;
 }
