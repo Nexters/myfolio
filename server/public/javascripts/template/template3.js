@@ -66,9 +66,7 @@
         });
     }
     function addImageNextEvent(){
-
         $('#right_btn').bind('click',function(){
-            console.log('count : ',count);
             if(count>=0 && count<2){
                 count++;
                 $('.imgs').css('background','url("' + img_arr[count] + '") no-repeat');
@@ -78,7 +76,6 @@
     }
     function addImageBeforeEvent(){
         $('#left_btn').bind('click',function(){
-            console.log('count : ',count);
             if(count>=1 && count<3){
                 count--;
                 $('.imgs').css('background','url("' + img_arr[count] + '") no-repeat');
