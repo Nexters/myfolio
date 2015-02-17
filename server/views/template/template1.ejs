@@ -27,9 +27,9 @@
                 <a class="nav-title-item" href="#page3">Contact</a>
             </div>
             <div class="common-nav-title is-edit-mode hide">
-                <input type="text" value="Home">
-                <input type="text" value="Portfolio">
-                <input type="text" value="Contact">
+                <input type="text" class="common-nav-title-input" value="Home">
+                <input type="text" class="common-nav-title-input" value="Portfolio">
+                <input type="text" class="common-nav-title-input" value="Contact">
             </div>
         </div>
     </nav>
@@ -39,9 +39,17 @@
             <div class="home-title is-view-mode">
                 <p>Hello :)</p>
             </div>
+            <div class="home-title is-edit-mode hide">
+                <input type="text" class="home-title-input" value="Hello :)">
+            </div>
+
             <div class="sub-title is-view-mode">
                 <p>I'm Nicolas Lowe. Web & Graphic Designer</p>
             </div>
+            <div class="sub-title is-edit-mode hide">
+                <input type="text" class="sub-title-input" value="I'm Nicolas Lowe. Web & Graphic Designer">
+            </div>
+
             <div class="home-image-container is-view-mode">
                 <div class="home-image-box">
                     <a href="/images/template1/main_folio_img_01.png" data-lightbox="page1">
@@ -57,6 +65,24 @@
                         <img class="main-image" src="/images/template1/main_folio_img_04.png"/>
                     </a>
                 </div>
+            </div>
+            <div class="home-image-container is-edit-mode hide">
+                <div class="home-image-box-input">
+                    <a href="/images/template1/main_folio_img_01.png" data-lightbox="page1">
+                        <img class="main-image" src="/images/template1/main_folio_img_01.png"/>
+                    </a>
+                    <a href="/images/template1/main_folio_img_02.png" data-lightbox="page1">
+                        <img class="main-image" src="/images/template1/main_folio_img_02.png"/>
+                    </a>
+                    <a href="/images/template1/main_folio_img_03.png" data-lightbox="page1">
+                        <img class="main-image" src="/images/template1/main_folio_img_03.png"/>
+                    </a>
+                    <a href="/images/template1/main_folio_img_04.png" data-lightbox="page1">
+                        <img class="main-image" src="/images/template1/main_folio_img_04.png"/>
+                    </a>
+                </div>
+            </div>
+
             </div>
         </div>
     </div>
@@ -78,12 +104,22 @@
 
     <div class="page2-common-page-container">
         <div class="page2-bot-text-box">
-            <p class="page2-bot-big-title is-view-mode">Project Page 3</p>
-            <p class="page2-bot-small-title is-view-mode">
+            <div class="page2-bot-big-title is-view-mode">Project Page 3</div>
+            <div class="page2-bot-big-title is-edit-mode hide">
+                <input type="text" class="page2-bot-big-title-input" value="Project Page 3">
+            </div>
+
+            <div class="page2-bot-small-title is-view-mode">
                 I'm a paragraph. Click here to add your own text and edit me. It's easy. Just click 'Edit Text' or
                 double click me to add your own content and make changes to the font. I'm a great place for you to
                 tell a story and let your users know a little more about you.
-            </p>
+            </div>
+            <div class="page2-bot-small-title is-edit-mode hide">
+                    <input type="text" class="page2-bot-small-title-input" value="I'm a paragraph. Click here to add your own text and edit me. It's easy. Just click 'Edit Text' or
+                double click me to add your own content and make changes to the font. I'm a great place for you to
+                tell a story and let your users know a little more about you.">
+                </div>
+            </div>
         </div>
         <img class="page2-mid-big-button-left" src="/images/template1/temp_middle_view_arrow_l.png" />
         <img class="page2-mid-big-button-right" src="/images/template1/temp_middle_view_arrow_r.png" />
@@ -93,12 +129,22 @@
 </div>
 
 <div id="page3">
-    <p class="page3-top-title is-view-mode">Let's work together.</p>
-    <p class="page3-top-subtitle is-view-mode">
+    <a class="page3-top-title is-view-mode">Let's work together.</a>
+    <div class="page3-top-title is-edit-mode hide">
+        <input type="text" class="page3-top-title-input" value="Project Page 3">
+    </div>
+    <div class="page3-top-subtitle is-view-mode">
         I'm a paragraph. Click here to add your own text and edit me. It's easy. Just click 'Edit Text' or
         double click me to add your own content and make changes to the font. I'm a great place for you to
         tell a story and let your users know a little more about you.
-    </p>
+    </div>
+    <div class="page3-top-subtitle is-edit-mode hide">
+        <a class="page3-top-subtitle-input">
+        I'm a paragraph. Click here to add your own text and edit me. It's easy. Just click 'Edit Text' or
+        double click me to add your own content and make changes to the font. I'm a great place for you to
+        tell a story and let your users know a little more about you.
+            </a>
+    </div>
 
     <div class="page3-contact-container">
         <div class="page3-contact-name-box">
@@ -125,6 +171,9 @@
             <div>
                 <p>MADE IN ASHLEE, WITH MYFOLIO.COM</p>
             </div>
+        </div>
+        <div class="common-footer-title is-edit-mode hide">
+            <p>MADE IN ASHLEE, WITH MYFOLIO.COM</p>
         </div>
     </div>
 </footer>
