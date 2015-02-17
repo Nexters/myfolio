@@ -1,3 +1,6 @@
+<script>
+    var IS_LOGIN = <%= isLogin %>;
+</script>
 <nav id="nav_menu">
     <img id="nav_logo_image" src="/images/myfolio_logo.png" class="nav-logo" />
     <div class="nav-profile">
@@ -9,7 +12,7 @@
                 <span class="caret"></span>
             </button>
             <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-                <li id="nav_mypage_btn" role="presentation"><a href="<%= userId %>" role="menuitem" tabindex="-1">My Portfolio</a></li>
+                <li id="nav_mypage_btn" role="presentation"><a href="<%= userName %>" role="menuitem" tabindex="-1">My Portfolio</a></li>
                 <li class="divider"></li>
                 <li id="nav_logout_btn" role="presentation"><a role="menuitem" tabindex="-1">Logout</a></li>
             </ul>

@@ -10,10 +10,12 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/blueimp-file-upload/9.5.7/jquery.iframe-transport.min.js"></script>
     <script src="/javascripts/template/template1.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/js/lightbox.min.js"></script>
+    <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/bower_components/lightbox2/css/lightbox.css">
 </head>
 
-<body>
-<% include toolbar.ejs %>
+<body data-portfolio="<% if (typeof portfolioId !== "undefined") { %><%= portfolioId %><% } %>">
+<% include ../Toolbar.ejs %>
 
 <div id="page1">
     <img class="home-image" src="/images/template1/temp_01_bg.png" />
@@ -85,7 +87,6 @@
         </div>
         <img class="page2-mid-big-button-left" src="/images/template1/temp_middle_view_arrow_l.png" />
         <img class="page2-mid-big-button-right" src="/images/template1/temp_middle_view_arrow_r.png" />
-
         <img class="page2-common-image-container" src="/images/template1/second_page_main.png" />
     </div>
 
@@ -128,5 +129,8 @@
     </div>
 </footer>
 </body>
+
+<% include ../CommonLib.ejs %>
+<script src="/javascripts/template/template1.js"></script>
 
 </html>

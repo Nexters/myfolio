@@ -36,5 +36,12 @@ server/config
 # Uploaded files
 server/upload
 
+# User portfolio files
+!server/views/portfolio/toolbar.ejs
+server/views/portfolio
+
 # Build files
 server/build
+
+# Bower files
+server/public/bower_components
