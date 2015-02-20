@@ -66,6 +66,7 @@ nav {
 #page1 {
     width: 100%;
     height: 100%;
+    min-height: 780px;
     max-height: 789px;
     margin-top: -1%;
     padding-top: 1%;
@@ -75,6 +76,7 @@ nav {
     #page1 {
         width: 100%;
         height: 100%;
+        min-height: 780px;
         max-height: 789px;
         margin-top: -1%;
         padding-top: 1%;
@@ -227,6 +229,7 @@ div.common-page-container {
     text-align: center;
     width: 100%;
     height: 100%;
+    min-height: 650px;
     max-height: 1600px;
     margin-top: 0px;
     padding-top: 9.58%; /* 82/856px */
@@ -240,6 +243,7 @@ div.common-page-container {
         text-align: center;
         width: 100%;
         height: 100%;
+        min-height: 650px;
         max-height: 856px;
         margin-top: 0px;
         padding-top: 2%; /* 82/856px */
@@ -567,6 +571,7 @@ div.page2-common-page-container {
     text-align: center;
     width: 100%;
     height: 100%;
+    min-height: 600px;
     max-height: 740px;
     margin-top: 200px;
     padding-top: 2%; /* 82/856px */
@@ -578,6 +583,7 @@ div.page2-common-page-container {
         text-align: center;
         width: 100%;
         height: 100%;
+        min-height: 600px;
         max-height: 740px;
         margin-top: 200px;
         padding-top: 1%; /* 82/856px */
@@ -591,6 +597,7 @@ div.page2-common-page-container {
         text-align: center;
         width: 100%;
         height: 100%;
+        min-height: 600px;
         max-height: 740px;
         margin-top: 0px;
         padding-top: 3%; /* 82/856px */
@@ -604,6 +611,7 @@ div.page2-common-page-container {
         text-align: center;
         width: 100%;
         height: 100%;
+        min-height: 600px;
         max-height: 740px;
         margin-top: 0px;
         padding-top: 5%; /* 82/856px */
@@ -728,7 +736,8 @@ div.page2-common-page-container {
     border: 2px solid #959595;
     width: inherit;
     max-width:600px;
-    min-height: 180px;
+    min-height: 100px;
+    max-height: 150px;
     height: inherit;
     margin: 0 auto;
     position:relative;
@@ -738,7 +747,6 @@ div.page2-common-page-container {
     font-family: 'Roboto';
     font-size: 1.13em;
     width: 100%;
-    height: 100%;
     margin: 1px;
     border: none;
     background-color: transparent;
@@ -802,4 +810,8 @@ i.image-change-btn {
     width: 100px;
     height: 40px;
     margin-top: 10px;
+}
+
+.common-footer-title > p {
+    margin: 0px;
 }
