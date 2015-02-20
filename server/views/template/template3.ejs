@@ -265,13 +265,14 @@ You only get one shot, do not miss your chance to blow
             </li>
             <li id="tem3_li">
                 <div>
-                    <form id="tem3_email_item" action="MAILTO:example@email.com">
+                    <form id="tem3_email_item" name="tem3_email_item" action="MAILTO:example@email.com" enctype="text/plain">
                         <ul>
+                            <li><label><input class="is-edit-mode hide" id="user_email_input" name="user_email_input" type="email" placeholder="user Email" value="example@email.com"style="width: 470px"/></label></li>
                             <li><label><input maxlength="40" type="text" placeholder="Name" name="name" style="width: 470px"></label></li>
                             <li><label><input type="email" placeholder="Email" name="mail" style="width: 470px "></label></li>
-                            <li><label><input type="text" placeholder="Subject" style="width: 470px"></label></li>
-                            <li><label><textarea cols="43" rows="8" placeholder="Messages" name="comments" ></textarea></label>
-                                <input type="submit" value="send" id="submitbutton" style="float: right"></li>
+                            <li><label><input type="text" name="subject" id="subject" placeholder="Subject" style="width: 470px"></label></li>
+                            <li><label><textarea cols="43" rows="8" id="body" name="body" placeholder="Messages"  ></textarea></label>
+                            <input type="submit" value="send" id="submitbutton" style="float: right"></li>
                         </ul>
                     </form>
                 </div>

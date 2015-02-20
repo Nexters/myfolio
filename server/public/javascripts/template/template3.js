@@ -86,6 +86,13 @@
     function addTemplateSaveEvent() {
         $('#template_editor_save_btn').on('TEMPLATE_SAVE_EVENT', function(e) {
             console.log("SAVE");
+            document.getElementById("tem3_email_item").action = "MAILTO:"+document.getElementById("user_email_input").value;
+        });
+    }
+    function addEmailSubmitBtnEvent(){
+        $('#submitbutton').bind('click',function(){
+            document.getElementById("submitbutton").onclick = "MAILTO:"+document.getElementById("user_email_input").value+
+                "?subject="+document.getElementById("subject").value+"&body="+document.getElementById("body").value;
         });
     }
 
@@ -97,6 +104,7 @@
         addImageBeforeEvent();
         addTemplateSaveEvent();
         addnavBtnEvent();
+        addEmailSubmitBtnEvent();
     }
     initTemplate3();
 }());
