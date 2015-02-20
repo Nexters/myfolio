@@ -1,8 +1,9 @@
 (function template1() {
 
     function initPageBackgroundImage() {
-        var backgroundImage = $('.page-background-image').data('background');
-        $('.page-background-image').attr('src', backgroundImage);
+        $('.page-background-image').each(function(idx, item) {
+            $(item).attr('src', $(item).data('background'));
+        });
     }
 
     function initViewImageItem() {
@@ -21,6 +22,16 @@
     }
 
     function addImageChangeEvent() {
+        $('.page-background-file-upload-btn').unbind('fileupload').fileupload({
+            dataType: 'json',
+            progressall: function (e, data) {
+                console.log("progress");
+            },
+            done: function (e, data) {
+                var uploadedImageUrl = "/image/" + data.result;
+                $(this).parent().parent().children('.page-background-image').attr('src',uploadedImageUrl);
+            }
+        });
         $('.image-file-upload-btn').unbind('fileupload').fileupload({
             dataType: 'json',
             progressall: function (e, data) {
@@ -36,6 +47,11 @@
 
     function addTemplateSaveEvent() {
         $('#template_editor_save_btn').on('TEMPLATE_SAVE_EVENT', function(e) {
+            $('.page-background-image').each(function(idx, item) {
+                var tmpItem = $(item);
+                tmpItem.attr('data-background', tmpItem.attr('src'));
+            });
+
             $('.view-sns-item > input').each(function(idx, item) {
                 var $editItem = $(item);
                 var $viewItem = $editItem.parent();
