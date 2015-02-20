@@ -1,41 +1,36 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <link rel="stylesheet" href="/stylesheets/main.css"/>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
-    <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
-    <script src="https://code.jquery.com/ui/1.11.2/jquery-ui.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/blueimp-file-upload/9.5.7/jquery.fileupload.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/blueimp-file-upload/9.5.7/jquery.iframe-transport.min.js"></script>
-    <script src="/javascripts/Main.js"></script>
-</head>
-
-<body>
-<% include partials/Nav.ejs %>
-<% include partials/JoinModal.ejs %>
-<% include partials/LoginModal.ejs %>
-<div class="main-page-container">
-    <div class="main-page-template-container">
-        <div class="select-template-title-container">
-            <h2 class="select-template-title"><p>Select a Template</p></h2>
-            <h5 class="select-template-content"><p>Choose yours and create something totally original.</p></h5>
-        </div>
-        <div class="select-template-container">
-            <% for (var i=0; i<templates.length; i++) { %>
-            <% var template = templates[i]; %>
-            <div class="select-template-box" data-id="<%= template.TEMPLATE_ID %>">
-                <img src="/images/<%= template.THUMB_IMG %>" />
-                <img src="/images/thumb_tag_icon.png" class="tag-icon" />
-                <h4 class="template-tag">
-                    <p><%= template.TEMPLATE_DESCRIPTION %></p>
-                </h4>
+    <head>
+        <link rel="stylesheet" href="/stylesheets/main.css"/>
+        <link rel="stylesheet" href="/javascripts/bower_components/bootstrap/dist/css/bootstrap.min.css">
+    </head>
+    <body>
+        <% include partials/Nav.ejs %>
+        <% include partials/JoinModal.ejs %>
+        <% include partials/LoginModal.ejs %>
+        <div class="main-page-container">
+            <div class="main-page-template-container">
+                <div class="select-template-title-container">
+                    <h2 class="select-template-title"><p>Select a Template</p></h2>
+                    <h5 class="select-template-content"><p>Choose yours and create something totally original.</p></h5>
+                </div>
+                <div class="select-template-container">
+                    <% for (var i=0; i<templates.length; i++) { %>
+                    <% var template = templates[i]; %>
+                    <div class="select-template-box" data-id="<%= template.TEMPLATE_ID %>">
+                        <img src="/images/<%= template.THUMB_IMG %>" />
+                        <img src="/images/thumb_tag_icon.png" class="tag-icon" />
+                        <h4 class="template-tag">
+                            <p><%= template.TEMPLATE_DESCRIPTION %></p>
+                        </h4>
+                    </div>
+                    <% } %>
+                </div>
             </div>
-            <% } %>
         </div>
-    </div>
-</div>
-<% include partials/Footer.ejs %>
-</body>
+        <% include partials/Footer.ejs %>
 
+        <% include CommonLib.ejs %>
+        <script src="/javascripts/Main.js"></script>
+    </body>
 </html>
