@@ -613,6 +613,7 @@ div.page2-common-page-container {
 
 
 .page3-top-title {
+    cursor: pointer;
     text-align: center;
     font-family: 'Roboto';
     font-size: 1.5em;
@@ -683,7 +684,7 @@ div.page2-common-page-container {
     border: 2px solid #959595;
     width: inherit;
     max-width:600px;
-    height: auto;
+    height: 40px;
     margin: 0 auto;
     position:relative;
     margin-bottom: 1.06%;
@@ -692,9 +693,11 @@ div.page2-common-page-container {
 .page3-contact-name {
     font-family: 'Roboto';
     font-size: 1.13em;
-    width: 15%;
-    margin-top: 1.56%;
-    margin-left: 1.81%;
+    width: 100%;
+    margin: 1px;
+    border: none;
+    line-height: 32px;
+    background-color: transparent;
 }
 
 .page3-contact-email-box {
@@ -703,7 +706,7 @@ div.page2-common-page-container {
     border: 2px solid #959595;
     width: inherit;
     max-width:600px;
-    height: auto;
+    height: 40px;
     margin: 0 auto;
     position:relative;
     margin-bottom: 1.06%;
@@ -712,9 +715,11 @@ div.page2-common-page-container {
 .page3-contact-email {
     font-family: 'Roboto';
     font-size: 1.13em;
-    width: 15%;
-    margin-top: 1.56%;
-    margin-left: 1.81%;
+    width: 100%;
+    margin: 1px;
+    line-height: 32px;
+    border: none;
+    background-color: transparent;
 }
 
 .page3-contact-messages-box {
@@ -732,9 +737,11 @@ div.page2-common-page-container {
 .page3-contact-messages {
     font-family: 'Roboto';
     font-size: 1.13em;
-    width: 15%;
-    margin-top: 1.56%;
-    margin-left: 1.81%;
+    width: 100%;
+    height: 100%;
+    margin: 1px;
+    border: none;
+    background-color: transparent;
 }
 
 .page3-contact-sns-image-container {
@@ -789,4 +796,10 @@ i.image-change-btn {
     margin-left: 4px;
     width: 30px;
     height: 30px;
+}
+
+#email_submit_btn {
+    width: 100px;
+    height: 40px;
+    margin-top: 10px;
 }

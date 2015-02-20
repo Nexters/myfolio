@@ -120,51 +120,56 @@
 </div>
 
 <div id="page3">
-    <a class="page3-top-title is-view-mode">Let's work together.</a>
-    <div class="page3-top-title is-edit-mode hide">
-        <input type="text" class="page3-top-title-input" value="Project Page 3">
-    </div>
-    <div class="page3-top-subtitle is-view-mode">
-        I'm a paragraph. Click here to add your own text and edit me. It's easy. Just click 'Edit Text' or
-        double click me to add your own content and make changes to the font. I'm a great place for you to
-        tell a story and let your users know a little more about you.
-    </div>
-    <div class="page3-top-subtitle is-edit-mode hide">
-        <a class="page3-top-subtitle-input">
+    <a class="page3-top-title is-view-mode view-item">Let's work together.</a>
+    <input type="text" class="page3-top-title page3-top-title-input is-edit-mode hide edit-item" value="Let's work together.">
+    <div class="page3-top-subtitle">
+        <div class="is-view-mode view-item">
+            <p>I'm a paragraph. Click here to add your own text and edit me. It's easy. Just click 'Edit Text' or</p>
+            <p>double click me to add your own content and make changes to the font. I'm a great place for you</p>
+            <p>to tell a story and let your users know a little more about you.</p>
+        </div>
+        <textarea class="page3-top-subtitle is-edit-mode edit-item hide" placeholder="Content">
             I'm a paragraph. Click here to add your own text and edit me. It's easy. Just click 'Edit Text' or
             double click me to add your own content and make changes to the font. I'm a great place for you to
             tell a story and let your users know a little more about you.
-        </a>
+        </textarea>
     </div>
-
     <div class="page3-contact-container">
-        <div class="page3-contact-name-box">
-            <p class="page3-contact-name">NAME</p>
-        </div>
-        <div class="page3-contact-email-box">
-            <p class="page3-contact-email">EMAIL</p>
-        </div>
-        <div class="page3-contact-messages-box">
-            <p class="page3-contact-messages">MESSAGES</p>
-        </div>
+        <form id="template3_email_item" action="MAILTO:example@email.com">
+            <div class="page3-contact-name-box">
+                <input class="page3-contact-name" type="text" maxlength="40" name="name" placeholder="NAME"/>
+            </div>
+            <div class="page3-contact-email-box">
+                <input class="page3-contact-email" type="text" name="mail" placeholder="EMAIL"/>
+            </div>
+            <div class="page3-contact-messages-box">
+                <textarea class="page3-contact-messages" name="comments" placeholder="MESSAGES"></textarea>
+            </div>
+            <input type="submit" value="Send" id="email_submit_btn">
+        </form>
     </div>
 
     <div class="page3-contact-sns-image-container">
-        <image class="page3-contact-sns-image" src="/images/template1/bottom_contact_fb.png"/>
-        <image class="page3-contact-sns-image" src="/images/template1/bottom_contact_tw.png"/>
-        <image class="page3-contact-sns-image" src="/images/template1/bottom_contact_gp.png"/>
+        <a class="page3-contact-sns-image view-sns-item" data-url="">
+            <img class="page3-contact-sns-image-img" src="/images/template1/bottom_contact_fb.png"/>
+            <input type="text" class="is-edit-mode sns-edit-item hide" placeholder="facebook.com/example"/>
+        </a>
+        <a class="page3-contact-sns-image view-sns-item" data-url="">
+            <img class="page3-contact-sns-image" src="/images/template1/bottom_contact_tw.png"/>
+            <input type="text" class="is-edit-mode sns-edit-item hide" placeholder="twitter.com/example"/>
+        </a>
+        <a class="page3-contact-sns-image view-sns-item" data-url="">
+            <img class="page3-contact-sns-image" src="/images/template1/bottom_contact_gp.png"/>
+            <input type="text" class="is-edit-mode sns-edit-item hide" placeholder="google.com/+example"/>
+        </a>
     </div>
 </div>
 
 <footer>
     <div class="common-footer-menu">
-        <div class="common-footer-title is-view-mode">
-            <div>
-                <p>MADE IN ASHLEE, WITH MYFOLIO.COM</p>
-            </div>
-        </div>
-        <div class="common-footer-title is-edit-mode hide">
-            <p>MADE IN ASHLEE, WITH MYFOLIO.COM</p>
+        <div class="common-footer-title">
+            <p class="is-view-mode view-item">MADE IN ASHLEE, WITH MYFOLIO.COM</p>
+            <input type="text" class="is-edit-mode edit-item hide" value="MADE IN ASHLEE, WITH MYFOLIO.COM" />
         </div>
     </div>
 </footer>

@@ -40,7 +40,6 @@
         html += '<img class="edit-image-item" src="' + imageUrl + '"/>';
         html += '</a>';
         html += '</div>';
-        // TODO: 입력하는 HTML 추가!!
         html += '<div class="photo-image-box-text">';
         html += '<p class="photo-image-box-title is-view-mode view-item hide"></p>';
         html += '<input type="text" class="photo-image-box-title is-edit-mode edit-item" placeHolder="Title">';
