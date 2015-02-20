@@ -61,6 +61,8 @@
                 }
                 $viewItem.attr('data-url', url);
             });
+            document.getElementById("email").value = "";//TODO: get user email data on session
+            document.getElementById("template3_email_item").action = "MAILTO:"+document.getElementById("email").value;
         });
     }
 

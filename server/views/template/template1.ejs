@@ -142,6 +142,7 @@
     </div>
     <div class="page3-contact-container">
         <form id="template3_email_item" action="MAILTO:example@email.com">
+            <input type="hidden" id="email" name="email" value="example@email.com">
             <div class="page3-contact-name-box">
                 <input class="page3-contact-name" type="text" maxlength="40" name="name" placeholder="NAME"/>
             </div>
@@ -149,7 +150,7 @@
                 <input class="page3-contact-email" type="text" name="mail" placeholder="EMAIL"/>
             </div>
             <div class="page3-contact-messages-box">
-                <textarea class="page3-contact-messages" name="comments" placeholder="MESSAGES"></textarea>
+                <textarea class="page3-contact-messages" name="body" placeholder="MESSAGES"></textarea>
             </div>
             <input type="submit" value="Send" id="email_submit_btn">
         </form>
