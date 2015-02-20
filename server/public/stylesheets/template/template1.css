@@ -186,22 +186,19 @@ div.common-page-container {
     margin: 0 auto;
     margin-top: 50px;
     padding-left: 2%;
-    padding-bottom: 24%;
+    padding-bottom: 20%;
+    padding-top: 5%;
     background: rgba(255,255,255,.3)
 }
 
 .home-image-box {
-    position: absolute;
-    width: inherit;
-    max-width: 90%;
-    height: auto;
-    cursor: pointer;
-    display: block;
-    float: left;
-    text-align:center;
-    vertical-align: middle;
-    margin: 10px 10px;
-    padding-top: 3.5%;
+    display: inline-block;
+    width: auto;
+    min-width: 160px;
+    height: 180px;
+    margin: 0px 10px;
+    overflow: hidden;
+
 }
 .home-image-box-input{
     position: absolute;
@@ -771,3 +768,25 @@ footer {
     color: #ffffff;
 }
 /* common footer end */
+
+i.page-background-image-change-btn {
+    cursor: pointer;
+    background-image: url("/images/template2/temp2_change_icon.png");
+    background-size: 30px;
+    position: absolute;
+    margin-top: 4px;
+    margin-left: 4px;
+    width: 30px;
+    height: 30px;
+}
+
+i.image-change-btn {
+    cursor: pointer;
+    background-image: url("/images/template2/temp2_change_icon.png");
+    background-size: 30px;
+    position: absolute;
+    margin-top: 4px;
+    margin-left: 4px;
+    width: 30px;
+    height: 30px;
+}
