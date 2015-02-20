@@ -46,6 +46,7 @@
         img_arr.push($('#img_item1').attr('src'));
         img_arr.push($('#img_item2').attr('src'));
         img_arr.push($('#img_item3').attr('src'));
+        document.getElementById("tem3_email_item").action = "MAILTO:"+document.getElementById("user_email_input").value;
     }
     function addImageChangeEvent() {
         $('.image-file-upload-btn').unbind('fileupload').fileupload({
@@ -89,12 +90,7 @@
             document.getElementById("tem3_email_item").action = "MAILTO:"+document.getElementById("user_email_input").value;
         });
     }
-    function addEmailSubmitBtnEvent(){
-        $('#submitbutton').bind('click',function(){
-            document.getElementById("submitbutton").onclick = "MAILTO:"+document.getElementById("user_email_input").value+
-                "?subject="+document.getElementById("subject").value+"&body="+document.getElementById("body").value;
-        });
-    }
+
 
     function initTemplate3() {
         initViewImageItem();
@@ -104,7 +100,6 @@
         addImageBeforeEvent();
         addTemplateSaveEvent();
         addnavBtnEvent();
-        addEmailSubmitBtnEvent();
     }
     initTemplate3();
 }());
