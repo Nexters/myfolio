@@ -36,26 +36,29 @@ PortfoiloService.prototype.makeUserPortfolioData = function (params, callback) {
                 USER_ID: params.userId
             };
             portfolioModel.selectById(criteria, options, function (err, portfolio) {
-                // 유저 포트폴리오가 이미 존재할 때 에러로 리턴
+                // 유저 포트폴리오가 이미 존재할 때 true 전달
                 if (portfolio && portfolio.length > 0) {
-                    callback({
-                        code: 0,
-                        msg: "Already have portfolio!"
-                    });
+                    callback(null, true);
                     return;
                 }
-                callback(err);
+                callback(err, false);
             });
         },
-        function (callback) {
+        function (hasPortfolio, callback) {
             criteria = {
                 TEMPLATE_ID: params.templateId,
                 USER_ID: params.userId,
                 USER_NAME: params.userName
             };
-            portfolioModel.insert(criteria, options, function (err) {
-                callback(err);
-            });
+            if (hasPortfolio) {
+                portfolioModel.update(criteria, options, function (err) {
+                    callback(err);
+                });
+            } else {
+                portfolioModel.insert(criteria, options, function (err) {
+                   callback(err);
+                });
+            }
         },
         function (callback) {
             criteria = {
@@ -66,7 +69,6 @@ PortfoiloService.prototype.makeUserPortfolioData = function (params, callback) {
             });
         },
         function (portfolio, callback) {
-
             // templateFileName: 템플릿 이름.ejs
             // saveFileName: 포트폴리오 이름.ejs
             // srcPath: 템플릿 경로
