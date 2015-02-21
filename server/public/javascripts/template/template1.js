@@ -47,6 +47,8 @@
 
     function addTemplateSaveEvent() {
         $('#template_editor_save_btn').on('TEMPLATE_SAVE_EVENT', function(e) {
+            var inputEmail;
+
             $('.page-background-image').each(function(idx, item) {
                 var tmpItem = $(item);
                 tmpItem.attr('data-background', tmpItem.attr('src'));
@@ -61,8 +63,11 @@
                 }
                 $viewItem.attr('data-url', url);
             });
-            document.getElementById("email").value = "";//TODO: get user email data on session
-            document.getElementById("template3_email_item").action = "MAILTO:"+document.getElementById("email").value;
+
+            inputEmail = $('#my_email_address').val();
+            if (inputEmail) {
+                $('#template1_email_item').attr('action', 'MAILTO:' + inputEmail);
+            }
         });
     }
 

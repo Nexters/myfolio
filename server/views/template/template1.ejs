@@ -142,13 +142,13 @@
         </textarea>
     </div>
     <div class="page3-contact-container">
-        <form id="template3_email_item" action="MAILTO:example@email.com">
-            <input type="hidden" id="email" name="email" value="example@email.com">
-            <div class="page3-contact-name-box">
-                <input class="page3-contact-name" type="text" maxlength="40" name="name" placeholder="NAME"/>
-            </div>
+        <div class="is-edit-mode hide">
+            <label>My Email Address</label>
+            <input type="text" id="my_email_address" placeholder="example@email.com"/>
+        </div>
+        <form id="template1_email_item" action="MAILTO:example@email.com">
             <div class="page3-contact-email-box">
-                <input class="page3-contact-email" type="text" name="mail" placeholder="EMAIL"/>
+                <input class="page3-contact-email" type="text" name="subject" placeholder="TITLE"/>
             </div>
             <div class="page3-contact-messages-box">
                 <textarea class="page3-contact-messages" name="body" placeholder="MESSAGES"></textarea>
