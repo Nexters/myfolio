@@ -88,7 +88,7 @@
                 success: function successHandler(data, status, xhr) {
                     if (data.code === 1) {
                         alert(data.msg);
-                        //location.reload(true);  // 저장하고 나서 페이지 리로드
+                        location.reload(true);  // 저장하고 나서 페이지 리로드
                         return;
                     }
                 }
