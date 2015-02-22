@@ -15,11 +15,12 @@
     }
 
     function addLoginEvent() {
-        $('#login_modal').keyup(function(e) {
+        $('#login_modal').keypress(function(e) {
             if (e.which === 13) {
                 $('#login_modal_login_btn').trigger('click');
             }
         });
+
         $('#login_modal_login_btn').click(function() {
             var inputId = $('#login_modal_input_id').val();
             var inputPw = $('#login_modal_input_pw').val();
@@ -64,7 +65,7 @@
         var regTest = /^[A-Za-z0-9+]*$/;
         var regEmailTest = /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i;
 
-        $('#join_modal').keyup(function(e) {
+        $('#join_modal').keypress(function(e) {
             if (e.which === 13) {
                 $('#join_modal_join_btn').trigger('click');
             }
