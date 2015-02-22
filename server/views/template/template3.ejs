@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/stylesheets/template/common.css"/>
+    <link rel="stylesheet" href="/stylesheets/template/template3.css"/>
+    <link rel="stylesheet" href="/javascripts/bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/javascripts/bower_components/lightbox2/css/lightbox.css">
+</head>
+
+<body>
+<div id="template3_header">
+    <% include ../Toolbar.ejs %>
+    <nav>
+        <ul class="template-nav-title is-view-mode view-item-parent">
+            <li><a href="#first"><div class="nav_title_item" id="1">Home</div></a></li>
+            <li><a href="#second"><div class="nav_title_item" id="2">Portfolio</div></a></li>
+            <li><a href="#third"><div class="nav_title_item" id="3">Contact</div></a></li>
+        </ul>
+        <ul class="template-nav-title is-edit-mode edit-item-parent hide">
+            <li><input type="text" class="nav_title_item" value="Home"/></li>
+            <li><input type="text" class="nav_title_item" value="Portfolio"/></li>
+            <li><input type="text" class="nav_title_item" value="Contact"/></li>
+        </ul>
+    </nav>
+</div>
+<div class="first">
+    <div class="fir_comment is-view-mode view-item">
+        <p></p>
+        <p>I'M JENNIFER LAWRENCE!</p>
+        <p>CREATIVE, UNIQUE, FANTASTIC.</p>
+        <p></p>
+    </div>
+    <textarea class="fir_comment is-edit-mode edit-item hide">
+        I'M JENNIFER LAWRENCE!
+        CREATIVE, UNIQUE, FANTASTIC.
+    </textarea>
+    <div class="fir_img_div">
+        <div class="img_base">
+            <div class="imgs" class="imgs">
+                <img id="left_btn" src="/images/template3/top_mac_arrow_l.png"/>
+                <img id="right_btn" src="/images/template3/top_mac_arrow_r.png"/>
+                <div class="fir_img_upload_div is-edit-mode hide">
+                    <ul>
+                        <li>
+                            <div class="img_upload_box">
+                                <i class="image-change-btn is-edit-mode hide"></i>
+                                <input class="image-file-upload-btn hided-input-file-btn is-edit-mode hide" type="file" name="files[]" data-url="/ajax/upload">
+                                <a class="view-image-item" data-image="/images/template3/top_mac_foilo_pic_01.png" data-lightbox="page1_lightbox">
+                                    <img id="img_item1" class="edit-image-item"/>
+                                </a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="img_upload_box">
+                                <i class="image-change-btn is-edit-mode hide"></i>
+                                <input class="image-file-upload-btn hided-input-file-btn is-edit-mode hide" type="file" name="files[]" data-url="/ajax/upload">
+                                <a class="view-image-item" data-image="/images/template3/top_mac_foilo_pic_02.png" data-lightbox="page1_lightbox">
+                                    <img id="img_item2" class="edit-image-item"/>
+                                </a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="img_upload_box">
+                                <i class="image-change-btn is-edit-mode hide"></i>
+                                <input class="image-file-upload-btn hided-input-file-btn is-edit-mode hide" type="file" name="files[]" data-url="/ajax/upload">
+                                <a class="view-image-item" data-image="/images/template3/top_mac_foilo_pic_03.png" data-lightbox="page1_lightbox">
+                                    <img id="img_item3" class="edit-image-item"/>
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="second">
+    <div class="sec_comment is-view-mode view-item" >
+        <p> </p>
+        <p>IT'S MY FOLIO</p>
+        <p>CREATIVE, UNIQUE, FANTASTIC.</p>
+        <p> </p>
+    </div>
+    <textarea class="sec_comment is-edit-mode edit-item hide" style="height: 200px">
+
+        IT'S MY FOLIO
+        CREATIVE, UNIQUE, FANTASTIC.
+
+    </textarea>
+    <div class="sec_img_container">
+        <div class="sec_firstPhoto">
+            <i class="image-change-btn is-edit-mode hide"></i>
+            <input class="image-file-upload-btn hided-input-file-btn2 is-edit-mode hide" type="file" name="files[]" data-url="/ajax/upload">
+            <a class="view-image-item" data-image="/images/template3/middle_folio_pic_01.png" data-lightbox="page1_lightbox">
+                <img class="edit-image-item"/>
+            </a>
+        </div>
+        <div class="sec_secondPhoto">
+            <i class="image-change-btn is-edit-mode hide"></i>
+            <input class="image-file-upload-btn hided-input-file-btn2 is-edit-mode hide" type="file" name="files[]" data-url="/ajax/upload">
+            <a class="view-image-item" data-image="/images/template3/middle_folio_pic_02.png" data-lightbox="page1_lightbox">
+                <img class="edit-image-item"/>
+            </a>
+        </div>
+        <div class="sec_thirdPhoto">
+            <i class="image-change-btn is-edit-mode hide"></i>
+            <input class="image-file-upload-btn hided-input-file-btn2 is-edit-mode hide" type="file" name="files[]" data-url="/ajax/upload">
+            <a class="view-image-item" data-image="/images/template3/middle_folio_pic_03.png" data-lightbox="page1_lightbox">
+                <img class="edit-image-item"/>
+            </a>
+        </div>
+        <div class="sec_fourthPhotos">
+            <ul>
+                <li>
+                    <i class="image-change-btn is-edit-mode hide"></i>
+                    <input class="image-file-upload-btn hided-input-file-btn2 is-edit-mode hide" type="file" name="files[]" data-url="/ajax/upload">
+                    <a class="view-image-item" data-image="/images/template3/middle_folio_pic_04.png" data-lightbox="page1_lightbox">
+                        <img class="edit-image-item" style="width: 240px"/>
+                    </a>
+                </li>
+                <li>
+                    <i class="image-change-btn is-edit-mode hide"></i>
+                    <input class="image-file-upload-btn hided-input-file-btn2 is-edit-mode hide" type="file" name="files[]" data-url="/ajax/upload">
+                    <a class="view-image-item" data-image="/images/template3/middle_folio_pic_05.png" data-lightbox="page1_lightbox">
+                        <img class="edit-image-item" style="width: 240px"/>
+                    </a>
+                </li>
+                <li>
+                    <i class="image-change-btn is-edit-mode hide"></i>
+                    <input class="image-file-upload-btn hided-input-file-btn2 is-edit-mode hide" type="file" name="files[]" data-url="/ajax/upload">
+                    <a class="view-image-item" data-image="/images/template3/middle_folio_pic_06.png" data-lightbox="page1_lightbox">
+                        <img class="edit-image-item" style="width: 240px"/>
+                    </a>
+                </li>
+                <li>
+                    <i class="image-change-btn is-edit-mode hide"></i>
+                    <input class="image-file-upload-btn hided-input-file-btn2 is-edit-mode hide" type="file" name="files[]" data-url="/ajax/upload">
+                    <a class="view-image-item" data-image="/images/template3/middle_folio_pic_07.png" data-lightbox="page1_lightbox">
+                        <img class="edit-image-item" style="width: 240px"/>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="third">
+    <div class="tem3_third_text is-view-mode view-item">
+        <div>
+            <p>T'S MY FOLIO</p>
+            <p>CREATIVE, UNIQUE, FANTASTIC.</p>
+        </div>
+    </div>
+    <div class="tem3_third_text is-edit-mode edit-item hide">
+        <textarea class="is-edit-mode edit-item hide"style="height: 150px;width: 300px;">
+            IT'S MY FOLIO
+            CREATIVE, UNIQUE, FANTASTIC.
+        </textarea>
+    </div>
+
+    <div id="tem3_item3">
+        <ul>
+            <li id="tem3_fr">
+                <div class="tem3_txt">
+                    <div class="tem3_img">
+                        <i class="image-change-btn is-edit-mode hide"></i>
+                        <input class="image-file-upload-btn hided-input-file-btn2 is-edit-mode hide" type="file" name="files[]" data-url="/ajax/upload">
+                        <a class="view-image-item" data-image="/images/template3/bottom_ability_icon.png" data-lightbox="page1_lightbox">
+                            <img class="edit-image-item" style="width: 150px"/>
+                        </a>
+                    </div>
+                    <div class="tem3_header is-view-mode">visual experience design</div>
+                    <div class="tem3_header is-edit-mode hide">
+                        <input type="text" class="is-edit-mode hide" value="visual experience design" style="background-color: #000000"/>
+                    </div>
+                    <div class="tem3_article is-view-mode view-item">
+                        WE DELIVER BEAUTIFUL<br/>AND EASY TO USE INTERFACES WITH<br/>FOCUS ON QUALITY
+                    </div>
+                    <textarea class="tem3_article is-edit-mode edit-item hide" style="height: 100px;width: 250px;background-color: black;">
+                        WE DELIVER BEAUTIFUL
+                        AND EASY TO USE INTERFACES WITH
+                        FOCUS ON QUALITY
+                    </textarea>
+                </div>
+            </li>
+
+            <li>
+                <div class="tem3_txt">
+                    <div class="tem3_img">
+                        <i class="image-change-btn is-edit-mode hide"></i>
+                        <input class="image-file-upload-btn hided-input-file-btn2 is-edit-mode hide" type="file" name="files[]" data-url="/ajax/upload">
+                        <a class="view-image-item" data-image="/images/template3/bottom_ability_icon.png" data-lightbox="page1_lightbox">
+                            <img class="edit-image-item" style="width: 150px"/>
+                        </a>
+                    </div>
+                    <div class="tem3_header is-view-mode">visual experience design</div>
+                    <div class="tem3_header is-edit-mode hide">
+                        <input type="text" class="is-edit-mode hide" value="visual experience design" style="background-color: #000000"/>
+                    </div>
+                    <div class="tem3_article is-view-mode view-item">
+                        WE DELIVER BEAUTIFUL<br/>AND EASY TO USE INTERFACES WITH<br/>FOCUS ON QUALITY
+                    </div>
+                    <textarea class="tem3_article is-edit-mode edit-item hide" style="height: 100px;width: 250px;background-color: black;">
+                        WE DELIVER BEAUTIFUL
+                        AND EASY TO USE INTERFACES WITH
+                        FOCUS ON QUALITY
+                    </textarea>
+                </div>
+            </li>
+
+            <li>
+                <div class="tem3_txt">
+                    <div class="tem3_img">
+                        <i class="image-change-btn is-edit-mode hide"></i>
+                        <input class="image-file-upload-btn hided-input-file-btn2 is-edit-mode hide" type="file" name="files[]" data-url="/ajax/upload">
+                        <a class="view-image-item" data-image="/images/template3/bottom_ability_icon.png" data-lightbox="page1_lightbox">
+                            <img class="edit-image-item" style="width: 150px"/>
+                        </a>
+                    </div>
+                    <div class="tem3_header is-view-mode">visual experience design</div>
+                    <div class="tem3_header is-edit-mode hide">
+                        <input type="text" class="is-edit-mode hide" value="visual experience design" style="background-color: #000000"/>
+                    </div>
+                    <div class="tem3_article is-view-mode view-item">
+                        WE DELIVER BEAUTIFUL<br/>AND EASY TO USE INTERFACES WITH<br/>FOCUS ON QUALITY
+                    </div>
+                    <textarea class="tem3_article is-edit-mode edit-item hide" style="height: 100px;width: 250px;background-color: black;">
+                        WE DELIVER BEAUTIFUL
+                        AND EASY TO USE INTERFACES WITH
+                        FOCUS ON QUALITY
+                    </textarea>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <div id="tem3_item2">
+        <ul id="tem3_ul">
+            <li id="tem3_li">
+                <div class="tem3_txt_item">
+                    <div class="tem3_img2" style="width: 500px">
+                        <i class="image-change-btn is-edit-mode hide"></i>
+                        <input class="image-file-upload-btn hided-input-file-btn2 is-edit-mode hide" type="file" name="files[]" data-url="/ajax/upload">
+                        <a class="view-image-item" data-image="/images/template3/bottom_myphoto.png" data-lightbox="page1_lightbox">
+                            <img class="edit-image-item"/>
+                        </a>
+                    </div>
+                    <div class="tem3_txt2 is-view-mode view-item">
+                        <p>You better lose yourself in the music, the moment</p>
+                        <p>You only get one shot, do not miss your chance to blow</p>
+                        <p>This opportunity comes once in a lifetime yo</p>
+                        <p>You better lose yourself in the music, the moment</p>
+                        <p>You own it, you better never let it go</p>
+                        <p>You only get one shot, do not miss your chance to blow</p>
+                    </div>
+                    <textarea class="tem3_txt2 is-edit-mode edit-item hide"
+                              style="height: 200px;width: 500px;background-color: black;text-align: right">
+You better lose yourself in the music, the moment
+You only get one shot, do not miss your chance to blow
+This opportunity comes once in a lifetime yo
+You better lose yourself in the music, the moment
+You own it, you better never let it go
+You only get one shot, do not miss your chance to blow
+                    </textarea>
+                </div>
+            </li>
+            <li id="tem3_li">
+                <div>
+                    <form id="tem3_email_item" name="tem3_email_item" action="MAILTO:example@email.com" enctype="text/plain">
+                        <ul>
+                            <li><label><input class="is-edit-mode hide" id="user_email_input" name="user_email_input" type="email" placeholder="user Email" value="example@email.com"style="width: 470px"/></label></li>
+                            <li><label><input maxlength="40" type="text" placeholder="Name" name="name" style="width: 470px"></label></li>
+                            <li><label><input type="email" placeholder="Email" name="mail" style="width: 470px "></label></li>
+                            <li><label><input type="text" name="subject" id="subject" placeholder="Subject" style="width: 470px"></label></li>
+                            <li><label><textarea cols="43" rows="8" id="body" name="body" placeholder="Messages"  ></textarea></label>
+                            <input type="submit" value="send" id="submitbutton" style="float: right"></li> 
+                        </ul>
+                    </form>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+<div class="footer">
+    <p class="is-view-mode view-item">Made in Jenninfer, With Myfolio.com</p>
+    <input type="text" class="is-edit-mode edit-item hide" value="Made in Jenninfer, With Myfolio.com" />
+</div>
+<% include ../CommonLib.ejs %>
+<script src="/javascripts/template/template3.js"></script>
+</body>
+</html>

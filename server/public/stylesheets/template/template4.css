@@ -1,0 +1,267 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto);
+@font-face {
+    font-family:'FARRAY';
+    src: url('/fonts/FARRAY.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family:'Fabrica';
+    src: url('/fonts/Fabrica.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    width: 100%;
+}
+
+/* template nav */
+nav {
+    min-width: 1100px;
+    height: 700px;
+}
+
+.template-nav-left-title {
+    display: block;
+    float: left;
+    height: 143px;
+    padding-left: 46px;
+    padding-top: 56px;
+    font-family: FARRAY;
+    font-size: 24px;
+}
+
+.template-nav-left-title > input {
+    width: 400px;
+}
+
+.template-nav-menu {
+    display: block;
+    width: 600px;
+    height: 80px;
+    padding-top: 66px;
+    float: right;
+}
+
+.template-nav-menu > .template-nav-title {
+    text-align: right;
+    margin-right: 47px;
+    line-height: 20px;
+}
+
+.template-nav-menu > .template-nav-title > .nav-title-item {
+    cursor: pointer;
+    text-decoration: none;
+    width: 140px;
+    margin: 0px 20px;
+    font-family: FARRAY;
+    font-size: 12px;
+    color: #000000;
+}
+
+.template-nav-menu > .template-nav-title > .selected {
+    border-bottom: solid 1px;
+}
+
+.nav-content-container {
+    margin: 0px auto;
+    min-height: 320px;
+    width: 500px;
+    padding-top: 160px;
+    text-align: center;
+}
+
+.nav-content-container .nav-content-box {
+    width: 500px;
+    min-height: 320px;
+}
+
+.nav-content-box > p {
+    font-family: FARRAY;
+    font-size: 46px;
+    line-height: 80px;
+    color: #ffffff;
+}
+
+textarea.nav-content-box {
+    font-family: FARRAY;
+    font-size: 46px;
+    line-height: 80px;
+    text-align: center;
+    color: #000000;
+}
+/* template nav end */
+
+/* template footer start */
+
+footer {
+    min-width: 1100px;
+    background: #000000;
+}
+
+footer > .common-footer-menu > .common-footer-title {
+    font-family: FARRAY;
+    font-size: 10px;
+    color: #ffffff;
+}
+
+/* template footer end */
+
+.common-background {
+    width: 100%;
+    background-color: #d9d8d4;
+}
+
+.content-image-container {
+    width: 1020px;
+    margin: 0px auto;
+    padding-top: 80px;
+    padding-bottom: 20px;
+    min-height: 700px;
+}
+
+.content-left-image-container {
+    display: inline-block;
+    width: 500px;
+    height: 720px;
+    margin-right: 20px;
+}
+
+.content-left-image-container > .content-small-image-box {
+    float: left;
+    display: inline-block;
+    width: 500px;
+    height: 350px;
+    overflow: hidden;
+}
+
+.content-small-image-box > a > img {
+    width: 500px;
+    height: 350px;
+    overflow: hidden;
+}
+
+.content-left-image-container > .bottom-image {
+    margin-top: 20px;
+}
+
+.content-right-content-container {
+    float: right;
+    display: inline-block;
+    width: 500px;
+    height: 720px;
+    background-color: #42a09d;
+    padding: 60px 40px;
+}
+
+.content-right-content-container > .content-title-box {
+    display: block;
+    width: 400px;
+    height: 150px;
+    margin-bottom: 50px;
+}
+
+.content-title-box > p {
+    font-family: FARRAY;
+    font-size: 24px;
+    color: #ffffff;
+}
+
+textarea.content-title-box {
+    font-family: FARRAY;
+    font-size: 24px;
+    color: #000000;
+}
+
+.content-right-content-container > .content-detail-box {
+    display: block;
+    width: 400px;
+    height: 400px;
+}
+
+.content-detail-box > p {
+    font-family: Fabrica;
+    font-size: 20px;
+    color: #ffffff;
+}
+
+textarea.content-detail-box {
+    font-family: Fabrica;
+    font-size: 20px;
+    color: #000000;
+}
+
+.contact-container {
+    min-height: 200px!important;
+}
+
+.contact-content-container {
+    width: 500px;
+    margin: 0px auto;
+}
+
+.contact-content-box {
+    font-family: Fabrica;
+    font-size: 20px;
+    line-height: 40px;
+    text-align: center;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+.contact-content-box > p {
+    font-family: Fabrica;
+    font-size: 20px;
+    line-height: 50px;
+    margin: 0px;
+}
+
+textarea.contact-content-box {
+    font-family: Fabrica;
+    width: 500px;
+    font-size: 20px;
+    line-height: 50px;
+    margin-top: 20px;
+    color: #000000;
+}
+
+.nav-image-change-btn {
+    position: absolute;
+    font-family: FARRAY;
+    font-size: 20px;
+    width: 30px;
+    height: 30px;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.nav-image-change-btn > img {
+    cursor: pointer;
+    position: absolute;
+    width: 30px;
+    height: 30px;
+}
+
+i.image-change-btn {
+    cursor: pointer;
+    background-image: url("/images/template2/temp2_change_icon.png");
+    background-size: 30px;
+    position: absolute;
+    margin-top: 4px;
+    margin-left: 4px;
+    width: 30px;
+    height: 30px;
+}
+
+i.image-delete-btn {
+    cursor: pointer;
+    background-image: url("/images/template2/temp2_delete_icon.png");
+    background-size: 30px;
+    position: absolute;
+    float: right;
+    margin-top: 4px;
+    margin-left: 966px;
+    width: 30px;
+    height: 30px;
+}

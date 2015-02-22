@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="shortcut icon" href="/favicon.ico">
+        <link rel="stylesheet" href="/stylesheets/template/common.css"/>
+        <link rel="stylesheet" href="/stylesheets/template/template4.css"/>
+        <link rel="stylesheet" href="/javascripts/bower_components/bootstrap/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/javascripts/bower_components/lightbox2/css/lightbox.css">
+    </head>
+
+    <body data-portfolio="<% if (typeof portfolioId !== "undefined") { %><%= portfolioId %><% } %>">
+    <% include ../Toolbar.ejs %>
+    <nav data-background="/images/template4/temp4_box01.png">
+        <div class="nav-image-change-btn is-edit-mode hide">
+            <img src="/images/template2/temp2_change_icon.png" />
+            <input class="background-file-upload-btn hided-input-file-btn" type="file" name="files[]" data-url="/ajax/upload">
+        </div>
+        <div class="template-nav-left-title">
+            <p class="is-view-mode view-item">MY FOLIO</p>
+            <input type="text" class="is-edit-mode hide edit-item" value="MY FOLIO">
+        </div>
+        <div class="template-nav-menu">
+            <div class="template-nav-title is-view-mode view-item-parent">
+                <a class="nav-title-item selected">HOME</a>
+                <a class="nav-title-item">CONTACT</a>
+            </div>
+            <div class="template-nav-title is-edit-mode edit-item-parent hide">
+                <input type="text" class="nav-title-item" value="HOME" />
+                <input type="text" class="nav-title-item" value="CONTACT" />
+            </div>
+        </div>
+        <div class="nav-content-container">
+            <div class="nav-content-box is-view-mode view-item">
+                <p>WHERESOEVER</p>
+                <p>YOU GO, GO</p>
+                <p>WITH ALL YOUR</p>
+                <p>HEART</p>
+            </div>
+            <textarea class="nav-content-box is-edit-mode edit-item hide" placeholder="Content"></textarea>
+        </div>
+    </nav>
+
+    <!-- content page1 start -->
+    <div class="content-page1 common-background common-page-container">
+        <div class="content-image-container">
+            <div class="content-left-image-container">
+                <div class="content-small-image-box">
+                    <i class="image-change-btn is-edit-mode hide"></i>
+                    <input class="image-file-upload-btn hided-input-file-btn is-edit-mode hide" type="file" name="files[]" data-url="/ajax/upload">
+                    <a class="view-image-item" data-image="/images/template4/temp4_box02.png" data-lightbox="page1_lightbox">
+                        <img class="edit-image-item"/>
+                    </a>
+                </div>
+                <div class="content-small-image-box bottom-image">
+                    <i class="image-change-btn is-edit-mode hide"></i>
+                    <input class="image-file-upload-btn hided-input-file-btn is-edit-mode hide" type="file" name="files[]" data-url="/ajax/upload">
+                    <a class="view-image-item" data-image="/images/template4/temp4_box03.png" data-lightbox="page1_lightbox">
+                        <img class="edit-image-item"/>
+                    </a>
+                </div>
+            </div>
+            <div class="content-right-content-container">
+                <div class="content-title-box is-view-mode view-item">
+                    <p>WHEN YOU HAVE FAULTS,</p>
+                    <p>DO NOT FEAR TO</p>
+                    <p>ABANDON THEM.</p>
+                </div>
+                <textarea class="content-title-box is-edit-mode edit-item hide" placeholder="Title"></textarea>
+
+                <div class="content-detail-box is-view-mode view-item">
+                    <p>When we see men of worth, we should</p>
+                    <p>think of equaling them; when we see</p>
+                    <p>men of a contrary character.</p>
+                </div>
+                <textarea class="content-detail-box is-edit-mode edit-item hide" placeholder="Content"></textarea>
+            </div>
+        </div>
+    </div>
+    <!-- content page1 end -->
+
+    <!-- content page2 start -->
+    <div class="content-page2 common-background common-page-container contact-container hide">
+        <div class="contact-content-container">
+            <div class="contact-content-box is-view-mode view-item">
+                <p>Contact</p>
+                <p>Email: </p>
+            </div>
+            <textarea class="contact-content-box is-edit-mode edit-item hide" placeholder="Contact"></textarea>
+        </div>
+    </div>
+    <!-- content page2 end -->
+
+    <footer>
+        <div class="common-footer-menu">
+            <div class="common-footer-title">
+                <div class="is-view-mode view-item">MY FOLIO | BY NNNNA</div>
+                <input type="text" class="is-edit-mode edit-item hide" value="MY FOLIO | BY NNNNA" />
+            </div>
+        </div>
+    </footer>
+    <% include ../CommonLib.ejs %>
+    <script src="/javascripts/template/template4.js"></script>
+    </body>
+</html>

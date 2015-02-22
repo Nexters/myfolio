@@ -11,6 +11,7 @@ var user = require('./routes/user');
 var template = require('./routes/template');
 var portfolio = require('./routes/portfolio');
 var upload = require('./routes/upload');
+var image = require('./routes/image');
 
 var config = require('./config/index');
 var MongoStore;
@@ -22,16 +23,15 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
 // uncomment after placing your favicon in /public
-app.use(favicon(__dirname + '/public/favicon.ico'));
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
-
 
 // Session
 if (app.get('env') === 'production') {
+    app.use(favicon(__dirname + '/dist/favicon.ico'));
+    app.use(express.static(path.join(__dirname, 'dist')));
     MongoStore = require('connect-mongo')(session);
     app.use(session({
         secret: 'myfolio-session',
@@ -40,6 +40,8 @@ if (app.get('env') === 'production') {
         saveUninitialized: true
     }));
 } else {
+    app.use(favicon(__dirname + '/public/favicon.ico'));
+    app.use(express.static(path.join(__dirname, 'public')));
     app.use(session({
         secret: 'myfolio-session',
         resave: false,
@@ -53,6 +55,7 @@ app.use('/template', template);
 app.use('/ajax/portfolio', portfolio);
 app.use('/ajax/user', user);
 app.use('/ajax/upload', upload);
+app.use('/image', image);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

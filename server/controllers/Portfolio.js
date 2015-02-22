@@ -14,24 +14,33 @@ function PortfolioController() {
 PortfolioController.prototype = new BaseController('PortfolioController');
 
 PortfolioController.prototype.getUserPortfolio = function (req, res, next) {
-    // TODO: 여기에 유저 포트폴리오 보여주는 페이지 작업
+    var params = {};
+    var content = {};
+    var isOwner = false;
+    var portfolioFile;
 
-    if (!sessionService.makeUserSessionData(req, content) || !sessionService.hasUserAuthority(req)) {
-        // TODO: 로그인 안했거나 다른 사람 포트폴리오 저장 안되도록 401.ejs 표시
-        res.render('401.ejs');
-        return;
+    params.userName = req.params.name;
+
+    if (sessionService.hasSession(req) && sessionService.hasUserAuthorityByName(req, params.userName)) {
+        isOwner = true;
     }
 
-    params.userId = req.params.id;
-    params.portfolioId = req.params.portfolio;
-
-    // TODO: 유저ID에 해당하는 포트폴리오 있을경우 포트폴리오 데이터 가져와서 수정하는 페이지 보여줌
-    // TODO: 아닐경우 타이틀에 해당하는 포트폴리오 템플릿 선택 페이지 보여줌
     portfolioService.getUserPortfolioData(params, function (err, result) {
         if (err) {
             res.render('404.ejs', err);
+            return;
         }
-        // TODO: 여기에 유저 포트폴리오 데이터 가져와서 클라이언트로 내려주는 코드 추가
+
+        if (!result || result.length === 0) {
+            res.redirect('/');
+            return;
+        }
+
+        content.isOwner = isOwner;  // isOwner: 유저 자신의 페이지인지 확인
+        content.portfolioId = result[0].PORTFOLIO_ID;   // portfolioId: 포트폴리오 ID 설정
+
+        portfolioFile = 'portfolio/' + result[0].PORTFOLIO_ID + '.ejs';
+        res.render(portfolioFile, content);
     });
 };
 
@@ -42,27 +51,38 @@ PortfolioController.prototype.makeUserPortfolio = function (req, res) {
         res.render('401.ejs');
         return;
     }
-
     params.templateId = req.params.template;
     params.userId = req.session.userId;
+    params.userName = req.session.userName;
 
     portfolioService.makeUserPortfolioData(params, function (err, result) {
         if (err) {
             res.render('404.ejs', err);
             return;
         }
+
         result.userName = req.session.userName;
         res.status(200).send(result);
     });
 };
 
 PortfolioController.prototype.saveUserPortfolio = function (req, res) {
-    var params = {},
-        content = {};
+    var params = {};
 
-    // TODO: 유저 포트폴리오 저장하는 코드 필요
+    params.portfolioId = req.params.id;
+    params.html = req.body.html;
+
+    portfolioService.saveUserPortfolioData(params, function (err, result) {
+        if (err) {
+            res.render('404.ejs', err);
+            return;
+        }
+        res.status(200).send({
+            code: 1,
+            msg: "save success"
+        });
+    });
+
 };
 
 module.exports = PortfolioController;
-
-

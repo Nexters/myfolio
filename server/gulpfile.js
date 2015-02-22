@@ -1,46 +1,106 @@
+'use strict';
+
+// Include Gulp & Tools We'll Use
 var gulp = require('gulp');
-var concat = require('gulp-concat');
-var uglify = require('gulp-uglify');
-var imagemin = require('gulp-imagemin');
-var sourcemaps = require('gulp-sourcemaps');
+var $ = require("gulp-load-plugins")({
+    pattern: ['gulp-*', 'gulp.*'],
+    replaceString: /\bgulp[\-.]/
+});
+var path = require('path');
 var del = require('del');
+var runSequence = require('run-sequence');
+var browserSync = require('browser-sync');
+var reload = browserSync.reload;
 
-var paths = {
-    scripts: ['public/javascripts/**/*.js'],
-    images: 'public/images/**/*'
-};
+var AUTOPREFIXER_BROWSERS = [
+    'ie >= 10',
+    'ie_mob >= 10',
+    'ff >= 30',
+    'chrome >= 34',
+    'safari >= 7',
+    'opera >= 23',
+    'ios >= 7',
+    'android >= 4.4',
+    'bb >= 10'
+];
 
-// Not all tasks need to use streams
-// A gulpfile is just another node program and you can use all packages available on npm
-gulp.task('clean', function(cb) {
-    // You can use multiple globbing patterns as you would with `gulp.src`
-    del(['build'], cb);
+// Compile and Automatically Prefix Stylesheets
+gulp.task('styles', function () {
+    // For best performance, don't add Sass partials to `gulp.src`
+    return gulp.src([
+        'public/stylesheets/*.scss',
+        'public/stylesheets/**/*.css'
+    ])
+        .pipe($.sourcemaps.init())
+        .pipe($.changed('.tmp/stylesheets', {extension: '.css'}))
+        .pipe($.sass({
+            precision: 10,
+            onError: console.error.bind(console, 'Sass error:')
+        }))
+        .pipe($.autoprefixer({browsers: AUTOPREFIXER_BROWSERS}))
+        .pipe($.sourcemaps.write())
+        .pipe(gulp.dest('.tmp/stylesheets'))
+        // Concatenate And Minify Styles
+        .pipe($.if('*.css', $.csso()))
+        .pipe(gulp.dest('dist/stylesheets'))
+        .pipe($.size({title: 'stylesheets'}));
 });
 
-gulp.task('scripts', ['clean'], function() {
-    // Minify and copy all JavaScript (except vendor scripts)
-    // with sourcemaps all the way down
-    return gulp.src(paths.scripts)
-        .pipe(sourcemaps.init())
-        .pipe(uglify())
-        .pipe(concat('all.min.js'))
-        .pipe(sourcemaps.write())
-        .pipe(gulp.dest('build/js'));
+// Minify JavaScript (except vendor scripts)
+gulp.task('scripts', function() {
+    return gulp.src(['public/javascripts/**/*.js', '!public/javascripts/bower_components/**/*.js'])
+        .pipe($.sourcemaps.init())
+        .pipe($.uglify())
+        .pipe(gulp.dest('dist/javascripts'))
+        .pipe($.size({title: 'javascripts'}));
 });
 
-// Copy all static images
-gulp.task('images', ['clean'], function() {
-    return gulp.src(paths.images)
-        // Pass in options to the task
-        .pipe(imagemin({optimizationLevel: 5}))
-        .pipe(gulp.dest('build/img'));
+// Optimize Images
+gulp.task('images', function () {
+    return gulp.src('public/images/**/*')
+        .pipe($.cache($.imagemin({
+            progressive: true,
+            interlaced: true
+        })))
+        .pipe(gulp.dest('dist/images'))
+        .pipe($.size({title: 'images'}));
 });
 
-// Rerun the task when a file changes
-gulp.task('watch', function() {
-    gulp.watch(paths.scripts, ['scripts']);
-    gulp.watch(paths.images, ['images']);
+// Copy Web Fonts To Dist
+gulp.task('fonts', function () {
+    return gulp.src(['public/fonts/**'])
+        .pipe(gulp.dest('dist/fonts'))
+        .pipe($.size({title: 'fonts'}));
 });
 
-// The default task (called when you run `gulp` from cli)
-gulp.task('default', ['clean', 'scripts', 'images']);
+// Copy All Files At The Root Level (app)
+gulp.task('copy', function () {
+    return gulp.src([
+        'public/*',
+        '!public/*.html'
+    ], {
+        dot: true
+    }).pipe(gulp.dest('dist'))
+        .pipe($.size({title: 'copy'}));
+});
+
+// Copy bower_components Files At The Root Level (app)
+gulp.task('copy-bower', function () {
+    return gulp.src([
+        'public/javascripts/bower_components/**/*'
+    ], {
+        dot: true
+    }).pipe(gulp.dest('dist/javascripts/bower_components'))
+        .pipe($.size({title: 'copy-bower'}));
+});
+
+// Clean Output Directory
+gulp.task('clean', del.bind(null, ['.tmp', 'dist/*', '!dist/.git'], {dot: true}));
+
+// Build Production Files, the Default Task
+gulp.task('default', ['clean'], function (cb) {
+    runSequence('styles', ['scripts', 'images', 'fonts', 'copy', 'copy-bower'], cb);
+});
+
+// Load custom tasks from the `tasks` directory
+// try { require('require-dir')('tasks'); } catch (err) { console.error(err); }

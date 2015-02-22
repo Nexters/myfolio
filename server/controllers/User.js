@@ -28,11 +28,31 @@ UserController.prototype.getUsers = function (req, res) {
 };
 
 UserController.prototype.checkId = function (req, res) {
-    // TODO: id 중복 검사 해야함
+    var params = {
+        id: req.params.id
+    };
+
+    userService.checkId(params, function (err, result) {
+        if (err) {
+            res.status(404).send(err);
+            return;
+        }
+        res.status(200).send(result);
+    });
 };
 
 UserController.prototype.checkName = function (req, res) {
-    // TODO: name 중복 검사 해야함
+    var params = {
+        name: req.params.name
+    };
+
+    userService.checkName(params, function (err, result) {
+        if (err) {
+            res.status(404).send(err);
+            return;
+        }
+        res.status(200).send(result);
+    });
 };
 
 UserController.prototype.join = function (req, res) {
@@ -43,12 +63,17 @@ UserController.prototype.join = function (req, res) {
     };
 
     userService.joinUser(params, function (err, result) {
-        if (err) {
+        if (err && (typeof err.code === "undefined")) {
             res.status(404).send(err);
             return;
         }
-        console.log(result);
+
+        if (err && err.code === 0) {
+            res.status(200).send(err);
+            return;
+        }
         sessionService.registerSession(req, params.id, params.name, null);
+
         res.status(200).send(result);
     });
 };
@@ -64,12 +89,14 @@ UserController.prototype.login = function (req, res) {
             res.status(404).send(err);
             return;
         }
+
         if (result.code === 1) {
             sessionService.registerSession(req, result.data.USER_ID, result.data.USER_NAME, result.data.USER_PORTFOLIO_ID);
         }
         res.status(200).send(result);
     });
 };
+
 
 UserController.prototype.logout = function (req, res) {
     if (!sessionService.hasSession(req)) {
