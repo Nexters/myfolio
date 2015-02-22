@@ -49,7 +49,6 @@ if (app.get('env') === 'production') {
     }));
 }
 
-
 app.use('/', routes);
 app.use('/template', template);
 app.use('/ajax/portfolio', portfolio);

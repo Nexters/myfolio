@@ -19,6 +19,18 @@
         });
     }
 
+    function checkIsOwner() {
+        try {
+            if (typeof g_isOwner !== undefined && g_isOwner === "true") {
+                $('#template_editor').removeClass('hide');
+            } else {
+                $('#template_editor').remove();
+            }
+        } catch(e) {
+            console.log(e);
+        }
+    }
+
     function addEditorEvent() {
         // 템플릿 수정하기 버튼 클릭
         $('#template_editor_modify_btn').click(function() {
@@ -76,7 +88,7 @@
                 success: function successHandler(data, status, xhr) {
                     if (data.code === 1) {
                         alert(data.msg);
-                        location.reload(true);  // 저장하고 나서 페이지 리로드
+                        //location.reload(true);  // 저장하고 나서 페이지 리로드
                         return;
                     }
                 }
@@ -89,6 +101,7 @@
     }
 
     function initCommon() {
+        checkIsOwner();
         addEditorEvent();
     }
 
