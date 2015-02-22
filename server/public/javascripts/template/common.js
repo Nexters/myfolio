@@ -2,6 +2,8 @@
     'use strict';
 
     function _sanitizeHtml() {
+        // toolbar 관련 전역변수 삭제
+        $('head > script').remove();
         // lightbox DOM에 남아있는 문제때문에 지워줌
         $('html').find('.lightboxOverlay').remove();
         $('html').find('.lightbox').remove();
