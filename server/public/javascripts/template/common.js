@@ -23,7 +23,9 @@
 
     function checkIsOwner() {
         try {
-            if (typeof g_isOwner !== undefined && g_isOwner === "true") {
+            if (typeof g_isOwner === "undefined") {
+                $('#template_editor').remove();
+            } else if (typeof g_isOwner !== "undefined" && g_isOwner === "true") {
                 $('#template_editor').removeClass('hide');
             } else {
                 $('#template_editor').remove();
