@@ -39,12 +39,14 @@ PortfolioController.prototype.getUserPortfolio = function (req, res, next) {
             res.redirect('/');
             return;
         }
-
-        content.isOwner = isOwner;  // isOwner: 유저 자신의 페이지인지 확인
-        content.portfolioId = result[0].PORTFOLIO_ID;   // portfolioId: 포트폴리오 ID 설정
-
+    
         portfolioFile = result[0].PORTFOLIO_ID + '.ejs';
         filePath = path.join(__dirname, '../views/portfolio/', portfolioFile);
+        
+        content.isOwner = isOwner;  // isOwner: 유저 자신의 페이지인지 확인
+        content.portfolioId = result[0].PORTFOLIO_ID;   // portfolioId: 포트폴리오 ID 설정
+        content.filename = filePath;
+        
         fs.readFile(filePath, 'utf-8', function (err, portfolioData) {
             if (err) {
                res.render('404.ejs', err);
