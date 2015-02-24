@@ -3,7 +3,10 @@
 var BaseController = require('./Base'),
     portfolioService = new (require('../service/PortfolioService'))(),
     sessionService = new (require('../service/SessionService'))(),
-    _ = require('underscore');
+    path = require('path'),
+    fs = require('fs'),
+    _ = require('underscore'),
+    ejs = require('ejs');
 
 function PortfolioController() {
     if (!(this instanceof PortfolioController)) {
@@ -17,7 +20,8 @@ PortfolioController.prototype.getUserPortfolio = function (req, res, next) {
     var params = {};
     var content = {};
     var isOwner = false;
-    var portfolioFile;
+    var filePath;
+    var addedScript, portfolioFile;
 
     params.userName = req.params.name;
 
@@ -35,12 +39,23 @@ PortfolioController.prototype.getUserPortfolio = function (req, res, next) {
             res.redirect('/');
             return;
         }
-
+    
+        portfolioFile = result[0].PORTFOLIO_ID + '.ejs';
+        filePath = path.join(__dirname, '../views/portfolio/', portfolioFile);
+        
         content.isOwner = isOwner;  // isOwner: 유저 자신의 페이지인지 확인
         content.portfolioId = result[0].PORTFOLIO_ID;   // portfolioId: 포트폴리오 ID 설정
-
-        portfolioFile = 'portfolio/' + result[0].PORTFOLIO_ID + '.ejs';
-        res.render(portfolioFile, content);
+        content.filename = filePath;
+        
+        fs.readFile(filePath, 'utf-8', function (err, portfolioData) {
+            if (err) {
+               res.render('404.ejs', err);
+               return;
+            }
+            addedScript = "<script>var g_isOwner = '<%= isOwner %>'</script>";
+            portfolioData = addedScript + portfolioData;
+            res.end(ejs.render(portfolioData, content));
+        });
     });
 };
 

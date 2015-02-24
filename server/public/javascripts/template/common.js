@@ -2,6 +2,8 @@
     'use strict';
 
     function _sanitizeHtml() {
+        // toolbar 관련 전역변수 삭제
+        $('head > script').remove();
         // lightbox DOM에 남아있는 문제때문에 지워줌
         $('html').find('.lightboxOverlay').remove();
         $('html').find('.lightbox').remove();
@@ -17,6 +19,20 @@
                 $('#toolbar_nav_title_container a:eq('+idx+')').text($(this).val());
             });
         });
+    }
+
+    function checkIsOwner() {
+        try {
+            if (typeof g_isOwner === "undefined") {
+                $('#template_editor').remove();
+            } else if (typeof g_isOwner !== "undefined" && g_isOwner === "true") {
+                $('#template_editor').removeClass('hide');
+            } else {
+                $('#template_editor').remove();
+            }
+        } catch(e) {
+            console.log(e);
+        }
     }
 
     function addEditorEvent() {
@@ -89,6 +105,7 @@
     }
 
     function initCommon() {
+        checkIsOwner();
         addEditorEvent();
     }
 
